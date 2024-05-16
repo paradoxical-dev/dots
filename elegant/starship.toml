@@ -1,0 +1,38 @@
+format = """
+$directory\
+$git_branch\
+$git_state\
+$git_status\
+$fill\
+$cmd_duration
+$character"""
+
+[directory]
+style = "#7E97AB"
+truncation_length = 2
+truncation_symbol = '  in '
+
+[character]
+format = '''❯ '''
+
+[git_branch]
+symbol = ' '
+format = "[$symbol$branch(:$remote_branch)]($style) "
+style = "#232326"
+
+[git_status]
+format = '[($all_status $ahead_behind )]($style)'
+style = "#232326"
+stashed = "≡"
+
+[git_state]
+format = '\([$state( $progress_current/$progress_total)]($style)\) '
+style = "#232326"
+
+[cmd_duration]
+min_time = 0
+format = "[$duration]($style)"
+style = "#A7A7A7"
+
+[fill]
+symbol = " "

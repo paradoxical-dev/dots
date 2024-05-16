@@ -1,0 +1,70 @@
+format = """
+[╭─](white)\
+[󰗣](#e6eed7)\
+[ 󰞦 ](bg:#e6eed7 fg:#12372A)\
+[](bg:#ADBC9F00 fg:#e6eed7)\
+[](fg:#adbc9f bg:#adbc9f00)\
+$username\
+[](fg:#adbc9f bg:#436850)\
+$git_branch\
+$git_status\
+[](fg:#436850 bg:#12372a)\
+$nodejs\
+[ ](fg:#12372A)
+[├─](white)\
+$directory\
+[♢](e6eed7)\
+$time\
+[♢](e6eed7)\
+$cmd_duration\
+\n$character"""
+
+[directory]
+style = "fg:#e6eed7"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = ". in "
+# home_symbol = " "
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+
+[git_branch]
+symbol = ""
+style = "bg:#394260"
+format = '[[ $symbol $branch ](fg:#e6eed7 bg:#436850)]($style)'
+
+[git_status]
+style = "bg:#394260"
+format = '[[($all_status $ahead_behind )](fg:#e6eed7 bg:#436850)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#e6eed7 bg:#12372a)]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#1d2230"
+format = '[[  $time ](fg:#adbc9f bg:#1d223000)]($style)'
+
+[fill]
+symbol = " "
+
+[username]
+style_root = 'bold'
+format = '[ $user](bg:#adbc9f fg:#494f49)'
+
+[cmd_duration]
+min_time = 0
+style = "italic #436850"
+format = '[ $duration]($style)'
+
+[character]
+format = '''╰╮󱆉 '''
+	      
