@@ -1,0 +1,88 @@
+palette = "catppuccin_mocha"
+
+# format = """
+# $directory\
+# $git_branch\
+# $git_status\
+# $fill\
+# $cmd_duration
+# $character"""
+
+format = """
+$username@$hostname\
+$directory\
+$character"""
+
+
+[palettes.catppuccin_mocha]
+white = "#ffffff"
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
+
+[directory]
+style = "fg:bold white bg:NONE"
+format = "[ $path ]($style)"
+truncation_length = 1
+truncation_symbol = "  in "
+
+# [directory.substitutions]
+# "Documents" = "󰈙 "
+# "Downloads" = " "
+# "Music" = " "
+# "Pictures" = " "
+
+[username]
+style_user = 'fg:#ea83a5'
+style_root = 'fg:white'
+format = "[$user]($style)"
+show_always = true
+
+[hostname]
+ssh_only = false
+disabled = false
+style = 'fg:#e29eca'
+format = '[$ssh_symbol$hostname]($style)'
+
+[git_branch]
+symbol = "on "
+style = "bold pink"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bold pink"
+format = '[($all_status$ahead_behind )]($style)'
+
+[fill]
+symbol = ' '
+style = 'NONE'
+
+[cmd_duration]
+min_time = 0
+format = '[$duration](bg:NONE fg:surface2)'
+
+[character]
+format = '> '
