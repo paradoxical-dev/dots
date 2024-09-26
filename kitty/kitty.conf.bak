@@ -1,0 +1,13 @@
+# BEGIN_KITTY_THEME
+# Xcodedark
+include current-theme.conf
+# END_KITTY_THEME
+
+# FONT #
+font_size 		12.5
+font_family		JetBrainsMonoNL NFM Regular
+italic_font		Victor Mono Italic
+bold_italic_font	Victor Mono Bold Italic
+
+# MAPS #
+map f11 toggle_fullscreen

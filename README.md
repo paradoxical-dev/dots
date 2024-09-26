@@ -1,2 +1,5 @@
 # .dotfiles
-a set of configurations for neovim, tmux and starship intended for use with bash.
+Confiugrations for my desktop enviornment.
+**Current OS**: Arch
+**Compositor**: wayland
+**WM**: hyprland
