@@ -40,7 +40,7 @@ return {
           functions = { bold = true },
           keywords = { italic = true },
         },
-        highlight_overrides = normal,
+        highlight_overrides = transparent,
       }
       vim.cmd.colorscheme "oldworld"
     end,

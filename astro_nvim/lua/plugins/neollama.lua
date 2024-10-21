@@ -18,6 +18,9 @@ return {
           hl = {
             -- default_border = {link = 'normal'}
           },
+          input = {
+            hl = { fg = "#C9C7CD", bold = true, italic = true },
+          },
         },
       }
 
