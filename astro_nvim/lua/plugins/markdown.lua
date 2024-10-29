@@ -31,6 +31,10 @@ return {
           "sql",
         },
       },
+      bullet = {
+        enabled = false,
+        icons = { "", "", "", "" },
+      },
     },
   },
 }
