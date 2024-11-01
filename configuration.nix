@@ -104,7 +104,7 @@
     lshw
     bottom
 
-    ollama
+    (import <nixpkgs-unstable> {}).ollama
 
   # DEV
     neovim
@@ -147,6 +147,7 @@
       #Group = "gitmoney";
       Environment = [
 	"OLLAMA_MODELS=/home/gitmoney/.ollama/models"
+	"OLLAMA_VERSION=0.3.14"
 	"__NV_PRIME_RENDER_OFFLOAD=1"
 	"__GLX_VENDOR_LIBRARY_NAME=nvidia"
       ];
