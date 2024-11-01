@@ -13,15 +13,15 @@
     ];
 
   # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-  #boot.loader.grub = {
-  #  enable = true;
-  #  device = "nodev";
-  #  efiSupport = true;
-  #  useOSProber = true;
-  #  efiInstallAsRemovable = true;
-  #};
+  #boot.loader.systemd-boot.enable = true;
+  #boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.grub = {
+    enable = true;
+    device = "nodev";
+    efiSupport = true;
+    useOSProber = true;
+    efiInstallAsRemovable = true;
+  };
 
   networking.hostName = "ParadoxLabs"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
@@ -97,6 +97,7 @@
     wget
     curl
     unzip
+    ddgr
     fzf
     ripgrep
     fastfetch
@@ -141,17 +142,18 @@
 
   # OLLAMA
   services.ollama.enable = true;
+  services.ollama.acceleration = "cuda";
   systemd.services.ollama = {
     serviceConfig = {
       User = "gitmoney";
       #Group = "gitmoney";
       Environment = [
 	"OLLAMA_MODELS=/home/gitmoney/.ollama/models"
-	"OLLAMA_VERSION=0.3.14"
 	"__NV_PRIME_RENDER_OFFLOAD=1"
 	"__GLX_VENDOR_LIBRARY_NAME=nvidia"
       ];
       DynamicUser = lib.mkForce false;
+      ProtectHome = lib.mkForce false;
     };
   };
 
