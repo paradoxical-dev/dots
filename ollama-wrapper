@@ -1,9 +1,0 @@
-#!/bin/bash
-# Will be used in the ollama.service exec attribute to set NVIDIA priority
-# Also sets the model download location to home directory for better disk usage
-# Must be set in the standard ollama.service NOT the editable service
-OLLAMA_MODELS=/home/mosus/.ollama/models \
-__NV_PRIME_RENDER_OFFLOAD=1 \
-__GLX_VENDOR_LIBRARY_NAME=nvidia \
-/usr/local/bin/ollama "$@"
-

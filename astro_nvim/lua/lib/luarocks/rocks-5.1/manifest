@@ -1,0 +1,125 @@
+commands = {}
+dependencies = {
+   gumbo = {
+      ["0.5-1"] = {
+         {
+            constraints = {
+               {
+                  op = ">=",
+                  version = {
+                     5, 1, string = "5.1"
+                  }
+               }
+            },
+            name = "lua"
+         }
+      }
+   }
+}
+modules = {
+   gumbo = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.Buffer"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.Set"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.constants"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.Attribute"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.AttributeList"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.ChildNode"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.Comment"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.DOMTokenList"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.Document"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.DocumentFragment"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.DocumentType"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.Element"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.ElementList"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.Node"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.NodeList"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.ParentNode"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.Text"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.dom.util"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.parse"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.sanitize"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.serialize.Indent"] = {
+      "gumbo/0.5-1"
+   },
+   ["gumbo.serialize.html"] = {
+      "gumbo/0.5-1"
+   }
+}
+repository = {
+   gumbo = {
+      ["0.5-1"] = {
+         {
+            arch = "installed",
+            commands = {},
+            dependencies = {},
+            modules = {
+               gumbo = "gumbo.lua",
+               ["gumbo.Buffer"] = "gumbo/Buffer.lua",
+               ["gumbo.Set"] = "gumbo/Set.lua",
+               ["gumbo.constants"] = "gumbo/constants.lua",
+               ["gumbo.dom.Attribute"] = "gumbo/dom/Attribute.lua",
+               ["gumbo.dom.AttributeList"] = "gumbo/dom/AttributeList.lua",
+               ["gumbo.dom.ChildNode"] = "gumbo/dom/ChildNode.lua",
+               ["gumbo.dom.Comment"] = "gumbo/dom/Comment.lua",
+               ["gumbo.dom.DOMTokenList"] = "gumbo/dom/DOMTokenList.lua",
+               ["gumbo.dom.Document"] = "gumbo/dom/Document.lua",
+               ["gumbo.dom.DocumentFragment"] = "gumbo/dom/DocumentFragment.lua",
+               ["gumbo.dom.DocumentType"] = "gumbo/dom/DocumentType.lua",
+               ["gumbo.dom.Element"] = "gumbo/dom/Element.lua",
+               ["gumbo.dom.ElementList"] = "gumbo/dom/ElementList.lua",
+               ["gumbo.dom.Node"] = "gumbo/dom/Node.lua",
+               ["gumbo.dom.NodeList"] = "gumbo/dom/NodeList.lua",
+               ["gumbo.dom.ParentNode"] = "gumbo/dom/ParentNode.lua",
+               ["gumbo.dom.Text"] = "gumbo/dom/Text.lua",
+               ["gumbo.dom.util"] = "gumbo/dom/util.lua",
+               ["gumbo.parse"] = "gumbo/parse.so",
+               ["gumbo.sanitize"] = "gumbo/sanitize.lua",
+               ["gumbo.serialize.Indent"] = "gumbo/serialize/Indent.lua",
+               ["gumbo.serialize.html"] = "gumbo/serialize/html.lua"
+            }
+         }
+      }
+   }
+}

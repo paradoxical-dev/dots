@@ -1,0 +1,42 @@
+rock_manifest = {
+   doc = {
+      LICENSE = "3b83ef96387f14655fc854ddc3c6bd57",
+      ["README.md"] = "2f73d94c95b7bfa94acdcbca80bf9f50"
+   },
+   ["gumbo-0.5-1.rockspec"] = "35e9134675f33aa697eae37a042c0bee",
+   lib = {
+      gumbo = {
+         ["parse.so"] = "f5cbbba1fb1067e87eafe9745eb41852"
+      }
+   },
+   lua = {
+      gumbo = {
+         ["Buffer.lua"] = "f6a341848a988991b7c6578669bbadf6",
+         ["Set.lua"] = "1ecdc4b4e7ba3d653e5b5d3cb34a6f8f",
+         ["constants.lua"] = "b62d0dd9b783a1b008a3eada056280f8",
+         dom = {
+            ["Attribute.lua"] = "ba986a9a27090e97ef440a2375a386e2",
+            ["AttributeList.lua"] = "7687570ad70d24dbbdb831a5fe992bdd",
+            ["ChildNode.lua"] = "c2e371d12f859de175e375d313f2b3f7",
+            ["Comment.lua"] = "36cf8680bc86fee5c04ceb9dedf0b1de",
+            ["DOMTokenList.lua"] = "ff18237e8e3f76dc463ea5a265139601",
+            ["Document.lua"] = "eeee2ee9ac7cf9a4b0ca651109c81031",
+            ["DocumentFragment.lua"] = "904c89941e3bb93423a596ec3c2d835f",
+            ["DocumentType.lua"] = "d21d9ac70c961797bb1f0c1108562a4b",
+            ["Element.lua"] = "45a11c3633cea5648d4c4bdfff855b84",
+            ["ElementList.lua"] = "a583132a6dfbbc459d11fe16bbb51bae",
+            ["Node.lua"] = "1e0520f48c7f28dbd8aa7c07e50aaaf4",
+            ["NodeList.lua"] = "9e4aea512d9446aa371f932402e0a4e0",
+            ["ParentNode.lua"] = "4d14e98d86eb8ab94f49af8fa4258ddb",
+            ["Text.lua"] = "5721a750a0b0120f24483d13799337d2",
+            ["util.lua"] = "932d5a8c97a779d10fa41eb9cd17dabd"
+         },
+         ["sanitize.lua"] = "70f5ee1c060d264e5bcb56f407a55006",
+         serialize = {
+            ["Indent.lua"] = "5d7425e15835c7b7d33069aa8952a7db",
+            ["html.lua"] = "e7492d1ead5f80b97659bde773b1d2d3"
+         }
+      },
+      ["gumbo.lua"] = "1bc7736305d35f3526c0f4fe3bd261bf"
+   }
+}

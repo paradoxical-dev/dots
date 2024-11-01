@@ -7,22 +7,6 @@ return {
   -- use mason-lspconfig to configure LSP installations
     {
     "williamboman/mason-lspconfig.nvim",
-    dependencies = {
-      {
-        "SmiteshP/nvim-navbuddy",
-        dependencies = {
-          "SmiteshP/nvim-navic",
-          "MunifTanjim/nui.nvim"
-        },
-        opts = {
-          lsp = { auto_attach = true }, -- Enable auto-attach for LSP
-        },
-        config = function(_, opts)
-          require("nvim-navbuddy").setup(opts) -- Use opts passed from `opts` table
-          vim.api.nvim_set_keymap('n', '<leader>nn', '<cmd>Navbuddy<cr>', { noremap = true, silent = true })
-        end
-      }
-    },
     -- overrides `require("mason-lspconfig").setup(...)`
     opts = function(_, opts)
       opts.ensure_installed = {

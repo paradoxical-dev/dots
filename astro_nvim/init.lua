@@ -15,5 +15,12 @@ if not pcall(require, "lazy") then
   vim.cmd.quit()
 end
 
+--gumbo
+local lua_path = vim.fn.stdpath('config') .. '/lua/share/lua/5.1/?.lua;' .. vim.fn.stdpath('config') .. '/lua/share/lua/5.1/?/init.lua'
+local lua_cpath = vim.fn.stdpath('config') .. '/lua/lib/lua/5.1/?.so'
+
+package.path = package.path .. ';' .. lua_path
+package.cpath = package.cpath .. ';' .. lua_cpath
+
 require "lazy_setup"
 require "polish"
