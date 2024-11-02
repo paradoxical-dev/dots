@@ -2,6 +2,8 @@
 
 {
     home.stateVersion = "24.05";
+    home.username = "gitmoney";
+    home.homeDirectory = "/home/gitmoney";
 
     #ZSH
     programs.zsh = {
