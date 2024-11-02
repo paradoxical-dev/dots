@@ -1,7 +1,6 @@
 {config, pkgs, ...}:
 
 {
-  home-manager.users.gitmoney = {
     home.stateVersion = "24.05";
 
     #ZSH
@@ -85,5 +84,4 @@
       enable = true;
       defaultEditor = true;
     };
-  };
 }
