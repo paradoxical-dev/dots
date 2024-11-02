@@ -22,7 +22,7 @@
     homeConfigurations = {
      gitmoney = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [ ./home-manager.nix ];
+      modules = [ ./home.nix ];
      };
     };
   };
