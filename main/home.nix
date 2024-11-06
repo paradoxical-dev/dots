@@ -90,7 +90,6 @@
     # KITTY
     programs.kitty = {
       enable = true;
-      # themeFile = "./kitty/current-theme.conf";
       keybindings = {
         "ctrl+shift+h" = "previous_tab";
         "ctrl+shift+l" = "next_tab";
@@ -113,7 +112,7 @@
         cursor_shape = "block";
       };
       extraConfig = ''
-        include /home/gitmoney/dots/kitty/current-theme.conf 
+        include /home/gitmoney/dots/configs/kitty/current-theme.conf 
 
         enabled_layouts    Grid, Stack
 
@@ -130,7 +129,7 @@
       settings = {
         logo = {
           type = "kitty";
-          source = "/home/gitmoney/dots/fastfetch/goku2.png";
+          source = "/home/gitmoney/dots/configs/fastfetch/goku2.png";
           height = 15;
           padding = {
             bottom = 2;

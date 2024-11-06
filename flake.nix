@@ -16,13 +16,13 @@
     nixosConfigurations = {
       main =lib.nixosSystem {
         inherit system;
-        modules = [ ./configuration.nix ];
+        modules = [ ./main/configuration.nix ];
       };
     };
     homeConfigurations = {
      gitmoney = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [ ./home.nix ];
+      modules = [ ./main/home.nix ];
      };
     };
   };

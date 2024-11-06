@@ -156,6 +156,11 @@
     };
   };
 
+  # BLUETOOTH
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
+  services.blueman.enable = true;
+
   # CODEIUM FIX
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
