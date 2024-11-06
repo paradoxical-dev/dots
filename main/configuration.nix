@@ -108,6 +108,7 @@
 
   # DEV
     neovim
+    obsidian
     git
     kitty
     gcc
@@ -121,6 +122,7 @@
     hyprland
     hyprpaper
     wlroots
+    xwayland
     waybar
     grim
     slurp
@@ -170,6 +172,9 @@
 
   # NVIDIA DISABLE FOR HYPRLAND
   environment.variables.AQ_DRM_DEVICES = "/dev/dri/card2";
+
+  # ELECTRON APPS WAYLAND
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # FLAKES
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
