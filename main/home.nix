@@ -1,9 +1,30 @@
 {config, pkgs, ...}:
 
+# TODO: paths are not recognized for some reason
+# let
+#   zshConf = import ./configs/shells/zsh.nix { inherit config pkgs; };
+#   kittyConf = import ./configs/kitty/kitty.nix { inherit config pkgs; };
+#   fastfetchConf = import ./configs/fastfetch/fastfetch.nix { inherit config pkgs; };
+# in 
 {
     home.stateVersion = "24.05";
     home.username = "gitmoney";
-    home.homeDirectory = "/home/gitmoney";
+    home.homeDirectory = "/home/gitmoney/";
+
+    # programs = {
+    #   zsh = zshConf.programs.zsh;
+    #   kitty = kittyConf.programs.kitty;
+    #   fastfetch = fastfetchConf.programs.fastfetch;
+    #   git = {
+    #     enable = true;
+    #     userName = "paradoxical-dev";
+    #     userEmail = "jaredonnell21@gmail.com";
+    #   };
+    #   neovim = {
+    #     enable = true;
+    #     defaultEditor = true;
+    #   };
+    # };
 
     #ZSH
     programs.zsh = {
@@ -112,7 +133,7 @@
         cursor_shape = "block";
       };
       extraConfig = ''
-        include /home/gitmoney/dots/configs/kitty/current-theme.conf 
+        include /home/gitmoney/dots/main/configs/kitty/current-theme.conf 
 
         enabled_layouts    Grid, Stack
 
@@ -129,7 +150,7 @@
       settings = {
         logo = {
           type = "kitty";
-          source = "/home/gitmoney/dots/configs/fastfetch/goku2.png";
+          source = "/home/gitmoney/dots/main/configs/fastfetch/goku2.png";
           height = 15;
           padding = {
             bottom = 2;
