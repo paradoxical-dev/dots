@@ -1,7 +1,7 @@
 {config, pkgs, ...}:
 
 let
-  zshConf = import ./configs/shells/zsh.nix { inherit config pkgs; };
+  zshConf = import ../default_configs/shells/zsh.nix { inherit config pkgs; };
   kittyConf = import ./configs/kitty/kitty.nix { inherit config pkgs; };
   fastfetchConf = import ./configs/fastfetch/fastfetch.nix { inherit config pkgs; };
 in 
