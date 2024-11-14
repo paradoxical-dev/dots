@@ -1,5 +1,7 @@
 { config, pkgs, ... }:
 
+{
+
 programs.zsh = {
   enable = true;
   enableCompletion = true;
@@ -67,3 +69,5 @@ programs.zsh = {
 	source <(fzf --zsh)
   '';
 };
+
+}

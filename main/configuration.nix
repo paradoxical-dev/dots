@@ -129,6 +129,8 @@
     xdg-desktop-portal-hyprland
     wl-clipboard
     wofi
+    dolphin
+    breeze-icons
     firefox-wayland
     
   # DRIVERS
