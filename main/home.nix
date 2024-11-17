@@ -4,6 +4,7 @@ let
   zshConf = import ../default_configs/shells/zsh.nix { inherit config pkgs; };
   kittyConf = import ./configs/kitty/kitty.nix { inherit config pkgs; };
   fastfetchConf = import ./configs/fastfetch/fastfetch.nix { inherit config pkgs; };
+  rofiConf = import ./configs/rofi/rofi.nix { inherit config pkgs; };
 in 
 {
     home.stateVersion = "24.05";
@@ -14,6 +15,7 @@ in
       zsh = zshConf.programs.zsh;
       kitty = kittyConf.programs.kitty;
       fastfetch = fastfetchConf.programs.fastfetch;
+      rofi = rofiConf.programs.rofi;
       git = {
         enable = true;
         userName = "paradoxical-dev";

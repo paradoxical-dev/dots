@@ -12,8 +12,6 @@
     ];
 
   # Bootloader.
-  #boot.loader.systemd-boot.enable = true;
-  #boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.grub = {
     enable = true;
     device = "nodev";
@@ -128,19 +126,10 @@
     slurp
     xdg-desktop-portal-hyprland
     wl-clipboard
-    wofi
+    rofi
     dolphin
     breeze-icons
     firefox-wayland
-    
-  # DRIVERS
-    #linuxPackages.nvidia_x11
-    #nvidia
-    #nvidia-utils
-    #nvidia-settings
-    #cuda
-    #mesa
-    #amdgpu
   ];
 
   # OLLAMA
@@ -149,7 +138,6 @@
   systemd.services.ollama = {
     serviceConfig = {
       User = "gitmoney";
-      #Group = "gitmoney";
       Environment = [
 	"OLLAMA_MODELS=/home/gitmoney/.ollama/models"
 	"__NV_PRIME_RENDER_OFFLOAD=1"
