@@ -101,6 +101,7 @@
     eza
     lshw
     bottom
+    tmux
 
     ollama
 
@@ -126,7 +127,7 @@
     slurp
     xdg-desktop-portal-hyprland
     wl-clipboard
-    rofi
+    rofi-wayland
     dolphin
     breeze-icons
     firefox-wayland

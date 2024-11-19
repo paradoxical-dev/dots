@@ -22,11 +22,14 @@
       window_border_width = 1;
       active_border_color = "#414141";
       inactive_border_color = "#414141";
-      window_padding_width = 5;
+      # window_padding_width = 15;
       cursor_shape = "block";
     };
     extraConfig = ''
-      include /home/gitmoney/dots/main/configs/kitty/current-theme.conf 
+      # include /home/gitmoney/dots/main/configs/kitty/current-theme.conf 
+      include /home/gitmoney/dots/main/configs/kitty/leaf_light.conf
+
+      window_padding_width 5 15
 
       enabled_layouts    Grid, Stack
 
