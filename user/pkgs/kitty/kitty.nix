@@ -27,7 +27,7 @@
     };
     extraConfig = ''
       # include /home/gitmoney/dots/main/configs/kitty/current-theme.conf 
-      include /home/gitmoney/dots/main/configs/kitty/leaf_light.conf
+      include ~/dots/user/pkgs/kitty/leaf_light.conf
 
       window_padding_width 5 15
 

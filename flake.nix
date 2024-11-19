@@ -1,5 +1,5 @@
 {
-  description = "base configuration";
+  description = "I'm all jacked up on Mt. Dew";
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
@@ -14,15 +14,15 @@
     pkgs = nixpkgs.legacyPackages.${system};
   in {
     nixosConfigurations = {
-      main =lib.nixosSystem {
+      TheTrap = lib.nixosSystem {
         inherit system;
-        modules = [ ./main/configuration.nix ];
+        modules = [ ./hosts/TheTrap/configuration.nix ];
       };
     };
     homeConfigurations = {
      gitmoney = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [ ./main/home.nix ];
+      modules = [ ./hosts/TheTrap/home.nix ];
      };
     };
   };

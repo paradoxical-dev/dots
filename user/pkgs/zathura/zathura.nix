@@ -3,12 +3,10 @@
   programs.zathura = {
     enable = true;
     options = {
-      # default-bg = "#e1e4dc";
-      # default-fg = "#000000";
     };
     extraConfig = ''
       set recolor "true"
-      set recolor-lightcolor "#e1e4dc"
+      set recolor-lightcolor "#D7D7D7"
       set recolor-darkcolor "#000000"
     '';
   };

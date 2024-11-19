@@ -6,9 +6,9 @@
 
 {
   imports =
-    [ # Include the results of the hardware scan.
+    [
       ./hardware-configuration.nix
-      ./nvidia.nix
+      ./hardware/nvidia.nix
     ];
 
   # Bootloader.
@@ -20,8 +20,8 @@
     efiInstallAsRemovable = true;
   };
 
-  networking.hostName = "ParadoxLabs"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
+  networking.hostName = "TheTrap"; # Define your hostname.
+  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";

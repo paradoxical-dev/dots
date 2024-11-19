@@ -20,8 +20,8 @@
 
     prime = {
       offload = {
-	enable = true;
-	enableOffloadCmd = true;
+	      enable = true;
+	      enableOffloadCmd = true;
       };
       amdgpuBusId = "PCI:0:6:0";
       nvidiaBusId = "PCI:0:1:0";
