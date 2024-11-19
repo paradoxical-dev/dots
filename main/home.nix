@@ -3,6 +3,7 @@
 let
   zshConf = import ../default_configs/shells/zsh.nix { inherit config pkgs; };
   tmuxConf = import ../default_configs/tmux/tmux.nix { inherit config pkgs; };
+  zathuraConf = import ../default_configs/zathura/zathura.nix { inherit config pkgs; };
   kittyConf = import ./configs/kitty/kitty.nix { inherit config pkgs; };
   fastfetchConf = import ./configs/fastfetch/fastfetch.nix { inherit config pkgs; };
   rofiConf = import ./configs/rofi/rofi.nix { inherit config pkgs; };
@@ -15,6 +16,7 @@ in
     programs = {
       zsh = zshConf.programs.zsh;
       tmux = tmuxConf.programs.tmux;
+      zathura = zathuraConf.programs.zathura;
       kitty = kittyConf.programs.kitty;
       fastfetch = fastfetchConf.programs.fastfetch;
       rofi = rofiConf.programs.rofi;

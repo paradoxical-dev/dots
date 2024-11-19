@@ -6,9 +6,12 @@
     mouse = true;
     prefix = "C-s";
     keyMode = "vi";
-    terminal = "screen-256color";
     baseIndex = 1;
+    escapeTime = 0;
     extraConfig = ''
+      set -g default-terminal 'tmux-256color'
+      set-option -ga terminal-overrides ",xterm-256color:Tc"
+
       bind-key h select-pane -L
       bind-key j select-pane -D
       bind-key k select-pane -U
@@ -27,8 +30,8 @@
 
       set-option -g status-position top
 
-      set -g status-left ''
-      set -g status-right ''
+      set -g status-left ""
+      set -g status-right ""
       set-option -g status-bg default
       set-option -g status-fg default
       set-option -g status-justify centre
@@ -48,6 +51,6 @@
 
       # Zen Mode
       set-option -g allow-passthrough on
-    ''
+    '';
   };
 }

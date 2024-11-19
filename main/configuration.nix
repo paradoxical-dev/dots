@@ -102,6 +102,7 @@
     lshw
     bottom
     tmux
+    zathura
 
     ollama
 
