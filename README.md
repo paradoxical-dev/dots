@@ -13,8 +13,10 @@ NixOS
 
 - Hyprland
 
-- Waybar
+- Hyprpanel
 
 - Wayland
 
 - sddm
+
+- wlogout

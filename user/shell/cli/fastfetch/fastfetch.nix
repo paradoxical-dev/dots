@@ -7,7 +7,7 @@
     settings = {
       logo = {
         type = "auto";
-        source = "~/dots/user/pkgs/fastfetch/goku_ascii.txt";
+        source = "~/dots/user/shell/cli/fastfetch/goku_ascii.txt";
         height = 15;
         padding = {
           bottom = 2;

@@ -1,16 +1,25 @@
-{config, pkgs, ...}:
+{ config, pkgs, ... }:
 {
     home.stateVersion = "24.05";
     home.username = "gitmoney";
     home.homeDirectory = "/home/gitmoney/";
 
+    nixpkgs.config.allowUnfree = true;
+
     imports = [
      ../../user/shell/zsh.nix
+     ../../user/shell/cli/fastfetch/fastfetch.nix
      ../../system/pkgs/tmux/tmux.nix
+
      ../../user/pkgs/zathura/zathura.nix
      ../../user/pkgs/kitty/kitty.nix
-     ../../user/pkgs/fastfetch/fastfetch.nix
-     ../../user/de/rofi/rofi.nix
+     ../../user/pkgs/obsidian.nix
+
+     ../../user/de/hypr/packages.nix
+
+     ../../user/lang/lua.nix
+     ../../user/lang/c.nix
+     ../../user/lang/py.nix
     ];
 
     programs = {

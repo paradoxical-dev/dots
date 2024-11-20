@@ -1,5 +1,8 @@
 { config, lib, pkgs, ...}:
 {
+  # Disable nvidia card for hyprland
+  environment.variables.AQ_DRM_DEVICES = "/dev/dri/card2";
+
   hardware.graphics = {
    enable = true;
   };

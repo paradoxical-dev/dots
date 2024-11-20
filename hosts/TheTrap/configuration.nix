@@ -1,7 +1,3 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
-
 { config, pkgs, lib, ... }:
 
 {
@@ -9,50 +5,27 @@
     [
       ./hardware-configuration.nix
       ./hardware/nvidia.nix
+      ./hardware/bluetooth.nix
+
+      ../../system/boot/grub/efi.nix
+      ../../system/boot/international.nix
+      ../../user/de/sddm.nix
+
+      ../../user/shell/cli/packages.nix
+      ../../user/shell/starship/starship.nix
+
+      ../../system/pkgs/ollama.nix
+      ../../system/wm/hypr/packages.nix
     ];
 
-  # Bootloader.
-  boot.loader.grub = {
-    enable = true;
-    device = "nodev";
-    efiSupport = true;
-    useOSProber = true;
-    efiInstallAsRemovable = true;
-  };
-
   networking.hostName = "TheTrap"; # Define your hostname.
-  networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Set your time zone.
   time.timeZone = "America/Chicago";
-
-  # Select internationalisation properties.
-  i18n.defaultLocale = "en_US.UTF-8";
-
-  i18n.extraLocaleSettings = {
-    LC_ADDRESS = "en_US.UTF-8";
-    LC_IDENTIFICATION = "en_US.UTF-8";
-    LC_MEASUREMENT = "en_US.UTF-8";
-    LC_MONETARY = "en_US.UTF-8";
-    LC_NAME = "en_US.UTF-8";
-    LC_NUMERIC = "en_US.UTF-8";
-    LC_PAPER = "en_US.UTF-8";
-    LC_TELEPHONE = "en_US.UTF-8";
-    LC_TIME = "en_US.UTF-8";
-  };
-
-  # Configure keymap in X11
-  services.xserver.xkb = {
-    layout = "us";
-    variant = "";
-  };
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.gitmoney = {
@@ -75,85 +48,21 @@
     videoDrivers = [ "amdgpu" "nvidia" ];
   };
 
-  # DM
-  services.displayManager = {
-    sddm.enable = true;
-    defaultSession = "hyprland";
-    sessionPackages = with pkgs; [ hyprland ];
-  };
-
   #ZSH
   users.defaultUserShell = pkgs.zsh;
   programs.zsh.enable = true;
 
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
   environment.systemPackages = with pkgs; [
-  # TOOLS
     os-prober
+    brightnessctl
     wget
     curl
     unzip
-    ddgr
-    fzf
     ripgrep
-    fastfetch
-    eza
-    lshw
-    bottom
     tmux
-    zathura
-
-    ollama
-
-  # DEV
     neovim
-    obsidian
     git
-    kitty
-    gcc
-    luarocks
-    lua5_1
-    python3
-
-  # D.E
-    sddm
-    starship
-    hyprland
-    hyprpaper
-    wlroots
-    xwayland
-    waybar
-    grim
-    slurp
-    xdg-desktop-portal-hyprland
-    wl-clipboard
-    rofi-wayland
-    dolphin
-    breeze-icons
-    firefox-wayland
   ];
-
-  # OLLAMA
-  services.ollama.enable = true;
-  services.ollama.acceleration = "cuda";
-  systemd.services.ollama = {
-    serviceConfig = {
-      User = "gitmoney";
-      Environment = [
-	"OLLAMA_MODELS=/home/gitmoney/.ollama/models"
-	"__NV_PRIME_RENDER_OFFLOAD=1"
-	"__GLX_VENDOR_LIBRARY_NAME=nvidia"
-      ];
-      DynamicUser = lib.mkForce false;
-      ProtectHome = lib.mkForce false;
-    };
-  };
-
-  # BLUETOOTH
-  hardware.bluetooth.enable = true;
-  hardware.bluetooth.powerOnBoot = true;
-  services.blueman.enable = true;
 
   # CODEIUM FIX
   programs.nix-ld.enable = true;
@@ -161,9 +70,6 @@
 
   # KERNEL PKG
   boot.kernelPackages = pkgs.linuxPackages;
-
-  # NVIDIA DISABLE FOR HYPRLAND
-  environment.variables.AQ_DRM_DEVICES = "/dev/dri/card2";
 
   # ELECTRON APPS WAYLAND
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
@@ -190,12 +96,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # This value determines the NixOS release from which the default
-  # settings for stateful data, like file locations and database versions
-  # on your system were taken. It‘s perfectly fine and recommended to leave
-  # this value at the release version of the first install of this system.
-  # Before changing this value read the documentation for this option
-  # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 
 }
