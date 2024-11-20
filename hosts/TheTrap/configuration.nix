@@ -6,6 +6,7 @@
       ./hardware-configuration.nix
       ./hardware/nvidia.nix
       ./hardware/bluetooth.nix
+      ./hardware/pipewire.nix
 
       ../../system/boot/grub/efi.nix
       ../../system/boot/international.nix
