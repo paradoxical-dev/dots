@@ -9,13 +9,14 @@
     imports = [
      ../../user/shell/zsh.nix
      ../../user/shell/cli/fastfetch/fastfetch.nix
-     ../../system/pkgs/tmux/tmux.nix
+     ../../system/pkgs/tmux.nix
 
-     ../../user/pkgs/zathura/zathura.nix
+     ../../user/pkgs/zathura.nix
      ../../user/pkgs/kitty/kitty.nix
      ../../user/pkgs/obsidian.nix
 
      ../../user/de/hypr/packages.nix
+     ../../user/de/hypr/wofi.nix
 
      ../../user/lang/lua.nix
      ../../user/lang/c.nix
