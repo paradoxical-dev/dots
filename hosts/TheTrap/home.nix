@@ -19,6 +19,8 @@
 
      ../../user/de/hypr/packages.nix
      ../../user/de/hypr/wofi.nix
+     ../../user/de/hypr/hyprlock.nix
+     ../../user/de/hypr/hypridle.nix
 
      ../../user/lang/lua.nix
      ../../user/lang/c.nix

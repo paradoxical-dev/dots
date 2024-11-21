@@ -10,13 +10,13 @@
 
       ../../system/boot/grub/efi.nix
       ../../system/boot/international.nix
-      ../../user/de/sddm.nix
 
       ../../user/shell/cli/packages.nix
       ../../user/shell/starship/starship.nix
 
       ../../system/pkgs/ollama.nix
       ../../system/pkgs/power-profile.nix
+      ../../system/pkgs/sddm.nix
       ../../system/wm/hypr/packages.nix
     ];
 
