@@ -10,9 +10,11 @@
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = {self, nixpkgs, home-manager, sddm-sugar-candy-nix, ...}: 
+  outputs = {self, nixpkgs, home-manager, hyprpanel, sddm-sugar-candy-nix, ...}: 
   let
     system = "x86_64-linux";
     lib = nixpkgs.lib;
@@ -22,22 +24,31 @@
       TheTrap = lib.nixosSystem {
         inherit system;
         modules = [ 
+          ./hosts/TheTrap/configuration.nix 
+
+          # sugar-candy overlay
           sddm-sugar-candy-nix.nixosModules.default
           {
-            nixpkgs = {
-              overlays = [
-                sddm-sugar-candy-nix.overlays.default
-              ];
-            };
+            nixpkgs.overlays = [
+              sddm-sugar-candy-nix.overlays.default
+            ];
           }
-          ./hosts/TheTrap/configuration.nix 
         ];
       };
     };
     homeConfigurations = {
      gitmoney = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [ ./hosts/TheTrap/home.nix ];
+      modules = [
+        ./hosts/TheTrap/home.nix
+
+        # hyprpanel overlay
+        {
+          nixpkgs.overlays = [
+            hyprpanel.overlay
+          ];
+        }
+      ];
      };
     };
   };

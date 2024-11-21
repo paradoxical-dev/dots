@@ -2,7 +2,9 @@
 {
   home.packages = with pkgs; [
     sddm
-    waybar
+    libgtop
+    gnome-bluetooth
+    hyprpanel
     wofi
     dolphin
     firefox-wayland

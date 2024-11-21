@@ -23,6 +23,7 @@
      ../../user/lang/lua.nix
      ../../user/lang/c.nix
      ../../user/lang/py.nix
+     ../../user/lang/dart.nix
     ];
 
     programs = {
