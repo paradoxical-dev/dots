@@ -12,9 +12,6 @@
     hyprpanel
     wofi
     libsForQt5.dolphin
-    libsForQt5.kdegraphics-thumbnailers
-    libsForQt5.qtimageformats
-    libsForQt5.ffmpegthumbs
     firefox-wayland
   ];
 }

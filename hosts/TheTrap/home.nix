@@ -14,6 +14,7 @@
      ../../user/pkgs/zathura.nix
      ../../user/pkgs/kitty/kitty.nix
      ../../user/pkgs/obsidian.nix
+     ../../user/pkgs/lazygit.nix
 
      ../../system/wm/hypr/hyprland.nix
 
