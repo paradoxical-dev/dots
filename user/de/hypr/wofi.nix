@@ -5,7 +5,7 @@
     settings = {
       allow_markup = true;
       allow_images = true;
-      term = "${pkgs.kitty}/bin/kitty";
+      term = "kitty";
       prompt = "where we droppin...";
     };
     style = ''

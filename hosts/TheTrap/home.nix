@@ -15,6 +15,8 @@
      ../../user/pkgs/kitty/kitty.nix
      ../../user/pkgs/obsidian.nix
 
+     ../../system/wm/hypr/hyprland.nix
+
      ../../user/de/hypr/packages.nix
      ../../user/de/hypr/wofi.nix
 
