@@ -16,6 +16,7 @@
       ../../user/shell/starship/starship.nix
 
       ../../system/pkgs/ollama.nix
+      ../../system/pkgs/power-profile.nix
       ../../system/wm/hypr/packages.nix
     ];
 

@@ -7,6 +7,8 @@
     hyprpanel
     wofi
     dolphin
+    kdePackages.kdegraphics-thumbnailers
+    kdePackages.qtimageformats
     firefox-wayland
   ];
 }
