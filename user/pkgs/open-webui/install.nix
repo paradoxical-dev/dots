@@ -1,7 +1,6 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    python3
-    python311
-  ];
+    (import ./open-webui.nix { inherit pkgs; })
+  ];  
 }

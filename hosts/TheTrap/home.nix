@@ -15,6 +15,7 @@
      ../../user/pkgs/kitty/kitty.nix
      ../../user/pkgs/obsidian.nix
      ../../user/pkgs/lazygit.nix
+     # ../../user/pkgs/open-webui/install.nix
 
      ../../system/wm/hypr/hyprland.nix
 
