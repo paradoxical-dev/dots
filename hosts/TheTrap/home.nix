@@ -15,7 +15,6 @@
      ../../user/pkgs/kitty/kitty.nix
      ../../user/pkgs/obsidian.nix
      ../../user/pkgs/lazygit.nix
-     # ../../user/pkgs/open-webui/install.nix
 
      ../../system/wm/hypr/hyprland.nix
 
@@ -26,7 +25,8 @@
 
      ../../user/lang/lua.nix
      ../../user/lang/c.nix
-     ../../user/lang/py.nix
+     ../../user/lang/python/py.nix
+     ../../user/lang/python/pyenv.nix
      ../../user/lang/nodejs.nix
      ../../user/lang/dart.nix
     ];

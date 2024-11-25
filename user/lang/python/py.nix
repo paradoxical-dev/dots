@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    (import ./open-webui.nix { inherit pkgs; })
-  ];  
+    python3Full
+    python312Packages.pip
+    pyenv
+  ];
 }

@@ -54,12 +54,14 @@
   programs.zsh.enable = true;
 
   environment.systemPackages = with pkgs; [
+    pkg-config
     os-prober
     brightnessctl
     wget
     curl
     unzip
     ripgrep
+
     tmux
     neovim
     git
