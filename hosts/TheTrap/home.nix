@@ -1,18 +1,19 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, hyprpanel, ... }:
 {
     home.stateVersion = "24.05";
-    home.username = "gitmoney";
-    home.homeDirectory = "/home/gitmoney/";
+    home.username = userSettings.username;
+    home.homeDirectory = "/home/" + userSettings.username + "/";
 
     nixpkgs.config.allowUnfree = true;
+    nixpkgs.overlays = [ hyprpanel.overlay ];
 
     imports = [
-     ../../user/shell/zsh.nix
+     ../../user/shell/${userSettings.shell}.nix
      ../../user/shell/cli/fastfetch/fastfetch.nix
      ../../system/pkgs/tmux.nix
 
      ../../user/pkgs/zathura.nix
-     ../../user/pkgs/kitty/kitty.nix
+     ../../user/pkgs/kitty/${userSettings.theme}.nix
      ../../user/pkgs/obsidian.nix
      ../../user/pkgs/lazygit.nix
 
@@ -35,7 +36,7 @@
       git = {
         enable = true;
         userName = "paradoxical-dev";
-        userEmail = "jaredonnell21@gmail.com";
+        userEmail = userSettings.email;
       };
       neovim = {
         enable = true;

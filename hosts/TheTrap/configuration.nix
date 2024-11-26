@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, lib, systemSettings, userSettings, ... }:
 
 {
   imports =
@@ -20,25 +20,25 @@
       ../../system/wm/hypr/packages.nix
     ];
 
-  networking.hostName = "TheTrap"; # Define your hostname.
+  networking.hostName = systemSettings.hostname; # Define your hostname.
 
   # Enable networking
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "America/Chicago";
+  time.timeZone = systemSettings.timezone;
 
   # Define a user account. Don't forget to set a password with ‘passwd’.
-  users.users.gitmoney = {
+  users.users.${userSettings.username} = {
     isNormalUser = true;
-    description = "Git Money";
+    description = userSettings.name;
     extraGroups = [ "networkmanager" "wheel" ];
-    shell = pkgs.zsh;
+    shell = pkgs.${userSettings.shell};
     packages = with pkgs; [];
   };
 
   # Enable automatic login for the user.
-  services.getty.autologinUser = "gitmoney";
+  services.getty.autologinUser = userSettings.username;
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -50,12 +50,13 @@
   };
 
   #ZSH
-  users.defaultUserShell = pkgs.zsh;
-  programs.zsh.enable = true;
+  users.defaultUserShell = pkgs.${userSettings.shell};
+  programs.${userSettings.shell}.enable = true;
 
   environment.systemPackages = with pkgs; [
     pkg-config
     os-prober
+    libnotify
     brightnessctl
     wget
     curl

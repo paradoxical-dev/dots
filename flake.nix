@@ -16,15 +16,40 @@
 
   outputs = {self, nixpkgs, home-manager, hyprpanel, sddm-sugar-candy-nix, ...}: 
   let
-    system = "x86_64-linux";
+    systemSettings = {
+      system = "x86_64-linux";
+      hostname = "TheTrap";
+      timezone = "America/Chicago";
+      locale = "en_US.UTF-8";
+      keyLayout = "us";
+      bootmode = "uefi";
+      bootMountPath = "/boot";
+      grubDevice = "";
+      gpuType = "hybrid";
+    };
+    userSettings = {
+      username = "gitmoney";
+      name = "gitmoney";
+      email = "jaredonnell21@gmail.com";
+      theme = "yin";
+      wm = "hyprland";
+      wmType = "wayland";
+      browser = "firefox";
+      terminal = "kitty";
+      shell = "zsh";
+      editor = "nvim";
+      fonts = [ pkgs.victor-mono ];
+      nerdFonts = [ "JetBrainsMono" ];
+      fontSize = "13";
+    };
     lib = nixpkgs.lib;
-    pkgs = nixpkgs.legacyPackages.${system};
+    pkgs = nixpkgs.legacyPackages.${systemSettings.system};
   in {
     nixosConfigurations = {
-      TheTrap = lib.nixosSystem {
-        inherit system;
+      main = lib.nixosSystem {
+        system = systemSettings.system;
         modules = [ 
-          ./hosts/TheTrap/configuration.nix 
+          ./hosts/${systemSettings.hostname}/configuration.nix 
 
           # sugar-candy overlay
           sddm-sugar-candy-nix.nixosModules.default
@@ -34,21 +59,23 @@
             ];
           }
         ];
+        specialArgs = {
+          inherit systemSettings;
+          inherit userSettings;
+        };
       };
     };
     homeConfigurations = {
-     gitmoney = home-manager.lib.homeManagerConfiguration {
+      ${userSettings.username} = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ./hosts/TheTrap/home.nix
-
-        # hyprpanel overlay
-        {
-          nixpkgs.overlays = [
-            hyprpanel.overlay
-          ];
-        }
+        ./hosts/${systemSettings.hostname}/home.nix
       ];
+      extraSpecialArgs = {
+        inherit systemSettings;
+        inherit userSettings;
+        inherit hyprpanel;
+      };
      };
     };
   };
