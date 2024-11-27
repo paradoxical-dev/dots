@@ -1,7 +1,4 @@
-{ config, pkgs, ... }:
-# let
-#   hyprlandConfPath = "${config.home.homeDirectory}dots/system/wm/hypr/hyprland.conf";
-# in 
+{ config, pkgs, userSettings, ... }:
 {
   wayland.windowManager = {
     hyprland = {
@@ -9,7 +6,8 @@
       systemd.enable = true;
       xwayland.enable = true;
       extraConfig = ''
-      source = ${config.home.homeDirectory}dots/system/wm/hypr/hyprland.conf
+      source = ${config.home.homeDirectory}dots/system/wm/hypr/conf/keybindings.conf
+      source = ${config.home.homeDirectory}dots/system/wm/hypr/conf/themes/${userSettings.theme}.conf
       '';
     };
   };

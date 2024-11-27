@@ -10,9 +10,9 @@
     imports = [
      ../../user/shell/${userSettings.shell}.nix
      ../../user/shell/cli/fastfetch/fastfetch.nix
-     ../../system/pkgs/tmux.nix
+     ../../system/pkgs/tmux/${userSettings.theme}.nix
 
-     ../../user/pkgs/zathura.nix
+     ../../user/pkgs/zathura/${userSettings.theme}.nix
      ../../user/pkgs/kitty/${userSettings.theme}.nix
      ../../user/pkgs/obsidian.nix
      ../../user/pkgs/lazygit.nix
