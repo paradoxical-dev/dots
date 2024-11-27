@@ -68,6 +68,11 @@
     git
   ];
 
+  # FONTS
+  fonts.packages = with pkgs; [
+    (nerdfonts.override { fonts = userSettings.nerdFonts; })
+  ] ++ userSettings.fonts;
+
   # CODEIUM FIX
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = [];
