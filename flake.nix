@@ -11,7 +11,9 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # TEST PATCH
+    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    hyprpanel.url = "path:/home/gitmoney/HyprPanel";
   };
 
   outputs = {self, nixpkgs, home-manager, hyprpanel, sddm-sugar-candy-nix, ...}: 
