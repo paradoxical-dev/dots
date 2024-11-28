@@ -1,0 +1,124 @@
+{
+  "bar.customModules.updates.pollingInterval": 1440000,
+  "theme.font.name": "System-ui",
+  "menus.transition": "crossfade",
+  "theme.bar.floating": false,
+  "theme.bar.location": "top",
+  "theme.bar.buttons.enableBorders": false,
+  "bar.launcher.autoDetectIcon": true,
+  "theme.bar.buttons.dashboard.enableBorder": false,
+  "bar.workspaces.show_icons": true,
+  "theme.bar.buttons.workspaces.fontSize": "1.2em",
+  "bar.windowtitle.class_name": true,
+  "bar.battery.hideLabelWhenFull": false,
+  "theme.bar.buttons.battery.enableBorder": false,
+  "theme.bar.buttons.clock.enableBorder": false,
+  "bar.media.show_active_only": true,
+  "bar.windowtitle.truncation_size": 40,
+  "menus.media.hideAlbum": true,
+  "menus.media.displayTimeTooltip": false,
+  "menus.clock.time.hideSeconds": false,
+  "menus.clock.weather.location": "62087",
+  "menus.dashboard.stats.enable_gpu": false,
+  "theme.bar.buttons.modules.ram.enableBorder": false,
+  "theme.bar.buttons.modules.storage.enableBorder": false,
+  "theme.bar.buttons.modules.power.enableBorder": false,
+  "menus.bluetooth.showBattery": true,
+  "menus.power.lowBatteryNotification": true,
+  "theme.bar.menus.monochrome": false,
+  "wallpaper.pywal": true,
+  "theme.bar.menus.opacity": 95,
+  "wallpaper.enable": true,
+  "wallpaper.image": "",
+  "theme.matugen": false,
+  "theme.matugen_settings.mode": "light",
+  "theme.matugen_settings.scheme_type": "neutral",
+  "theme.bar.transparent": true,
+  "theme.bar.scaling": 95,
+  "theme.bar.menus.menu.dashboard.scaling": 95,
+  "scalingPriority": "hyprland",
+  "theme.bar.menus.menu.clock.scaling": 90,
+  "theme.font.weight": 600,
+  "theme.bar.outer_spacing": "1.0em",
+  "theme.bar.buttons.radius": "1.0em",
+  "theme.bar.buttons.padding_x": "1.0rem",
+  "theme.bar.buttons.padding_y": "0.25rem",
+  "bar.workspaces.showWsIcons": false,
+  "bar.clock.format": "%I:%M %p",
+  "bar.notifications.show_total": true,
+  "bar.notifications.hideCountWhenZero": true,
+  "menus.clock.weather.key": "6899753f0dd54dbb970182426242111",
+  "theme.bar.buttons.monochrome": true,
+  "theme.bar.menus.menu.dashboard.profile.radius": "2.0em",
+  "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
+  "menus.dashboard.powermenu.avatar.name": "gitmoney",
+  "menus.dashboard.shortcuts.left.shortcut4.command": "wofi --show drun",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "bash -c \"~/dots/system/pkgs/open-webui/startup.sh\"",
+  "menus.dashboard.powermenu.avatar.image": "/home/gitmoney/Downloads/super_goku.jpg",
+  "bar.clock.icon": "",
+  "theme.bar.buttons.clock.spacing": "0.75em",
+  "bar.workspaces.workspaces": 5,
+  "bar.layouts": {
+    "0": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "clock"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "notifications"
+      ]
+    },
+    "1": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "clock"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "notifications"
+      ]
+    },
+    "2": {
+      "left": [
+        "dashboard",
+        "workspaces"
+      ],
+      "middle": [
+        "clock"
+      ],
+      "right": [
+        "volume",
+        "network",
+        "bluetooth",
+        "battery",
+        "notifications"
+      ]
+    }
+  },
+  "menus.dashboard.directories.left.directory3.command": "bash -c \"xdg-open $HOME/education/\"",
+  "menus.dashboard.directories.left.directory3.label": "󱉟  Education",
+  "menus.dashboard.directories.right.directory3.label": "󱂵  Home",
+  "menus.dashboard.directories.right.directory2.label": "󰉏  Pictures",
+  "menus.dashboard.directories.right.directory1.label": "󱧶  Documents",
+  "menus.dashboard.directories.left.directory2.label": "󰉏  Videos",
+  "menus.dashboard.directories.left.directory1.label": "󰉍  Downloads",
+  "menus.dashboard.shortcuts.right.shortcut3.command": "bash -c \"pkill hyprsunset || hyprsunset\"",
+  "menus.dashboard.shortcuts.right.shortcut3.icon": "",
+  "menus.dashboard.shortcuts.right.shortcut3.tooltip": "Toggle Bluelight",
+  "menus.dashboard.shortcuts.left.shortcut1.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Ollama",
+  "menus.dashboard.stats.enabled": true
+}
