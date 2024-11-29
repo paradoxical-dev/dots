@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 {
   services.displayManager = {
     sddm = {
@@ -7,9 +7,11 @@
       sugarCandyNix = {
         enable = true;
         settings = {
+          Background = ../../wallpapers/${userSettings.theme};
           ScreenWidth = 2560;
           ScreenHeight = 1440;
           FormPosition = "left";
+          HaveFormBackground = true;
           PartialBlur = true;
         };
       };

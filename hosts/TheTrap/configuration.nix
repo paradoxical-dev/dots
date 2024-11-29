@@ -16,6 +16,7 @@
 
       ../../system/pkgs/ollama.nix
       ../../system/pkgs/open-webui/open-webui.nix
+      ../../user/pkgs/music/mpd.nix
       ../../system/pkgs/power-profile.nix
       ../../system/pkgs/sddm.nix
       ../../system/wm/hypr/packages.nix
