@@ -16,7 +16,6 @@
      ../../user/pkgs/kitty/${userSettings.theme}.nix
      ../../user/pkgs/obsidian.nix
      ../../user/pkgs/lazygit.nix
-     # ../../user/pkgs/music/mpd.nix
 
      ../../system/wm/hypr/hyprland.nix
 

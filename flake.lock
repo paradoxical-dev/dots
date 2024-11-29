@@ -45,14 +45,17 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1732689853,
-        "narHash": "sha256-PRitfBmcAsIRI84dncLFW+b0OyS+v6YZAvgMw280poI=",
-        "path": "/home/gitmoney/HyprPanel",
-        "type": "path"
+        "lastModified": 1732776432,
+        "narHash": "sha256-WuE4suVoWL5asL0HrW+vbMbONb1WeCBRZv8SDiTtz/I=",
+        "owner": "Jas-SinghFSU",
+        "repo": "HyprPanel",
+        "rev": "56c94166446c2cf8546f1e7f642ea0306c468e3a",
+        "type": "github"
       },
       "original": {
-        "path": "/home/gitmoney/HyprPanel",
-        "type": "path"
+        "owner": "Jas-SinghFSU",
+        "repo": "HyprPanel",
+        "type": "github"
       }
     },
     "nixpkgs": {

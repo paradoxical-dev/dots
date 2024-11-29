@@ -12,8 +12,8 @@
     };
 
     # TEST PATCH
-    # hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
-    hyprpanel.url = "path:/home/gitmoney/HyprPanel";
+    hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
+    # hyprpanel.url = "path:/home/gitmoney/HyprPanel";
   };
 
   outputs = {self, nixpkgs, home-manager, hyprpanel, sddm-sugar-candy-nix, ...}: 
