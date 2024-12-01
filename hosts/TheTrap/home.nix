@@ -4,6 +4,11 @@
     home.username = userSettings.username;
     home.homeDirectory = "/home/" + userSettings.username + "/";
 
+    # Set system theme environment variable
+    home.sessionVariables = {
+      SYSTEM_THEME = userSettings.theme;
+    };
+
     nixpkgs.config.allowUnfree = true;
     nixpkgs.overlays = [ hyprpanel.overlay ];
 
