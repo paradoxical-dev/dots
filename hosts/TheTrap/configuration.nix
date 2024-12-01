@@ -16,7 +16,6 @@
 
       ../../system/pkgs/ollama.nix
       ../../system/pkgs/open-webui/open-webui.nix
-      ../../user/pkgs/music/mpd.nix
       ../../system/pkgs/power-profile.nix
       ../../system/pkgs/sddm.nix
       ../../system/wm/hypr/packages.nix
@@ -71,9 +70,7 @@
   ];
 
   # FONTS
-  fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = userSettings.nerdFonts; })
-  ] ++ userSettings.fonts;
+  fonts.packages = userSettings.nerdFonts ++ userSettings.fonts;
 
   # CODEIUM FIX
   programs.nix-ld.enable = true;

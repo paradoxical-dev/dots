@@ -41,7 +41,7 @@
       shell = "zsh";
       editor = "nvim";
       fonts = [ pkgs.victor-mono ];
-      nerdFonts = [ "JetBrainsMono" ];
+      nerdFonts = [ pkgs.nerd-fonts.jetbrains-mono ];
       fontSize = "13";
     };
     lib = nixpkgs.lib;

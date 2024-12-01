@@ -7,7 +7,7 @@
   services.pipewire = {
     enable = true;
     audio.enable = true;
-    systemWide = true;
+    # systemWide = true;
   };
   security.rtkit.enable = true;
 }

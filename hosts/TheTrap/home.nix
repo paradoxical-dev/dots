@@ -17,7 +17,9 @@
      ../../user/pkgs/obsidian.nix
      ../../user/pkgs/lazygit.nix
      ../../user/pkgs/ags.nix
-     ../../user/pkgs/mpdris.nix
+
+     ../../user/pkgs/music/mpd/mpd.nix
+     ../../user/pkgs/music/mpd/mpdris.nix
 
      ../../system/wm/hypr/hyprland.nix
 
