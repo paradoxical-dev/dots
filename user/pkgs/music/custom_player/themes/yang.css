@@ -1,0 +1,32 @@
+* {
+  all: unset;
+  font-family: "JetBrains Mono";
+  font-weight: 900;
+  color: #DeDeDe;
+}
+
+.music {
+  background-color: #212121;
+  padding: 1rem;
+}
+
+.music .thumbnail {
+  background-size: cover;
+  background-position: center;
+  min-width: 150px;
+  min-height: 300px;
+}
+
+.music .meta .name {
+  font-size: 16px;
+}
+
+.music .controls .control {
+  border-radius: 8px;
+  font-size: 24px;
+  padding: 0 8px;
+}
+
+.music .controls .center_controls {
+  margin-right: 0px;
+}
