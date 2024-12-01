@@ -3,6 +3,8 @@
 # main terminal / system file editor
 kitty --detach
 
+sleep 0.1
+
 hyprctl dispatch movewindowpixel exact 1125 85, activewindow
 hyprctl dispatch resizewindowpixel exact 700 900, activewindow
 
@@ -11,11 +13,15 @@ hyprctl dispatch resizewindowpixel exact 700 900, activewindow
 # music visualizer (terminal placeholder for now)
 kitty --detach
 
+sleep 0.1
+
 hyprctl dispatch movewindowpixel exact 90 540, activewindow
 hyprctl dispatch resizewindowpixel exact 700 450, activewindow
 
 # music player (terminal placeholder for now)
 kitty --detach
+
+sleep 0.1
 
 hyprctl dispatch movewindowpixel exact 300 80, activewindow
 hyprctl dispatch resizewindowpixel exact 325 425, activewindow
