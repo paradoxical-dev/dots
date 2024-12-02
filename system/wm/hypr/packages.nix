@@ -8,6 +8,7 @@
     grim
     slurp
     xdg-desktop-portal-hyprland
+    xdg-desktop-portal-gtk
     wl-clipboard
     breeze-icons
   ];

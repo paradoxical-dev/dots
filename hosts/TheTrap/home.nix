@@ -30,6 +30,7 @@
      ../../system/wm/hypr/hyprland.nix
 
      ../../user/de/hypr/packages.nix
+     ../../user/de/hypr/gtk/${userSettings.theme}.nix
      ../../user/de/hypr/wofi.nix
      ../../user/de/hypr/hyprlock.nix
      ../../user/de/hypr/hypridle.nix
