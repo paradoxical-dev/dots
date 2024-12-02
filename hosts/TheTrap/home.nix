@@ -25,6 +25,7 @@
 
      ../../user/pkgs/music/mpd/mpd.nix
      ../../user/pkgs/music/mpd/mpdris.nix
+     # ../../user/pkgs/music/cava.nix
 
      ../../system/wm/hypr/hyprland.nix
 
