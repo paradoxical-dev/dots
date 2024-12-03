@@ -4,11 +4,11 @@
   imports =
     [
       ./hardware-configuration.nix
-      ./hardware/nvidia.nix
-      ./hardware/bluetooth.nix
-      ./hardware/pipewire.nix
+      ../../system/hardware/drivers/${systemSettings.gpu.type}.nix
+      ../../system/hardware/bluetooth.nix
+      ../../system/hardware/pipewire.nix
 
-      ../../system/boot/grub/efi.nix
+      ../../system/boot/grub/${systemSettings.bootmode}.nix
       ../../system/boot/international.nix
 
       ../../user/shell/cli/packages.nix
@@ -48,7 +48,20 @@
   # Xserver
   services.xserver = {
     enable = true;
-    videoDrivers = [ "amdgpu" "nvidia" ];
+    videoDrivers =
+    if systemSettings.gpu.type == "hybrid" then 
+      [ (if systemSettings.gpu.hybrid.iGpuType == "amd" 
+           then "amdgpu" 
+           else "intel") 
+        "nvidia" ]
+    else if systemSettings.gpu.type == "nvidia" then 
+      [ "nvidia" ]
+    else if systemSettings.gpu.type == "amd" then
+      [ "amdgpu" ];
+    else if systemSettings.gpu.type == "intel" then
+      [ "intel" ];
+    else
+      throw "Unknown GPU type: ${systemSettings.gpu.type}";
   };
 
   #ZSH
