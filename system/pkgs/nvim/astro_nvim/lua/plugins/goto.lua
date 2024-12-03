@@ -2,11 +2,12 @@ return {
   -- Add the goto-preview plugin
   {
     "rmagatti/goto-preview",
+    lazy = true,
     config = function()
-      require('goto-preview').setup({
+      require("goto-preview").setup {
         width = 120, -- Width of the floating window
         height = 25, -- Height of the floating window
-        border = {"↖", "─" ,"┐", "│", "┘", "─", "└", "│"}, -- Border characters of the floating window
+        border = { "↖", "─", "┐", "│", "┘", "─", "└", "│" }, -- Border characters of the floating window
         default_mappings = false, -- Bind default mappings
         debug = false, -- Print debug information
         opacity = 0, -- 0-100 opacity level of the floating window where 100 is fully transparent.
@@ -14,7 +15,7 @@ return {
         post_open_hook = nil, -- A function taking two arguments, a buffer and a window to be ran as a hook.
         post_close_hook = nil, -- A function taking two arguments, a buffer and a window to be ran as a hook.
         references = {
-          telescope = require("telescope.themes").get_dropdown({ hide_preview = false })
+          telescope = require("telescope.themes").get_dropdown { hide_preview = false },
         },
         focus_on_open = true, -- Focus the floating window when opening it.
         dismiss_on_move = false, -- Dismiss the floating window when moving the cursor.
@@ -22,14 +23,58 @@ return {
         bufhidden = "wipe", -- the bufhidden option to set on the floating window. See :h bufhidden
         stack_floating_preview_windows = true, -- Whether to nest floating windows
         preview_window_title = { enable = true, position = "left" }, -- Whether to set the preview window title as the filename
-      })
+      }
 
       -- Key mappings
-      vim.keymap.set("n", "<leader>gh", "<cmd>lua require('goto-preview').goto_preview_definition()<CR>", { noremap = true, silent = true })
-      vim.keymap.set("n", "gD", "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>", { noremap = true, silent = true })
-      vim.keymap.set("n", "gi", "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>", { noremap = true, silent = true })
-      vim.keymap.set("n", "gq", "<cmd>lua require('goto-preview').close_all_win()<CR>", { noremap = true, silent = true })
-    end
+      -- vim.keymap.set(
+      --   "n",
+      --   "<leader>gh",
+      --   "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+      --   { noremap = true, silent = true }
+      -- )
+      -- vim.keymap.set(
+      --   "n",
+      --   "gD",
+      --   "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+      --   { noremap = true, silent = true }
+      -- )
+      -- vim.keymap.set(
+      --   "n",
+      --   "gi",
+      --   "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+      --   { noremap = true, silent = true }
+      -- )
+      -- vim.keymap.set(
+      --   "n",
+      --   "gq",
+      --   "<cmd>lua require('goto-preview').close_all_win()<CR>",
+      --   { noremap = true, silent = true }
+      -- )
+    end,
+
+    vim.keymap.set(
+      "n",
+      "<leader>gh",
+      "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
+      { noremap = true, silent = true }
+    ),
+    vim.keymap.set(
+      "n",
+      "gD",
+      "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
+      { noremap = true, silent = true }
+    ),
+    vim.keymap.set(
+      "n",
+      "gi",
+      "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
+      { noremap = true, silent = true }
+    ),
+    vim.keymap.set(
+      "n",
+      "gq",
+      "<cmd>lua require('goto-preview').close_all_win()<CR>",
+      { noremap = true, silent = true }
+    ),
   },
 }
-

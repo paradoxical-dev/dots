@@ -42,7 +42,7 @@ return {
         },
         highlight_overrides = transparent,
       }
-      vim.cmd.colorscheme "oldworld"
+      -- vim.cmd.colorscheme "oldworld"
     end,
   },
 }

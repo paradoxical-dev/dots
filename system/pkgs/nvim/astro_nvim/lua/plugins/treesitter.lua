@@ -9,7 +9,7 @@ return {
     ensure_installed = {
       "lua",
       "vim",
-      -- add more arguments for adding more treesitter parsers
+      "latex",
     },
   },
 }

@@ -5,6 +5,7 @@ return {
       "MunifTanjim/nui.nvim",
       "nvim-lua/plenary.nvim",
     },
+    lazy = true,
     config = function()
       require("neollama").setup {
         params = {
@@ -28,19 +29,18 @@ return {
           },
         },
       }
-
-      vim.api.nvim_set_keymap(
-        "n",
-        "<leader>cc",
-        '<cmd>lua require("neollama").initialize()<CR>',
-        { noremap = true, silent = true }
-      )
-      vim.api.nvim_set_keymap(
-        "v",
-        "<leader>c",
-        '<cmd>lua require("neollama").initialize()<CR>',
-        { noremap = true, silent = true }
-      )
     end,
   },
+  vim.api.nvim_set_keymap(
+    "n",
+    "<leader>cc",
+    '<cmd>lua require("neollama").initialize()<CR>',
+    { noremap = true, silent = true }
+  ),
+  vim.api.nvim_set_keymap(
+    "v",
+    "<leader>c",
+    '<cmd>lua require("neollama").initialize()<CR>',
+    { noremap = true, silent = true }
+  ),
 }

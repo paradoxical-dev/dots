@@ -7,5 +7,6 @@
     bottom
     ddgr
     fzf
+    chafa
   ];
 }
