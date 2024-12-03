@@ -3,6 +3,10 @@ return {
     "folke/snacks.nvim",
     priority = 1000,
     lazy = false,
+    keys = {
+      { "<leader>.", function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+      { "<leader>s", function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
+    },
     opts = {
       bigfile = { enabled = false },
       notifier = { enabled = false },
