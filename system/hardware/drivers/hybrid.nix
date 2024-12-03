@@ -1,4 +1,4 @@
-{ config, lib, pkgs, systemSettings, ...}:
+{ config, systemSettings, ...}:
 {
   # Disable nvidia card for hyprland
   environment.variables.AQ_DRM_DEVICES = "/dev/dri/${systemSettings.gpu.hybrid.primaryCard}";

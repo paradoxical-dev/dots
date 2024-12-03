@@ -37,6 +37,7 @@
 
      ../../user/lang/lua.nix
      ../../user/lang/c.nix
+     ../../user/lang/rust.nix
      ../../user/lang/python/py.nix
      ../../user/lang/python/pyenv.nix
      ../../user/lang/nodejs.nix
