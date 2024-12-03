@@ -26,7 +26,7 @@
       cursor_shape = "block";
     };
     extraConfig = ''
-      include ~/dots/user/pkgs/kitty/${userSettings.theme}.conf
+      include ~/dots/user/pkgs/kitty/themes/${userSettings.theme}.conf
 
       window_padding_width 5 15
 
