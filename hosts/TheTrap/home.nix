@@ -15,10 +15,10 @@
     imports = [
      ../../user/shell/${userSettings.shell}.nix
      ../../user/shell/cli/fastfetch/fastfetch.nix
-     ../../system/pkgs/tmux/${userSettings.theme}.nix
+     ../../user/pkgs/tmux/default.nix
 
-     ../../user/pkgs/zathura/${userSettings.theme}.nix
-     ../../user/pkgs/kitty/${userSettings.theme}.nix
+     ../../user/pkgs/zathura.nix
+     ../../user/pkgs/kitty/default.nix
      ../../user/pkgs/obsidian.nix
      ../../user/pkgs/lazygit.nix
      ../../user/pkgs/ags.nix
@@ -30,7 +30,7 @@
      ../../system/wm/hypr/hyprland.nix
 
      ../../user/de/hypr/packages.nix
-     ../../user/de/hypr/gtk/${userSettings.theme}.nix
+     ../../user/de/hypr/gtk/default.nix
      ../../user/de/hypr/wofi.nix
      ../../user/de/hypr/hyprlock.nix
      ../../user/de/hypr/hypridle.nix

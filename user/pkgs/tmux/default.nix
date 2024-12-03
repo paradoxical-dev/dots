@@ -1,4 +1,18 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
+let
+  themes = {
+    yin = {
+      status = {
+        window = {
+          default = "#[fg=#39393b]#[Italics]#I: #[Italics]#W";
+          current = "#[fg=#c9c7cd,bg=#28282b]    #[Italics]#I: #[Italics]#W    ";
+        };
+      };
+    };
+  };
+
+  currentTheme = themes.${userSettings.theme};
+in 
 {
   programs.tmux = {
     enable = true;
@@ -38,8 +52,8 @@
       set-option -g status-position top
 
       # Configure window list style
-      setw -g window-status-format "#[fg=#39393b]#[Italics]#I: #[Italics]#W"
-      setw -g window-status-current-format "#[fg=#c9c7cd,bg=#28282b]    #[Italics]#I: #[Italics]#W    "
+      setw -g window-status-format "${currentTheme.status.window.default}"
+      setw -g window-status-current-format "${currentTheme.status.window.current}"
       setw -g window-status-separator "       "
 
       # Set the status line height to 1

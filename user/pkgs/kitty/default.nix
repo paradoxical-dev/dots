@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   home.packages = with pkgs; [ kitty ];
@@ -23,12 +23,10 @@
       window_border_width = 1;
       active_border_color = "#414141";
       inactive_border_color = "#414141";
-      # window_padding_width = 15;
       cursor_shape = "block";
     };
     extraConfig = ''
-      # include /home/gitmoney/dots/main/configs/kitty/current-theme.conf 
-      include ~/dots/user/pkgs/kitty/leaf_light.conf
+      include ~/dots/user/pkgs/kitty/${userSettings.theme}.conf
 
       window_padding_width 5 15
 
@@ -36,7 +34,7 @@
 
       cursor_trail       3
 
-      font_size          12
+      font_size          ${userSettings.fontSize}
       font_family        JetBrainsMonoNL NFM Regular
       italic_font        Victor Mono Italic
       bold_italic_font   Victor Mono Bold Italic
