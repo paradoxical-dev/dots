@@ -62,18 +62,11 @@
         system = systemSettings.system;
         modules = [ 
           ./hosts/${systemSettings.hostname}/configuration.nix 
-
-          # TODO: Modularize this overlay
-          sddm-sugar-candy-nix.nixosModules.default
-          {
-            nixpkgs.overlays = [
-              sddm-sugar-candy-nix.overlays.default
-            ];
-          }
         ];
         specialArgs = {
           inherit systemSettings;
           inherit userSettings;
+          inherit sddm-sugar-candy-nix;
         };
       };
     };

@@ -1,4 +1,4 @@
-{ config, pkgs, lib, systemSettings, userSettings, ... }:
+{ config, pkgs, lib, systemSettings, userSettings, sddm-sugar-candy-nix, ... }:
 {
   imports =
     [
@@ -12,14 +12,20 @@
       ../../system/boot/grub/${systemSettings.bootmode}.nix
       ../../system/boot/international.nix
 
+      ../../system/pkgs/sddm.nix
+      sddm-sugar-candy-nix.nixosModules.default
+
       ../../user/shell/cli/packages.nix
       ../../user/shell/starship/starship.nix
 
       ../../system/pkgs/ollama.nix
       ../../system/pkgs/open-webui/open-webui.nix
-      ../../system/pkgs/sddm.nix
       ../../system/wm/hypr/packages.nix
-    ];
+  ];
+
+  nixpkgs.overlays = [
+    sddm-sugar-candy-nix.overlays.default
+  ];
 
   networking.hostName = systemSettings.hostname; # Define your hostname.
 
