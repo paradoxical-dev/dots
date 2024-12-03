@@ -7,6 +7,7 @@
       ../../system/hardware/drivers/${systemSettings.gpu.type}.nix
       ../../system/hardware/bluetooth.nix
       ../../system/hardware/pipewire.nix
+      ../../system/hardware/power-profile.nix
 
       ../../system/boot/grub/${systemSettings.bootmode}.nix
       ../../system/boot/international.nix
@@ -16,8 +17,7 @@
 
       ../../system/pkgs/ollama.nix
       ../../system/pkgs/open-webui/open-webui.nix
-      ../../system/pkgs/power-profile.nix
-      ../../system/pkgs/upower.nix
+      # ../../system/pkgs/upower.nix
       ../../system/pkgs/sddm.nix
       ../../system/wm/hypr/packages.nix
     ];
@@ -57,9 +57,9 @@
     else if systemSettings.gpu.type == "nvidia" then 
       [ "nvidia" ]
     else if systemSettings.gpu.type == "amd" then
-      [ "amdgpu" ];
+      [ "amdgpu" ]
     else if systemSettings.gpu.type == "intel" then
-      [ "intel" ];
+      [ "intel" ]
     else
       throw "Unknown GPU type: ${systemSettings.gpu.type}";
   };
@@ -73,6 +73,7 @@
     os-prober
     libnotify
     brightnessctl
+    upower
     wget
     curl
     unzip
@@ -82,6 +83,9 @@
     neovim
     git
   ];
+
+  # UPOWER
+  services.upower.enable = true;
 
   # DCONF
   programs.dconf.enable = true;
