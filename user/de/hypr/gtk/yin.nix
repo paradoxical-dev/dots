@@ -1,29 +1,43 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
+let
+  themeConfig = {
+    yin = {
+      iconName = "Adwaita";
+      iconPackage = pkgs.adwaita-icon-theme;
+      cursorName = "Bibata-Modern-Classic";
+      cursorPackage = pkgs.bibata-cursors;
+    };
+  };
+
+  currentTheme = themeConfig.${userSettings.theme} or {
+    iconName = "Adwaita";
+    iconPackage = pkgs.adwaita-icon-theme;
+    cursorName = "Bibata-Modern-Classic";
+    cursorPackage = pkgs.bibata-cursors;
+  };
+in 
 {
+  home.packages = with pkgs; [
+    gtk3
+    gtk4
+    dconf
+  ];
+
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Adwaita";
-      package = pkgs.adwaita-icon-theme;
+      name = currentTheme.iconName;
+      package = currentTheme.iconPackage;
     };
     cursorTheme = {
-      name = "Bibata-Modern-Classic";
-      package = pkgs.bibata-cursors;
-      size = 48;
+      name = currentTheme.cursorName;
+      package = currentTheme.cursorPackage;
+      size = 24;
     };
-    # gtk2.extraConfig = ''
-    #   gtk-cursor-theme-name = "Bibata-Modern-Classic";
-    # '';
-    # gtk3.extraConfig = {
-    #   gtk-cursor-theme-name = "Bibata-Modern-Classic";
-    # };
-    # gtk4.extraConfig = {
-    #   gtk-cursor-theme-name = "Bibata-Modern-Classic";
-    # };
   };
   home.pointerCursor = {
-    name = "Bibata-Modern-Classic";
-    package = pkgs.bibata-cursors;
+    name = currentTheme.cursorName;
+    package = currentTheme.cursorPackage;
     gtk.enable = true;
   };
 }

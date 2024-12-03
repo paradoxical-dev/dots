@@ -25,7 +25,19 @@
       bootmode = "uefi";
       bootMountPath = "/boot";
       grubDevice = "";
-      gpuType = "hybrid";
+      gpu = {
+        type = "hybrid";
+        hybrid = {
+          iGpuType = "amd";
+          # BusIDs can be found with `lspci -nn | grep -i vga | grep -i <gpu type>`
+          # The ID will be returned as "06:00.0" but must be formatted to remove trailing 0s and prefixed with "PCI:"
+          iGpuBusId = "PCI:0:6:0";
+          dGpuBusID = "PCI:0:1:0";
+          # The primaryCard will be the linked card to the preferred GPU (typically the intrgrated GPU)
+          # The card can be found by using `ls -l /dev/dri/by-path/` and finding the corresponding card number
+          primaryCard = "card2";
+        };
+      };
     };
     userSettings = {
       username = "gitmoney";
@@ -51,7 +63,7 @@
         modules = [ 
           ./hosts/${systemSettings.hostname}/configuration.nix 
 
-          # sugar-candy overlay
+          # TODO: Modularize this overlay
           sddm-sugar-candy-nix.nixosModules.default
           {
             nixpkgs.overlays = [
