@@ -1,10 +1,10 @@
 { config, pkgs, lib, systemSettings, userSettings, ... }:
-
 {
   imports =
     [
       ./hardware-configuration.nix
       ../../system/hardware/drivers/${systemSettings.gpu.type}.nix
+      ../../system/hardware/drivers/xserver-video.nix
       ../../system/hardware/bluetooth.nix
       ../../system/hardware/pipewire.nix
       ../../system/hardware/power-profile.nix
@@ -17,7 +17,6 @@
 
       ../../system/pkgs/ollama.nix
       ../../system/pkgs/open-webui/open-webui.nix
-      # ../../system/pkgs/upower.nix
       ../../system/pkgs/sddm.nix
       ../../system/wm/hypr/packages.nix
     ];
@@ -44,25 +43,6 @@
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
-
-  # Xserver
-  services.xserver = {
-    enable = true;
-    videoDrivers =
-    if systemSettings.gpu.type == "hybrid" then 
-      [ (if systemSettings.gpu.hybrid.iGpuType == "amd" 
-           then "amdgpu" 
-           else "intel") 
-        "nvidia" ]
-    else if systemSettings.gpu.type == "nvidia" then 
-      [ "nvidia" ]
-    else if systemSettings.gpu.type == "amd" then
-      [ "amdgpu" ]
-    else if systemSettings.gpu.type == "intel" then
-      [ "intel" ]
-    else
-      throw "Unknown GPU type: ${systemSettings.gpu.type}";
-  };
 
   #ZSH
   users.defaultUserShell = pkgs.${userSettings.shell};
