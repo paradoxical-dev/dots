@@ -1,14 +1,7 @@
-{ config, pkgs, ... }:
-{
-  programs.wofi = {
-    enable = true;
-    settings = {
-      allow_markup = true;
-      allow_images = true;
-      term = "kitty";
-      prompt = "where we droppin...";
-    };
-    style = ''
+{ config, pkgs, userSettings, ... }:
+let
+  themes = {
+    yin = ''
 window {
   font-family: "JetBrains Mono";
   margin: 0px;
@@ -64,5 +57,17 @@ window {
   color: #656565
 }
     '';
+  };
+in 
+{
+  programs.wofi = {
+    enable = true;
+    settings = {
+      allow_markup = true;
+      allow_images = true;
+      term = userSettings.terminal;
+      prompt = "where we droppin...";
+    };
+    style = themes.${userSettings.theme};
   };
 }
