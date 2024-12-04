@@ -45,6 +45,9 @@
       email = "jaredonnell21@gmail.com";
       theme = "yin";
       wm = "hyprland";
+      hypr = {    # hyprland specific settings
+        monitors = [ "eDP-2" ];    # can be found with `hyprctl monitors`
+      };
       wmType = "wayland";
       browser = "firefox";
       terminal = "kitty";

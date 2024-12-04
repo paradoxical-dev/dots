@@ -28,6 +28,7 @@
      # ../../user/pkgs/music/cava.nix
 
      ../../system/wm/hypr/hyprland.nix
+     ../../system/wm/hypr/hyprpaper/default.nix
 
      ../../user/de/hypr/packages.nix
      ../../user/de/hypr/gtk/default.nix
