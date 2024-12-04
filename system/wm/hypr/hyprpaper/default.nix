@@ -1,27 +1,20 @@
 { config, pkgs, userSettings, ... }:
 let
-  getWallpaper = theme: let
-    jpgPath = "${config.home.homeDirectory}/dots/wallpapers/${theme}.jpg";
-    pngPath = "${config.home.homeDirectory}/dots/wallpapers/${theme}.png";
-  in
-    if builtins.pathExists jpgPath then
-      jpgPath
-    else if builtins.pathExists pngPath then
-      pngPath
-    else
-      throw "Wallpaper not found for theme: ${theme}";
+  themes = {
+    yin = "${config.home.homeDirectory}dots/wallpapers/yin.png";
+  };
 
-  themeWallPaper = getWallpaper userSettings.theme;
-  monitorWallPapers = builtins.map (monitor: "${monitor},${themeWallPaper}") userSettings.hypr.monitors;
+  wallpaperPath = themes.${userSettings.theme};
+  monitorWallpapers = builtins.map (monitor: "${monitor},${wallpaperPath}") userSettings.hypr.monitors; 
 in
 {
   services.hyprpaper = {
     enable = true;
     settings = {
       preload = [
-        themeWallPaper
+        wallpaperPath
       ];
-      wallpaper = monitorWallPapers;
+      wallpaper = monitorWallpapers;
     };
   };
 }
