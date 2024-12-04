@@ -21,7 +21,7 @@
       ../../system/pkgs/ollama.nix
       ../../system/pkgs/open-webui/open-webui.nix
       ../../system/wm/hypr/packages.nix
-  ];
+    ];
 
   nixpkgs.overlays = [
     sddm-sugar-candy-nix.overlays.default
@@ -41,7 +41,7 @@
     description = userSettings.name;
     extraGroups = [ "networkmanager" "wheel" ];
     shell = pkgs.${userSettings.shell};
-    packages = with pkgs; [];
+    packages = with pkgs; [ ];
   };
 
   # Enable automatic login for the user.
@@ -81,7 +81,7 @@
 
   # CODEIUM FIX
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = [];
+  programs.nix-ld.libraries = [ ];
 
   # KERNEL PKG
   boot.kernelPackages = pkgs.linuxPackages;

@@ -1,10 +1,10 @@
-{ config, systemSettings, ...}:
+{ config, systemSettings, ... }:
 {
   # Disable nvidia card for hyprland
   environment.variables.AQ_DRM_DEVICES = "/dev/dri/${systemSettings.gpu.hybrid.primaryCard}";
 
   hardware.graphics = {
-   enable = true;
+    enable = true;
   };
 
   hardware.nvidia = {
@@ -23,8 +23,8 @@
 
     prime = {
       offload = {
-	      enable = true;
-	      enableOffloadCmd = true;
+        enable = true;
+        enableOffloadCmd = true;
       };
       ${if systemSettings.gpu.hybrid.iGpuType == "amd" then
         "amdgpuBusId"

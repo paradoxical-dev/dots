@@ -8,7 +8,7 @@ let
   };
 
   currentTheme = themes.${userSettings.theme};
-in 
+in
 {
   home.packages = with pkgs; [
     zathura
@@ -16,8 +16,7 @@ in
 
   programs.zathura = {
     enable = true;
-    options = {
-    };
+    options = { };
     extraConfig = ''
       set recolor "true"
       set recolor-lightcolor "${currentTheme.lightcolor}"

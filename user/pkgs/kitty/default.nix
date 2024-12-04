@@ -38,7 +38,7 @@
       font_family        JetBrainsMonoNL NFM Regular
       italic_font        Victor Mono Italic
       bold_italic_font   Victor Mono Bold Italic
-      '';
+    '';
   };
 
 }

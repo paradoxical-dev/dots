@@ -15,7 +15,7 @@ let
     cursorName = "Bibata-Modern-Classic";
     cursorPackage = pkgs.bibata-cursors;
   };
-in 
+in
 {
   home.packages = with pkgs; [
     gtk3

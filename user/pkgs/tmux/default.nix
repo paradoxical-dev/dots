@@ -12,7 +12,7 @@ let
   };
 
   currentTheme = themes.${userSettings.theme};
-in 
+in
 {
   programs.tmux = {
     enable = true;
