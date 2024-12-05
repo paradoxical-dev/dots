@@ -4,6 +4,10 @@ let
     yin = {
       cursorTheme = "Barbita-Modern-Classic";
     };
+
+    yang = {
+      cursorTheme = "Barbita-Modern-Ice";
+    };
   };
 
   currentCursorConfig = cursorConfigs.${userSettings.theme} or {

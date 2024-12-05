@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 {
   programs.hyprlock = {
     enable = true;
@@ -12,7 +12,7 @@
 
       background = [
         {
-          path = "screenshot";
+          path = "${config.home.homeDirectory}dots/wallpapers/${userSettings.theme}";
           blur_passes = 3;
           blur_size = 8;
         }

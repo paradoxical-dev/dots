@@ -4,6 +4,7 @@
     [
       ./hardware-configuration.nix
       ../../system/hardware/drivers/${systemSettings.gpu.type}.nix
+      ../../system/hardware/drivers/cuda-cache.nix
       ../../system/hardware/drivers/xserver-video.nix
       ../../system/hardware/bluetooth.nix
       ../../system/hardware/pipewire.nix

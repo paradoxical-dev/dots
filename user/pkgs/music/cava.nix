@@ -8,8 +8,8 @@
     settings = {
       input.method = "fifo";
       color = {
-        background = "#DEDEDE";
-        foreground = "#000000";
+        background = "'#DEDEDE'";
+        foreground = "'#000000'";
       };
     };
   };

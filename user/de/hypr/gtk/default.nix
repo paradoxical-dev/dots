@@ -7,6 +7,13 @@ let
       cursorName = "Bibata-Modern-Classic";
       cursorPackage = pkgs.bibata-cursors;
     };
+
+    yang = {
+      iconName = "Adwaita";
+      iconPackage = pkgs.adwaita-icon-theme;
+      cursorName = "Bibata-Modern-Ice";
+      cursorPackage = pkgs.bibata-cursors;
+    };
   };
 
   currentTheme = themeConfig.${userSettings.theme} or {

@@ -5,6 +5,10 @@ let
       lightcolor = "#D7D7D7";
       darkcolor = "#000000";
     };
+    yang = {
+      lightcolor = "#000000";
+      darkcolor = "#e7e7e7";
+    };
   };
 
   currentTheme = themes.${userSettings.theme};
