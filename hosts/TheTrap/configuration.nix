@@ -57,9 +57,10 @@
   environment.systemPackages = with pkgs; [
     pkg-config
     os-prober
-    libnotify
-    brightnessctl
+    cron
     upower
+    brightnessctl
+    libnotify
     wget
     curl
     unzip

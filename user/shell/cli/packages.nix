@@ -8,5 +8,9 @@
     ddgr
     fzf
     chafa
+    figlet
+    bc
+    lm_sensors
+    smartmontools
   ];
 }

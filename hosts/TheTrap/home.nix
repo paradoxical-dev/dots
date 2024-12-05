@@ -14,7 +14,7 @@
 
   imports = [
     ../../user/shell/${userSettings.shell}.nix
-    ../../user/shell/cli/fastfetch/fastfetch.nix
+    ../../user/shell/cli/fastfetch/default.nix
     ../../user/pkgs/tmux/default.nix
 
     ../../user/pkgs/zathura.nix

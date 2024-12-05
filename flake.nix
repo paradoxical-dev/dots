@@ -56,7 +56,7 @@
         editor = "nvim";
         fonts = [ pkgs.victor-mono ];
         nerdFonts = [ pkgs.nerd-fonts.jetbrains-mono ];
-        fontSize = "13";
+        fontSize = "11.5";
       };
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};

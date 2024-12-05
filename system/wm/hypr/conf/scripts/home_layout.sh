@@ -19,7 +19,7 @@ hyprctl dispatch movewindowpixel exact 90 540, activewindow
 hyprctl dispatch resizewindowpixel exact 700 450, activewindow
 
 # music player
-ags -c ~/dots/user/pkgs/music/custom_player/config.js &
+ags -b music-player -c ~/dots/user/pkgs/music/custom_player/config.js &
 
 sleep 0.35
 
