@@ -1,4 +1,14 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
+let
+  themes = {
+    yin = {
+      background = "#DEDEDE";
+      foreground = "#000000";
+    };
+  };
+
+  currentTheme = themes.${userSettings.theme};
+in
 {
   home.packages = with pkgs; [
     cava
@@ -8,8 +18,8 @@
     settings = {
       input.method = "fifo";
       color = {
-        background = "'#DEDEDE'";
-        foreground = "'#000000'";
+        background = "'${currentTheme.background}'";
+        foreground = "'${currentTheme.foreground}'";
       };
     };
   };

@@ -8,10 +8,8 @@ sleep 0.1
 hyprctl dispatch movewindowpixel exact 1125 85, activewindow
 hyprctl dispatch resizewindowpixel exact 700 900, activewindow
 
-# TODO: replace with visualizer and player
-
-# music visualizer (terminal placeholder for now)
-kitty --detach
+# visualizer
+kitty --detach cava
 
 sleep 0.1
 
