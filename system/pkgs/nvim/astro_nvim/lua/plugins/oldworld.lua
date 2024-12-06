@@ -1,7 +1,7 @@
 return {
   {
     "dgox16/oldworld.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     config = function()
       local transparent = {
@@ -42,7 +42,7 @@ return {
         },
         highlight_overrides = transparent,
       }
-      -- vim.cmd.colorscheme "oldworld"
+      vim.cmd.colorscheme "oldworld"
     end,
   },
 }
