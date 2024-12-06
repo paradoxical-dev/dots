@@ -1,4 +1,15 @@
 { config, pkgs, userSettings, ... }:
+let
+  themes = {
+    yin = {
+      wallpaper = "/home/${userSettings.username}/wallpapers/yin.png";
+    };
+    yang = {
+      wallpaper = "/home/${userSettings.username}/wallpapers/yang.png";
+    };
+  };
+  currentTheme = themes.${userSettings.theme};
+in
 {
   services.displayManager = {
     sddm = {
@@ -7,7 +18,7 @@
       sugarCandyNix = {
         enable = true;
         settings = {
-          Background = ../../wallpapers/${userSettings.theme};
+          Background = currentTheme.wallpaper;
           ScreenWidth = 2560;
           ScreenHeight = 1440;
           FormPosition = "left";

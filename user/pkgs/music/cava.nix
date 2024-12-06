@@ -5,6 +5,10 @@ let
       background = "#DEDEDE";
       foreground = "#000000";
     };
+    yang = {
+      background = "#222222";
+      foreground = "#fefefe";
+    };
   };
 
   currentTheme = themes.${userSettings.theme};

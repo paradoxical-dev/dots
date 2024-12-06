@@ -1,5 +1,4 @@
 { config, pkgs, userSettings, ... }:
-
 {
   home.packages = with pkgs; [ kitty ];
 
@@ -40,5 +39,4 @@
       bold_italic_font   Victor Mono Bold Italic
     '';
   };
-
 }

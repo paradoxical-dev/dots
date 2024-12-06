@@ -42,8 +42,6 @@ function updateMetadata() {
     posInterval = null
   }
 
-  console.log(player.name)
-
   player?.connect('changed', () => {
     console.log('connecting')
     musicPlayer.value = player
