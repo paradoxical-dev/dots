@@ -1,8 +1,7 @@
 return {
   {
     "simrat39/symbols-outline.nvim",
-    lazy = true,
-    priority = 1000,
+    event = "VeryLazy",
     config = function()
       require("symbols-outline").setup {
         highlight_hovered_item = true,
@@ -76,7 +75,7 @@ return {
           vim.opt_local.number = false
           vim.opt_local.relativenumber = false
           vim.opt_local.colorcolumn = ""
-          vim.opt_local.foldcolumn = "0"
+          vim.opt_local.foldcolumn = "1"
         end,
       })
 
