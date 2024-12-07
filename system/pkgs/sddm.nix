@@ -1,11 +1,15 @@
-{ config, pkgs, userSettings, ... }:
+{ config, pkgs, lib, userSettings, ... }:
 let
   themes = {
     yin = {
-      wallpaper = "/home/${userSettings.username}/wallpapers/yin.png";
+      wallpaper = "yin.png";
+      accent = "#222222";
+      button_text = "#FFFFFF";
     };
     yang = {
-      wallpaper = "/home/${userSettings.username}/wallpapers/yang.png";
+      wallpaper = "yang.png";
+      accent = "#FFFFFF";
+      button_text = "#222222";
     };
   };
   currentTheme = themes.${userSettings.theme};
@@ -18,11 +22,13 @@ in
       sugarCandyNix = {
         enable = true;
         settings = {
-          Background = currentTheme.wallpaper;
+          Background = lib.cleanSource ../../wallpapers/${currentTheme.wallpaper};
+          AccentColor = currentTheme.accent;
+          OverrideLoginButtonTextColor = currentTheme.button_text;
           ScreenWidth = 2560;
           ScreenHeight = 1440;
           FormPosition = "left";
-          HaveFormBackground = true;
+          HaveFormBackground = false;
           PartialBlur = true;
         };
       };
