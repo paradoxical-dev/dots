@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 {
   environment.systemPackages = with pkgs; [
     fail2ban

@@ -14,6 +14,7 @@
       ../../system/security/unbound.nix
       ../../system/security/sysctl.nix
       ../../system/security/fail2ban.nix
+      ../../system/security/sudo.nix
 
       ../../system/boot/grub/${systemSettings.bootmode}.nix
       ../../system/boot/international.nix

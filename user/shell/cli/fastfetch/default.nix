@@ -15,10 +15,6 @@
           key = " ";
           text = "hostname | figlet -f slant";
         }
-        # {
-        #   type = "custom";
-        #   format = " ";
-        # }
         {
           format = "OS:";
           type = "custom";
@@ -80,6 +76,19 @@
           type = "custom";
           format = " ";
         }
+        {
+          type = "custom";
+          format = "Fail2Ban:";
+        }
+        {
+          type = "command";
+          key = " ";
+          text = "sudo ~/dots/user/shell/cli/fastfetch/scripts/fail2ban.sh";
+        }
+        # {
+        #   type = "custom";
+        #   format = " ";
+        # }
         # {
         #   type = "custom";
         #   format = "Temps:";
