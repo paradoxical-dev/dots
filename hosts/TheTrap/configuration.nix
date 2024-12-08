@@ -10,6 +10,11 @@
       ../../system/hardware/pipewire.nix
       ../../system/hardware/power-profile.nix
 
+      ../../system/security/firewall.nix
+      ../../system/security/unbound.nix
+      ../../system/security/sysctl.nix
+      ../../system/security/fail2ban.nix
+
       ../../system/boot/grub/${systemSettings.bootmode}.nix
       ../../system/boot/international.nix
 

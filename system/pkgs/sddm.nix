@@ -4,10 +4,12 @@ let
     yin = {
       wallpaper = "yin.png";
       accent = "#222222";
+      main = "#222222";
       button_text = "#FFFFFF";
     };
     yang = {
       wallpaper = "yang.png";
+      main = "#FFFFFF";
       accent = "#FFFFFF";
       button_text = "#222222";
     };
@@ -23,6 +25,7 @@ in
         enable = true;
         settings = {
           Background = lib.cleanSource ../../wallpapers/${currentTheme.wallpaper};
+          MainColor = currentTheme.main;
           AccentColor = currentTheme.accent;
           OverrideLoginButtonTextColor = currentTheme.button_text;
           ScreenWidth = 2560;

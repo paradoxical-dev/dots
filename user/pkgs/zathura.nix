@@ -6,7 +6,7 @@ let
       darkcolor = "#000000";
     };
     yang = {
-      lightcolor = "#000000";
+      lightcolor = "#222222";
       darkcolor = "#e7e7e7";
     };
   };

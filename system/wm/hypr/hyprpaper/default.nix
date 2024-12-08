@@ -23,7 +23,7 @@ in
     Service = {
       # provide a delay and for some reason it works
       # 0.5 seconds is the lowest I could get to work
-      ExecStartPre = "${pkgs.coreutils}/bin/sleep 0.5";
+      ExecStartPre = "${pkgs.coreutils}/bin/sleep 0.6";
     };
   };
 }
