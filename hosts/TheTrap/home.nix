@@ -8,6 +8,7 @@
   home.sessionVariables = {
     SYSTEM_THEME = userSettings.theme;
   };
+  home.file.".system-theme".text = userSettings.theme;
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ hyprpanel.overlay ];
@@ -29,6 +30,7 @@
 
     ../../system/wm/hypr/hyprland.nix
     ../../system/wm/hypr/hyprpaper/default.nix
+    ../../system/pkgs/nvim/colors.nix
 
     ../../user/de/hypr/packages.nix
     ../../user/de/hypr/gtk/default.nix

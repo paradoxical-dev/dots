@@ -43,7 +43,7 @@ in
 
 
       unbind r
-      bind r source-file ~/.tmux.conf
+      bind r source-file ~/.config/tmux/tmux.conf
 
 
       bind C-c run "tmux save buffer - | xclip -i -sel clip"
