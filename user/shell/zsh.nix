@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
 
@@ -9,7 +9,9 @@
     syntaxHighlighting.enable = true;
 
     shellAliases = {
-      update = "sudo nixos-rebuild switch";
+      update = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}dots#main";
+      hm-update = "home-manager switch --flake ${config.home.homeDirectory}dots; ${config.home.homeDirectory}dots/scripts/theme-switch.sh";
+      update-full = "update && hm-update";
 
       c = "clear";
       ff = "fastfetch";
@@ -67,6 +69,9 @@
 
         # Fzf
       	source <(fzf --zsh)
+
+      	# Environment
+      	export SYSTEM_THEME="${userSettings.theme}"
     '';
   };
 

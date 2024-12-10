@@ -4,10 +4,6 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/" + userSettings.username + "/";
 
-  # Set system theme environment variable
-  home.sessionVariables = {
-    SYSTEM_THEME = userSettings.theme;
-  };
   home.file.".system-theme".text = userSettings.theme;
 
   nixpkgs.config.allowUnfree = true;
