@@ -1,4 +1,4 @@
-#/bin/bash
+#/bin/sh
 
 # main terminal / system file editor
 kitty --detach
@@ -17,6 +17,8 @@ hyprctl dispatch movewindowpixel exact 90 540, activewindow
 hyprctl dispatch resizewindowpixel exact 700 450, activewindow
 
 # music player
+theme=$(cat ~/.system-theme)
+export SYSTEM_THEME=$theme
 ags -b music-player -c ~/dots/user/pkgs/music/custom_player/config.js &
 
 sleep 0.35
