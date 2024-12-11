@@ -56,12 +56,14 @@
       DiagnosticSignInfo = { fg = "#708894", bg = "none" },
       DiagnosticSignHint = { fg = "#8d7e8e", bg = "none" },
       DiagnosticSignOk = { fg = "#7a8a6c", bg = "none" },
+      DiagnosticUnnecessary = { fg = "#777777", italic = true },
 
       GitSignsAdd = { fg = "#4f6736", bg = "none" },
       GitSignsChange = { fg = "#c4b28a", bg = "none" },
       GitSignsDelete = { fg = "#a84843", bg = "none" },
 
       snacksDashboardDir = { fg = "#777777", italic = true },
+      SnacksIndent = { bg = "none", fg = "#454545" },
 
       NotifyBackground = base_transparent,
 

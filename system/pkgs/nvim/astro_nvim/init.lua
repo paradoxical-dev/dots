@@ -1,5 +1,12 @@
 -- This file simply bootstraps the installation of Lazy.nvim and then calls other files for execution
 -- This file doesn't necessarily need to be touched, BE CAUTIOUS editing this file and proceed at your own risk.
+
+-- Snacks debugging
+_G.dd = function(...) Snacks.debug.inspect(...) end
+_G.bt = function() Snacks.debug.backtrace() end
+vim.print = _G.dd
+--
+
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
   -- stylua: ignore
@@ -16,11 +23,14 @@ if not pcall(require, "lazy") then
 end
 
 --gumbo
-local lua_path = vim.fn.stdpath('config') .. '/lua/share/lua/5.1/?.lua;' .. vim.fn.stdpath('config') .. '/lua/share/lua/5.1/?/init.lua'
-local lua_cpath = vim.fn.stdpath('config') .. '/lua/lib/lua/5.1/?.so'
+local lua_path = vim.fn.stdpath "config"
+  .. "/lua/share/lua/5.1/?.lua;"
+  .. vim.fn.stdpath "config"
+  .. "/lua/share/lua/5.1/?/init.lua"
+local lua_cpath = vim.fn.stdpath "config" .. "/lua/lib/lua/5.1/?.so"
 
-package.path = package.path .. ';' .. lua_path
-package.cpath = package.cpath .. ';' .. lua_cpath
+package.path = package.path .. ";" .. lua_path
+package.cpath = package.cpath .. ";" .. lua_cpath
 
 require "lazy_setup"
 require "polish"

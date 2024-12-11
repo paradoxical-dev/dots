@@ -53,12 +53,14 @@ local transparent = {
   DiagnosticSignInfo = { fg = "#708894", bg = "none" },
   DiagnosticSignHint = { fg = "#8d7e8e", bg = "none" },
   DiagnosticSignOk = { fg = "#7a8a6c", bg = "none" },
+  DiagnosticUnnecessary = { fg = "#777777", italic = true },
 
   GitSignsAdd = { fg = "#4f6736", bg = "none" },
   GitSignsChange = { fg = "#c4b28a", bg = "none" },
   GitSignsDelete = { fg = "#a84843", bg = "none" },
 
   snacksDashboardDir = { fg = "#777777", italic = true },
+  SnacksIndent = { bg = "none", fg = "#454545" },
 
   NotifyBackground = base_transparent,
 
@@ -68,7 +70,7 @@ local transparent = {
 return {
   {
     "ramojus/mellifluous.nvim",
-    lazy = false,
+    lazy = true,
     priority = 1000,
     opts = {
       colorset = "kanagawa_dragon",
@@ -82,7 +84,7 @@ return {
     },
     config = function(_, opts)
       require("mellifluous").setup(opts)
-      vim.cmd.colorscheme "mellifluous"
+      -- vim.cmd.colorscheme "mellifluous"
     end,
   },
 }

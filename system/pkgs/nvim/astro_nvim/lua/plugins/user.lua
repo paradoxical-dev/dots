@@ -175,7 +175,23 @@ return {
 
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = false },
-  -- {"andweeb/presence.nvim", enabled = false },
+  { "lukas-reineke/indent-blankline.nvim", enabled = false },
+
+  -- Create new ToggleTerm for nix-repl
+  {
+    "akinsho/toggleterm.nvim",
+    lazy = true,
+    keys = {
+      {
+        "<leader>tr",
+        function()
+          local Terminal = require("toggleterm.terminal").Terminal
+          Terminal:new({ cmd = "nix repl" }):toggle()
+        end,
+        desc = "ToggleTerm nix",
+      },
+    },
+  },
 
   -- You can also easily customize additional setup of plugins that is outside of the plugin's setup call
   {
