@@ -6,6 +6,8 @@
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
+    grub2-themes.url = "github:vinceliuice/grub2-themes";
+
     sddm-sugar-candy-nix = {
       url = "gitlab:Zhaith-Izaliel/sddm-sugar-candy-nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -14,7 +16,7 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprpanel, sddm-sugar-candy-nix, ... }:
+  outputs = { self, nixpkgs, home-manager, hyprpanel, sddm-sugar-candy-nix, grub2-themes, ... }:
     let
       systemSettings = {
         system = "x86_64-linux";
@@ -71,6 +73,7 @@
           specialArgs = {
             inherit systemSettings;
             inherit userSettings;
+            inherit grub2-themes;
             inherit sddm-sugar-candy-nix;
           };
         };

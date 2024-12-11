@@ -1,4 +1,4 @@
-{ config, pkgs, lib, systemSettings, userSettings, sddm-sugar-candy-nix, ... }:
+{ config, pkgs, lib, systemSettings, userSettings, grub2-themes, sddm-sugar-candy-nix, ... }:
 {
   imports =
     [
@@ -17,6 +17,7 @@
       ../../system/security/sudo.nix
 
       ../../system/boot/grub/${systemSettings.bootmode}.nix
+      grub2-themes.nixosModules.default
       ../../system/boot/international.nix
 
       ../../system/pkgs/sddm.nix
