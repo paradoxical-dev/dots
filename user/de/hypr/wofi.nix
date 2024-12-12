@@ -113,6 +113,62 @@ let
         color: #e0e0e0
       }
     '';
+    burst = ''
+      window {
+        font-family: "JetBrains Mono";
+        margin: 0px;
+        border: 1px solid rgba(254, 254, 250, 0.6);
+        background-color: rgba(34, 34, 34, 0.95);
+        border-radius: 10px;
+      }
+
+      #input {
+        margin: 5px;
+        border: 1px solid rgba(254, 254, 250, 0.6);
+        color: #e0e0e0;
+        background-color: rgba(53, 53, 53, 0.95);
+        font-family: "Victor Mono";
+        font-style: italic;
+      }
+
+      #inner-box {
+        margin: 5px;
+        border: none;
+        background-color: transparent;
+      }
+
+      #outer-box {
+        margin: 5px;
+        border: none;
+        background-color: transparent;
+      }
+
+      #scroll {
+        margin: 0px;
+        border: none;
+      }
+
+      #text {
+        margin: 5px;
+        border: none;
+        color: #d0d0d0;
+      }
+
+      #entry {
+        border: none;
+      }
+
+      #entry:focus {
+        border: none;
+      }
+
+      #entry:selected {
+        background-color: rgba(53, 53, 53, 0.95);
+        border-radius: 5px;
+        border: 1px solid rgba(254, 254, 250, 0.6);
+        color: #e0e0e0
+      }
+    '';
   };
 in
 {

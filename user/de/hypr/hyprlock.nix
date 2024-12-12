@@ -1,4 +1,13 @@
 { config, pkgs, userSettings, ... }:
+let
+  themes = {
+    yin = "${config.home.homeDirectory}dots/wallpapers/yin.png";
+    yang = "${config.home.homeDirectory}dots/wallpapers/yang.png";
+    burst = "${config.home.homeDirectory}dots/wallpapers/fractal.png";
+  };
+
+  wallpaperPath = themes.${userSettings.theme};
+in
 {
   programs.hyprlock = {
     enable = true;
@@ -12,7 +21,7 @@
 
       background = [
         {
-          path = "${config.home.homeDirectory}dots/wallpapers/${userSettings.theme}";
+          path = wallpaperPath;
           blur_passes = 3;
           blur_size = 8;
         }

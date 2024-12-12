@@ -8,6 +8,10 @@ let
     yang = {
       cursorTheme = "Barbita-Modern-Ice";
     };
+
+    burst = {
+      cursorTheme = "Barbita-Modern-Ice";
+    };
   };
 
   currentCursorConfig = cursorConfigs.${userSettings.theme} or {

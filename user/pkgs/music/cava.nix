@@ -9,6 +9,10 @@ let
       background = "#222222";
       foreground = "#fefefe";
     };
+    burst = {
+      background = "#17171f";
+      foreground = "#BB9AF7";
+    };
   };
 
   currentTheme = themes.${userSettings.theme};

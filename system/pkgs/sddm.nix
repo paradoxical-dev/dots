@@ -13,6 +13,12 @@ let
       accent = "#FFFFFF";
       button_text = "#222222";
     };
+    burst = {
+      wallpaper = "fractal.png";
+      main = "#FFFFFF";
+      accent = "#87A1DD";
+      button_text = "#FFFFFF";
+    };
   };
   currentTheme = themes.${userSettings.theme};
 in

@@ -17,6 +17,14 @@ let
         };
       };
     };
+    burst = {
+      status = {
+        window = {
+          default = "#[fg=#e7e7e7]#[Italics]#I: #[Italics]#W";
+          current = "#[fg=#28282b,bg=#ebebeb]    #[Italics]#I: #[Italics]#W    ";
+        };
+      };
+    };
   };
 
   currentTheme = themes.${userSettings.theme};

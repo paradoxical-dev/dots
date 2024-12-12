@@ -9,6 +9,10 @@ let
       lightcolor = "#222222";
       darkcolor = "#e7e7e7";
     };
+    burst = {
+      lightcolor = "#17171f";
+      darkcolor = "#e7e7e7";
+    };
   };
 
   currentTheme = themes.${userSettings.theme};

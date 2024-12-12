@@ -45,7 +45,7 @@
         username = "gitmoney";
         name = "gitmoney";
         email = "jaredonnell21@gmail.com";
-        theme = "yang"; # yin | yang
+        theme = "burst"; # yin | yang | burst
         wm = "hyprland";
         hypr = {
           # hyprland specific settings

@@ -3,6 +3,7 @@ let
   themes = {
     yin = "${config.home.homeDirectory}dots/wallpapers/yin.png";
     yang = "${config.home.homeDirectory}dots/wallpapers/yang.png";
+    burst = "${config.home.homeDirectory}dots/wallpapers/fractal.png";
   };
 
   wallpaperPath = themes.${userSettings.theme};
