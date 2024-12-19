@@ -26,7 +26,6 @@
 
     ../../system/wm/hypr/hyprland.nix
     ../../system/wm/hypr/hyprpaper/default.nix
-    ../../system/pkgs/nvim/colors.nix
 
     ../../user/de/hypr/packages.nix
     ../../user/de/hypr/gtk/default.nix
@@ -34,6 +33,7 @@
     ../../user/de/hypr/hyprlock.nix
     ../../user/de/hypr/hypridle.nix
 
+    ../../user/lang/databases.nix
     ../../user/lang/lua.nix
     ../../user/lang/c.nix
     ../../user/lang/rust.nix
@@ -41,7 +41,10 @@
     ../../user/lang/python/pyenv.nix
     ../../user/lang/nodejs.nix
     ../../user/lang/dart.nix
-  ];
+  ] ++ (if userSettings.nvim.match_theme then
+    [ ../../system/pkgs/nvim/colors.nix ]
+  else [ ]
+  );
 
   programs = {
     git = {

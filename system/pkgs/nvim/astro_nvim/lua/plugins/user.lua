@@ -176,6 +176,8 @@ return {
   -- You can disable default plugins as follows:
   { "max397574/better-escape.nvim", enabled = false },
   { "lukas-reineke/indent-blankline.nvim", enabled = false },
+  { "rcarriga/nvim-notify", enabled = false },
+  { "kdheepak/lazygit.nvim", enabled = false },
 
   -- Create new ToggleTerm for nix-repl
   {

@@ -12,9 +12,18 @@ return {
         zen = {
           position = "float",
           backdrop = {
-            blend = 90,
+            blend = 99,
             bg = "#000000",
             transparent = false,
+          },
+        },
+        scratch = {
+          position = "float",
+          backdrop = {
+            transparent = true,
+          },
+          wo = {
+            winhighlight = "Normal:NormalFloat",
           },
         },
       },
@@ -40,7 +49,15 @@ return {
         height = { min = 1, max = 0.8 },
       },
 
+      lazygit = {
+        enabled = true,
+        theme = {
+          activeBorderColor = { fg = "Keyword", bold = true },
+        },
+      },
+
       scratch = {
+        win = { style = "scratch" },
         win_by_ft = {
           javascript = {
             keys = {
@@ -146,7 +163,7 @@ return {
             vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
             zen_active = false
           else
-            vim.api.nvim_set_hl(0, "Normal", { bg = "#222222" })
+            vim.api.nvim_set_hl(0, "Normal", { bg = "#17171f" })
             zen_active = true
           end
 
@@ -156,6 +173,7 @@ return {
       },
       { "<leader>Z", function() Snacks.zen.zoom() end, desc = "Toggle Zoom" },
       { "<leader>N", function() Snacks.notifier.show_history() end, desc = "Notification History" },
+      { "<leader>gg", function() Snacks.lazygit.open() end, desc = "Open Lazygit" },
     },
   },
 }

@@ -7,6 +7,9 @@ _G.bt = function() Snacks.debug.backtrace() end
 vim.print = _G.dd
 --
 
+-- Set colorscheme with color-compiler
+-- require("color-compiler").load "burst"
+
 local lazypath = vim.env.LAZY or vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
   -- stylua: ignore
