@@ -8,14 +8,20 @@ My base zsh config comes with some QoL features and ergonomic aliases.
 
 ## Aliases
 
+- **`update`**: sudo nixos rebuild switch --flake ~/dots#main
+- **`hm-update`**: home-manager switch --flake ~/dots; ~/dots/scripts/theme-switch.sh
+- **`update-full`**: update && hm-update
+
 - **`c`**: clear
 - **`ff`**: fastfetch
+- **`v`**: nvim
+- **`wifi`**: nmtui
+- **`shutdown`**: systemctl poweroff
+
 - **`ls`**: eza -a --icons
 - **`ll`**: eza -al --icons
 - **`lt`**: eza -a --tree --level=1 --icons
-- **`shutdown`**: systemctl poweroff
-- **`v`**: nvim
-- **`wifi`**: nmtui
+
 - **`gs`**: git status
 - **`ga`**: git add
 - **`gc`**: git commit -m
