@@ -11,7 +11,7 @@ let
     };
     burst = {
       lightcolor = "#17171f";
-      darkcolor = "#e7e7e7";
+      darkcolor = "#d8d6eb";
     };
   };
 

@@ -12,5 +12,8 @@
     bc
     lm_sensors
     smartmontools
+    tldr
+    bat
+    jq
   ];
 }
