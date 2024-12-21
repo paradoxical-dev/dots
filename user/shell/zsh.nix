@@ -31,6 +31,7 @@
       gsp = "git stash; git pull";
       gcheck = "git checkout";
       gcredential = "git config credential.helper store";
+      gg = "lazygit";
     };
 
     history = {

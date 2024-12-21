@@ -5,9 +5,7 @@ All user specific configuration goes here. These configurations, *should* be tie
 This includes:
 
 - User packages
-
 - Shell configuration
-
 - Programming languages and related packages
 
 And more.
