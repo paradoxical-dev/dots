@@ -1,22 +1,55 @@
-# .dotfiles
-Starting a switch NixOS. Have a base configuration (it sucks) which is not modular but includes the basic necesseties to get started.
+# dots
 
-I'll keep building on this and making it more modular using flakes and conditional configurations. I'll also try to learn the Nix way of doing things.
+# Overview
 
-My overall goal is to have a system capable of supporting bleeding edge software like Arch in a reproducible and stable mannor
+My collection of configurations to create a modular, cross-platform system capable of supporting a wide range of use-cases. 
 
-**Current OS:**
+This configuration comes with support for popular video drivers, common development tools, easy switching between system themes, preconfigured neovim editor with integrated theme support, system security packages and much more. My use case is primarily focused on development and study work, however the config aims to be easily customizeable to fit any need.
 
-NixOS
-
-**DE:**
-
-- Hyprland
-
-- Hyprpanel
+<details>
+<summary>**Primary DE**</summary>
 
 - Wayland
 
-- sddm
+- **WM**: Hyprland
 
-- wlogout
+- **Bar**: Hyprpanel
+
+- **Session Manager**: SDDM w/ Sugar Candy Theme
+
+- **Terminal**: Kitty
+
+- **Shell**: Zsh
+
+- **Editor**: Neovim
+</details>
+
+<details>
+<summary>**Prepackaged Tools**</summary>
+
+- Obsidian
+
+- Zathura
+
+- MPD
+
+- Cava
+
+- HyprIdle/HyprLock
+
+- Wofi
+
+- Ollama/Open-WebUI
+</details>
+
+<details>
+<summary>**Inluded Security Packages**</summary>
+
+- Fail2Ban
+
+- Unbound
+
+- Firewall Daemon
+
+- Sysctl
+</details>
