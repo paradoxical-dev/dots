@@ -6,8 +6,10 @@ My collection of configurations to create a modular, cross-platform system capab
 
 This configuration comes with support for popular video drivers, common development tools, easy switching between system themes, preconfigured neovim editor with integrated theme support, system security packages and much more. My use case is primarily focused on development and study work, however the config aims to be easily customizeable to fit any need.
 
+## Configurations
+
 <details>
-<summary>**Primary DE**</summary>
+<summary>Primary DE</summary>
 
 - Wayland
 
@@ -25,7 +27,7 @@ This configuration comes with support for popular video drivers, common developm
 </details>
 
 <details>
-<summary>**Prepackaged Tools**</summary>
+<summary>Prepackaged Tools</summary>
 
 - Obsidian
 
@@ -43,7 +45,7 @@ This configuration comes with support for popular video drivers, common developm
 </details>
 
 <details>
-<summary>**Inluded Security Packages**</summary>
+<summary>Inluded Security Packages</summary>
 
 - Fail2Ban
 
@@ -52,4 +54,24 @@ This configuration comes with support for popular video drivers, common developm
 - Firewall Daemon
 
 - Sysctl
+</details>
+
+# Builtin Themes
+
+This configuration comes with different pre packaged themes. Each theme has corresponding config files for customizeable applications, such as Kitty, Hyprpanle, etc.
+
+This makes it so that updating home-manager with a different set theme, will update the config files to match the new theme.
+
+## Themes
+
+<details>
+<summary>Yin</summary>
+</details>
+
+<details>
+<summary>Yang</summary>
+</details>
+
+<details>
+<summary>Burst</summary>
 </details>
