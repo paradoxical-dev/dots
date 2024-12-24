@@ -11,7 +11,6 @@
     hyprlock
     hyprpanel
     wofi
-    libsForQt5.dolphin
     yazi
     firefox-wayland
   ];
