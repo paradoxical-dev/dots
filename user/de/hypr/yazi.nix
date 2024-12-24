@@ -18,5 +18,12 @@ in
   programs.yazi = {
     enable = true;
     theme = currentTheme;
+    settings = {
+      opener = {
+        open = [
+          { run = ''xdg-open "$@"''; orphan = true; desc = "Open"; }
+        ];
+      };
+    };
   };
 }
