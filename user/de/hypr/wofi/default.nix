@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, ... }:
+{ config, userSettings, ... }:
 {
   programs.wofi = {
     enable = true;

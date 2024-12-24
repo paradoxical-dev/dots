@@ -15,6 +15,7 @@
 
       c = "clear";
       ff = "fastfetch";
+      fe = "yazi";
       ls = "eza -a --icons";
       ll = "eza -al --icons";
       lt = "eza -a --tree --level=1 --icons";

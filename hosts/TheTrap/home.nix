@@ -16,7 +16,7 @@
 
     ../../user/pkgs/zathura.nix
     ../../user/pkgs/kitty/default.nix
-    ../../user/pkgs/obsidian.nix
+    ../../user/pkgs/obsidian/default.nix
     ../../user/pkgs/lazygit.nix
     ../../user/pkgs/ags.nix
 
