@@ -4,7 +4,7 @@
   home.username = userSettings.username;
   home.homeDirectory = "/home/" + userSettings.username + "/";
 
-  home.file.".system-theme".text = userSettings.theme;
+  home.file.".system-theme".text = userSettings.theme; # writes current theme to file to be used by scripts
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.overlays = [ hyprpanel.overlay ];
@@ -19,6 +19,7 @@
     ../../user/pkgs/obsidian/default.nix
     ../../user/pkgs/lazygit.nix
     ../../user/pkgs/ags.nix
+    ../../user/pkgs/alpaca.nix
 
     ../../user/pkgs/music/mpd/mpd.nix
     ../../user/pkgs/music/mpd/mpdris.nix

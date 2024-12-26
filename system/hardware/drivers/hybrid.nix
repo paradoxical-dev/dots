@@ -1,5 +1,10 @@
-{ config, systemSettings, ... }:
+{ config, pkgs, systemSettings, ... }:
 {
+
+  # Adds support for nvidia-container-toolkit
+  environment.systemPackages = with pkgs; [ nvidia-container-toolkit ];
+  hardware.nvidia-container-toolkit.enable = true;
+
   # Disable nvidia card for hyprland
   environment.variables.AQ_DRM_DEVICES = "/dev/dri/${systemSettings.gpu.hybrid.primaryCard}";
 

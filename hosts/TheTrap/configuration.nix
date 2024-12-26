@@ -26,8 +26,7 @@
       ../../user/shell/cli/packages.nix
       ../../user/shell/starship/starship.nix
 
-      ../../system/pkgs/ollama.nix
-      ../../system/pkgs/open-webui/open-webui.nix
+      ../../system/pkgs/docker.nix
       ../../system/wm/hypr/packages.nix
     ];
 
