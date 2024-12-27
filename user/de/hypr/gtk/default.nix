@@ -1,7 +1,9 @@
-{ config, pkgs, userSettings, ... }:
+{ pkgs, userSettings, ... }:
 let
   themeConfig = {
     yin = {
+      themeName = "Graphite";
+      themePackage = pkgs.graphite-gtk-theme;
       iconName = "Adwaita";
       iconPackage = pkgs.adwaita-icon-theme;
       cursorName = "Bibata-Modern-Classic";
@@ -9,6 +11,17 @@ let
     };
 
     yang = {
+      themeName = "Graphite-Dark";
+      themePackage = pkgs.graphite-gtk-theme;
+      iconName = "Adwaita";
+      iconPackage = pkgs.adwaita-icon-theme;
+      cursorName = "Bibata-Modern-Ice";
+      cursorPackage = pkgs.bibata-cursors;
+    };
+
+    burst = {
+      themeName = "Tokyonight-Dark";
+      themePackage = pkgs.tokyonight-gtk-theme;
       iconName = "Adwaita";
       iconPackage = pkgs.adwaita-icon-theme;
       cursorName = "Bibata-Modern-Ice";
@@ -17,6 +30,8 @@ let
   };
 
   currentTheme = themeConfig.${userSettings.theme} or {
+    themeName = null;
+    themePackage = null;
     iconName = "Adwaita";
     iconPackage = pkgs.adwaita-icon-theme;
     cursorName = "Bibata-Modern-Classic";
@@ -32,6 +47,10 @@ in
 
   gtk = {
     enable = true;
+    theme = {
+      name = currentTheme.themeName;
+      package = currentTheme.themePackage;
+    };
     iconTheme = {
       name = currentTheme.iconName;
       package = currentTheme.iconPackage;
