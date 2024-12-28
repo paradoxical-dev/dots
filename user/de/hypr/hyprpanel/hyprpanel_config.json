@@ -53,7 +53,7 @@
   "theme.bar.menus.menu.dashboard.profile.size": "8.5em",
   "menus.dashboard.powermenu.avatar.name": "gitmoney",
   "menus.dashboard.shortcuts.left.shortcut4.command": "wofi --show drun",
-  "menus.dashboard.shortcuts.left.shortcut1.command": "bash -c \"~/dots/system/pkgs/open-webui/startup.sh\"",
+  "menus.dashboard.shortcuts.left.shortcut1.command": "bash -c \"~/dots/system/wm/hypr/conf/scripts/alpaca-sidebar.sh\"",
   "menus.dashboard.powermenu.avatar.image": "/home/gitmoney/Downloads/super_goku.jpg",
   "bar.clock.icon": "",
   "theme.bar.buttons.clock.spacing": "0.75em",
@@ -108,7 +108,7 @@
       ]
     }
   },
-  "menus.dashboard.directories.left.directory3.command": "bash -c \"xdg-open $HOME/education/\"",
+  "menus.dashboard.directories.left.directory3.command": "bash -c \"kitty --detach yazi $HOME/education\"",
   "menus.dashboard.directories.left.directory3.label": "󱉟  Education",
   "menus.dashboard.directories.right.directory3.label": "󱂵  Home",
   "menus.dashboard.directories.right.directory2.label": "󰉏  Pictures",
@@ -120,5 +120,19 @@
   "menus.dashboard.shortcuts.right.shortcut3.tooltip": "Toggle Bluelight",
   "menus.dashboard.shortcuts.left.shortcut1.icon": "",
   "menus.dashboard.shortcuts.left.shortcut1.tooltip": "Ollama",
-  "menus.dashboard.stats.enabled": true
+  "menus.dashboard.stats.enabled": true,
+  "theme.bar.opacity": 100,
+  "theme.bar.buttons.opacity": 100,
+  "theme.bar.buttons.background_opacity": 0,
+  "theme.bar.buttons.background_hover_opacity": 100,
+  "theme.notification.opacity": 100,
+  "terminal": "kitty",
+  "menus.dashboard.directories.right.directory2.command": "bash -c \"kitty --detach yazi $HOME/Pictures/\"",
+  "menus.dashboard.directories.right.directory3.command": "bash -c \"kitty --detach yazi $HOME/\"",
+  "menus.dashboard.directories.right.directory1.command": "bash -c \"kitty --detach yazi $HOME/Documents/\"",
+  "menus.dashboard.directories.left.directory2.command": "bash -c \"kitty --detach yazi $HOME/Videos/\"",
+  "menus.dashboard.directories.left.directory1.command": "bash -c \"kitty --detach yazi $HOME/Downloads/\"",
+  "menus.dashboard.shortcuts.left.shortcut2.command": "spotify-launcher",
+  "menus.dashboard.shortcuts.left.shortcut2.icon": "",
+  "menus.dashboard.shortcuts.left.shortcut2.tooltip": "Spotify"
 }
