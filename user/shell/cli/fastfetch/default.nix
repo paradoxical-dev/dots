@@ -20,7 +20,7 @@
           type = "custom";
         }
         {
-          key = "{#34} {icon} distro  {#keys}";
+          key = "{#34} {icon} Distro  {#keys}";
           type = "os";
         }
         {
@@ -85,19 +85,21 @@
           key = " ";
           text = "sudo ~/dots/user/shell/cli/fastfetch/scripts/fail2ban.sh";
         }
-        # {
-        #   type = "custom";
-        #   format = " ";
-        # }
-        # {
-        #   type = "custom";
-        #   format = "Temps:";
-        # }
-        # {
-        #   type = "command";
-        #   key = " ";
-        #   text = "sh ~/dots/user/shell/cli/fastfetch/scripts/temps.sh";
-        # }
+        {
+          type = "custom";
+          format = " ";
+        }
+        {
+          type = "custom";
+          format = "Docker:";
+          # key = "󰡨 Docker";
+          # keyColor = "blue";
+        }
+        {
+          type = "command";
+          key = " ";
+          text = "sudo ~/dots/user/shell/cli/fastfetch/scripts/docker.sh ollama";
+        }
       ];
     };
   };
