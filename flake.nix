@@ -56,7 +56,7 @@
         terminal = "kitty";
         shell = "zsh";
         nvim = {
-          nvim_compile = false; # To use compiled colorschemes using color-compiler.nvim
+          nvim_compile = true; # To use compiled colorschemes using color-compiler.nvim
           match_theme = true; # whether to use colors.nix located in system/pkgs/nvim
         };
         fonts = [ pkgs.victor-mono ];

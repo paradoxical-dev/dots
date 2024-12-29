@@ -27,21 +27,19 @@ get_container_info() {
   ports=$(format_ports "$ports_json")
 }
 
-# Function to get the appropriate symbol and color based on container status
 get_status_symbol() {
   status=$1
   if [ "$status" = "running" ]; then
-    echo -e "\033[32m●\033[0m" # Green play button for up
+    echo -e "\033[32m●\033[0m"
   elif [ "$status" = "paused" ]; then
-    echo -e "\033[33m\033[0m" # Yellow paused button
+    echo -e "\033[33m\033[0m"
   elif [ "$status" = "exited" ]; then
-    echo -e "\033[31m\033[0m" # Red stop button for down
+    echo -e "\033[31m\033[0m"
   else
-    echo -e "\033[34m?  $1\033[0m" # Blue question mark for other statuses
+    echo -e "\033[34m?  $1\033[0m"
   fi
 }
 
-# Main function
 main() {
   if [ $# -eq 0 ]; then
     echo "Error: No container name provided."
@@ -56,5 +54,4 @@ main() {
   done
 }
 
-# Call main function with arguments (container names)
 main "$@"
