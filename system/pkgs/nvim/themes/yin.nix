@@ -10,30 +10,102 @@
           Normal = { bg = "none" },
           Cursor = { bg = "#000000", fg = "#e1e4dc" },
           NormalNC = { bg = "none" },
-          NormalFloat = { link = "Normal" },
-          FloatBorder = { link = "Normal" },
-          TabLineFill = { link = "Normal" },
-          WinBar = { link = "Normal" },
-          WinBarNC = { link = "Normal" },
-          WinSeparator = { fg = "#404040" },
-          CursorLineFold = { link = "Normal" },
-          CursorLineSign = { link = "Normal" },
+          NormalFloat = { bg = "none" },
+          FloatBorder = { bg = "none", fg = "#403f42" },
+          Pmenu = { bg = "none" },
+
+          TabLineFill = { bg = "none" },
+          WinBar = { bg = "none" },
+          WinBarNC = { bg = "none" },
+          WinSeparator = { fg = "#9f9f9f" },
+          CursorLineFold = { bg = "none" },
+          CursorLineSign = { bg = "none" },
           FoldColumn = { bg = "none", fg = "#666666" },
-          SignColumn = { link = "Normal" },
+          SignColumn = { bg = "none" },
           StatusLine = { bg = "none" },
           CursorLine = { bg = "none" },
+
           Comment = { fg = "#696969" },
+
+          DiagnosticUnnecessary = { fg = "#b7b7b7", italic = true },
+          DiagnosticVirtualTextError = { bg = "#E1D9D9", fg = "#9D4B53" },
+          DiagnosticVirtualTextWarn = { bg = "#e1ded9", fg = "#a78a58" },
+          DiagnosticVirtualTextInfo = { bg = "#d9dfe1", fg = "#40739a" },
+          DiagnosticVirtualTextHint = { bg = "#d9e1de", fg = "#436e64" },
+
+          HeirlineNormal = { fg = "#715688", bg = "#715688" },
+          HeirlineVisual = { fg = "#40739a", bg = "#40739a" },
+          HeirlineInsert = { fg = "#729b79", bg = "#729b79" },
+          HeirlineCommand = { fg = "#b99bb5", bg = "#b99bb5" },
+          HeirlineTerminal = { fg = "#729b79", bg = "#729b79" },
+          HeirlineReplace = { fg = "#a78a58", bg = "#a78a58" },
+          HeirlineInactive = { fg = "#777777", bg = "#777777" },
+          StatusNormal = { fg = "#715688", bg = "#715688" },
+          StatusVisual = { fg = "#40739a", bg = "#40739a" },
+          StatusInsert = { fg = "#729b79", bg = "#729b79" },
+          StatusCommand = { fg = "#b99bb5", bg = "#b99bb5" },
+          StatusTerminal = { fg = "#729b79", bg = "#729b79" },
+          StatusReplace = { fg = "#a78a58", bg = "#a78a58" },
+          StatusInactive = { fg = "#777777", bg = "#777777" },
+
           CmpDocumentation = { bg = "none" },
-          CmpDocumentationBorder = { bg = "none" },
-          snacksDashboardDir = { link = "Comment" },
-          NotifyBackground = { link = "Normal" },
+          CmpDocumentationBorder = { bg = "none", fg = "#403f42" },
+
+          NeoTreeIndentMarker = { fg = "#d1d3cc" },
+
+          TelescopeSelection = { bg = "#d0d1cf" },
+          TelescopePromptCounter = { fg = "#403f42" },
+
+          LazyNormal = { bg = "#d4d5d3" },
+
+          MasonNormal = { bg = "#d4d5d3" },
+
+          snacksDashboardDir = { fg = "#8b8b8b" },
+          SnacksDashboardDesc = { fg = "#403f42" },
+          SnacksDashboardHeader = { fg = "#403f42" },
+          SnacksDashboardFooter = { fg = "#403f42" },
+          SnacksDashboardTitle = { fg = "#403f42" },
+          SnacksDashboardSpecial = { fg = "#403f42" },
+
+          NotifyBackground = { bg = "none" },
+
           RenderMarkdownCode = { bg = "#d6d6d6" },
+          RenderMarkdownH1Bg = { bg = "#d9e1da", fg = "#729B79", bold = true },
+          RenderMarkdownH2Bg = { bg = "#d9dfe1", fg = "#40739a", bold = true },
+          RenderMarkdownH3Bg = { bg = "#dcd9e1", fg = "#715688", bold = true },
+          RenderMarkdownH4Bg = { bg = "#e1ded9", fg = "#a78a58", bold = true },
+          RenderMarkdownH5Bg = { bg = "none" },
+          RenderMarkdownH6Bg = { bg = "none" },
         }
-        require("leaf").setup({
+        require("leaf").setup {
           theme = "light",
+          -- theme = "dark",
           overrides = transparent,
-        })
-        vim.cmd.colorscheme("leaf")
+        }
+        vim.cmd.colorscheme "leaf"
+        vim.g.terminal_color_0 = "#2e2c2f"
+        vim.g.terminal_color_8 = "#403f42"
+
+        vim.g.terminal_color_1 = "#BA5860"
+        vim.g.terminal_color_9 = "#9d4b53"
+
+        vim.g.terminal_color_2 = "#729B79"
+        vim.g.terminal_color_10 = "#59795f"
+
+        vim.g.terminal_color_3 = "#CCAA6C"
+        vim.g.terminal_color_11 = "#a78a58"
+
+        vim.g.terminal_color_4 = "#5292C6"
+        vim.g.terminal_color_12 = "#40739a"
+
+        vim.g.terminal_color_5 = "#8C6AA8"
+        vim.g.terminal_color_13 = "#715688"
+
+        vim.g.terminal_color_6 = "#489CA5"
+        vim.g.terminal_color_14 = "#3b8187"
+
+        vim.g.terminal_color_7 = "#e1e4dc"
+        vim.g.terminal_color_15 = "#b1b3ad"
       end,
     }
   '';

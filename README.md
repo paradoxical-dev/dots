@@ -41,7 +41,11 @@ This configuration comes with support for popular video drivers, common developm
 
 - Wofi
 
-- Ollama/Open-WebUI
+- Docker
+
+- Alpaca
+
+- Yazi
 </details>
 
 <details>
@@ -66,12 +70,32 @@ This makes it so that updating home-manager with a different set theme, will upd
 
 <details>
 <summary>Yin</summary>
+
+![Home](https://i.imgur.com/PUmXPjc.png)
+
+![Neovim](https://i.imgur.com/qKOq2yO.png)
+
+![Obsidian/zathura](https://i.imgur.com/peLx7e2.png)
+
 </details>
 
 <details>
 <summary>Yang</summary>
+
+![Home](https://i.imgur.com/UennvDJ.png)
+
+![Neovim](https://i.imgur.com/H7TOMbB.png)
+
+![Obsidian/zathura](https://i.imgur.com/51cfRHV.png)
+
 </details>
 
 <details>
 <summary>Burst</summary>
+
+![Home](https://i.imgur.com/BwRwpYV.png)
+
+![Neovim](https://i.imgur.com/TNgCoEj.png)
+
+![Obsidian/zathura](https://i.imgur.com/tG6IhZx.png)
 </details>
