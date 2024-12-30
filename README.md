@@ -62,7 +62,7 @@ This configuration comes with support for popular video drivers, common developm
 
 # Builtin Themes
 
-This configuration comes with different pre packaged themes. Each theme has corresponding config files for customizeable applications, such as Kitty, Hyprpanle, etc.
+This configuration comes with different pre packaged themes. Each theme has corresponding config files for customizeable applications, such as Kitty, Hyprpanel, etc.
 
 This makes it so that updating home-manager with a different set theme, will update the config files to match the new theme.
 

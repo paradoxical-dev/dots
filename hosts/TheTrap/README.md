@@ -1,6 +1,6 @@
 # TheTrap
 
-This is my main machine that I use to run all my development work. It is an Eluktronix RP-15 G2 hybrid laptop
+This is my main machine that I use to run all my development work. It is an Eluktronics RP-15 G2 hybrid laptop
 
 ## Specs
 
