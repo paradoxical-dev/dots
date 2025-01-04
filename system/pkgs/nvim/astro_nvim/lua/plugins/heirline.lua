@@ -1,7 +1,8 @@
 return {
   {
     "rebelot/heirline.nvim",
-    event = "BufEnter",
+    event = "VeryLazy",
+    -- event = "BufEnter",
     opts = function(_, opts)
       local status = require "astroui.status"
       local foo = {
@@ -27,9 +28,10 @@ return {
         status.component.mode { hl = status.hl.get_attributes "mode" },
         -- bar,
         status.component.git_branch {
-          -- surround = { separator = { "██", "█ " }, color = "#2D2c22" },
-          surround = { separator = { "█", "█ " }, color = "#2D2c22" },
+          surround = { separator = { "█", "█ " }, color = "#2d2c22" },
           hl = { bg = "#EFD0A3", fg = "#EFD0A3" },
+          -- surround = { separator = { "█", "█ " }, color = "#eae1d0" },
+          -- hl = { bg = "#a78a58", fg = "#a78a58" },
         },
         status.component.file_info(),
         status.component.git_diff(),

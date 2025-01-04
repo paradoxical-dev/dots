@@ -11,7 +11,7 @@ return {
   -- "andweeb/presence.nvim",
   {
     "ray-x/lsp_signature.nvim",
-    event = "BufRead",
+    event = "VeryLazy",
     config = function() require("lsp_signature").setup() end,
   },
 
@@ -179,6 +179,9 @@ return {
   { "rcarriga/nvim-notify", enabled = false },
   { "kdheepak/lazygit.nvim", enabled = false },
 
+  -- Disable dressing.nvim
+  -- { "stevearc/dressing.nvim", enabled = false },
+
   -- Create new ToggleTerm for nix-repl
   {
     "akinsho/toggleterm.nvim",
@@ -208,6 +211,8 @@ return {
 
   {
     "windwp/nvim-autopairs",
+    lazy = true,
+    event = "InsertEnter",
     config = function(plugin, opts)
       require "astronvim.plugins.configs.nvim-autopairs"(plugin, opts) -- include the default astronvim config that calls the setup call
       -- add more custom autopairs configuration such as custom rules

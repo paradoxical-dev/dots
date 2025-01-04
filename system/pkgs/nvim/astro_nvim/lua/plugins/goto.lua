@@ -24,32 +24,6 @@ return {
         stack_floating_preview_windows = true, -- Whether to nest floating windows
         preview_window_title = { enable = true, position = "left" }, -- Whether to set the preview window title as the filename
       }
-
-      -- Key mappings
-      -- vim.keymap.set(
-      --   "n",
-      --   "<leader>gh",
-      --   "<cmd>lua require('goto-preview').goto_preview_definition()<CR>",
-      --   { noremap = true, silent = true }
-      -- )
-      -- vim.keymap.set(
-      --   "n",
-      --   "gD",
-      --   "<cmd>lua require('goto-preview').goto_preview_type_definition()<CR>",
-      --   { noremap = true, silent = true }
-      -- )
-      -- vim.keymap.set(
-      --   "n",
-      --   "gi",
-      --   "<cmd>lua require('goto-preview').goto_preview_implementation()<CR>",
-      --   { noremap = true, silent = true }
-      -- )
-      -- vim.keymap.set(
-      --   "n",
-      --   "gq",
-      --   "<cmd>lua require('goto-preview').close_all_win()<CR>",
-      --   { noremap = true, silent = true }
-      -- )
     end,
 
     vim.keymap.set(
