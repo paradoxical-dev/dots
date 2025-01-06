@@ -24,6 +24,7 @@ let
                     "render-md",
                     "semantics",
                     "snacks",
+                    "telescope",
                     "ufo",
                     "which-key",
                   },

@@ -42,6 +42,14 @@ return {
 				end,
 				desc = "Nix REPL",
 			},
+			{
+				"<leader>tb",
+				function()
+					local term = require("toggleterm.terminal").Terminal
+					term:new({ cmd = "btm", direction = "float" }):toggle()
+				end,
+				desc = "Bottom",
+			},
 		},
 		version = "*",
 		opts = {

@@ -3,6 +3,9 @@ return {
 		"simrat39/symbols-outline.nvim",
 		lazy = true,
 		event = "LspAttach",
+		keys = {
+			{ "<leader>ls", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" },
+		},
 		opts = {
 			width = 15,
 			symbols = {

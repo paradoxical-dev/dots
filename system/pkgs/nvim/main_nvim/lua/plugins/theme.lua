@@ -1,10 +1,1 @@
-return {
-	{
-		"paradoxical-dev/color-compiler.nvim",
-		lazy = false,
-		priority = 1000,
-		config = function()
-			require("color-compiler").load("burst")
-		end,
-	},
-}
+/nix/store/jj2bm7nzcnlkvgqid8abrh3q9jzarhch-home-manager-files/.config/nvim/lua/plugins/theme.lua

@@ -34,16 +34,9 @@ vim.opt.cmdheight = 0
 vim.opt.showcmdloc = "statusline"
 
 -- folds
--- vim.opt.foldcolumn = "1"
 vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
--- vim.opt.fillchars = {
--- 	fold = " ",
--- 	foldopen = "",
--- 	foldclose = "",
--- 	foldsep = " ",
--- }
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","

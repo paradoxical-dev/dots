@@ -63,9 +63,9 @@ return {
 					icon = { icon = "󰺝", color = "red" },
 				},
 
-				{ "<C-k>", "<cmd>cnext<CR>zz", desc = "Next Quickfix Item" },
+				{ "<leader>]", "<cmd>cnext<CR>zz", desc = "Next Quickfix Item" },
 				{
-					"<C-j>",
+					"<leader>[",
 					"<cmd>cprev<CR>zz",
 					desc = "Previous Quickfix Item",
 				},
@@ -115,6 +115,12 @@ return {
 					desc = "Toggle Diagnostics",
 					icon = { icon = "", color = "yellow" },
 				},
+				-- this is only needed when using multicursor in markdown files
+				{
+					"<leader>ur",
+					"<cmd>RenderMarkdown toggle<CR>",
+					desc = "Toggle Render Markdown",
+				},
 
 				-- Buffer Nav --
 				{ "[b", "<cmd>bprev<CR>", desc = "Previous Buffer" },
@@ -132,7 +138,6 @@ return {
 					end,
 					desc = "Close all buffers but the current",
 				},
-
 				{
 					"<leader>bc",
 					function()
@@ -143,6 +148,12 @@ return {
 					desc = "Close the current buffer",
 				},
 				{ "<leader>bn", "<cmd>new<CR>", desc = "New Buffer" },
+
+				-- Window Nav --
+				{ "<C-h>", "<C-w>h", desc = "Window Left" },
+				{ "<C-j>", "<C-w>j", desc = "Window Down" },
+				{ "<C-k>", "<C-w>k", desc = "Window Up" },
+				{ "<C-l>", "<C-w>l", desc = "Window Right" },
 
 				-- Neollama / AI --
 				{
@@ -165,11 +176,6 @@ return {
 			icons = {
 				group = "",
 				separator = "󰅂 ",
-			},
-			win = {
-				-- wo = {
-				-- 	winhighlight = "Normal:NormalFloat",
-				-- },
 			},
 		},
 		keys = {

@@ -12,38 +12,26 @@ if not pcall(require, "lazy") then
   vim.api.nvim_echo(
     { { ("Unable to load lazy from: %s\n"):format(lazypath), "ErrorMsg" }, { "Press any key to exit...", "MoreMsg" } },
     true, {})
-	vim.fn.getchar()
-	vim.cmd.quit()
+  vim.fn.getchar()
+  vim.cmd.quit()
 end
 
 -- Snacks debugging
 _G.dd = function(...)
-	Snacks.debug.inspect(...)
+  Snacks.debug.inspect(...)
 end
 _G.bt = function()
-	Snacks.debug.backtrace()
+  Snacks.debug.backtrace()
 end
 vim.print = _G.dd
 --
 
--- STATUSCOLUMN --
--- local function StatusBorder()
--- 	return "┃"
--- end
--- _G.MyStatusColumn = function()
--- 	local text = ""
--- 	text = table.concat({
--- 		StatusBorder(),
--- 	})
--- 	return text
--- end
-
 -- add local rocks path
 -- this is only needed for non NixOS supported luarocks such as gumbo
 local lua_path = vim.fn.stdpath("config")
-	.. "/lua/rocks/share/lua/5.1/?.lua;"
-	.. vim.fn.stdpath("config")
-	.. "/lua/rocks/share/lua/5.1/?/init.lua"
+    .. "/lua/rocks/share/lua/5.1/?.lua;"
+    .. vim.fn.stdpath("config")
+    .. "/lua/rocks/share/lua/5.1/?/init.lua"
 local lua_cpath = vim.fn.stdpath("config") .. "/lua/rocks/lib/lua/5.1/?.so"
 
 package.path = package.path .. ";" .. lua_path
