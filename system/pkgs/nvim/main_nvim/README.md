@@ -1,34 +1,30 @@
-# Blazing Fast; No Compromises
+# 🚀 Blazing Fast; No Compromises
 
 This config creates a blazing fast neovim experience, with no compromises in features. From the plugin selection to the keybindings, everything is optimized for maximum performance.
 
-Built on [Lazy](https://github.com/folke/lazy.nvim) I aimed to lazy load 99% of the plugins I use. Only including 2 plugins at startup (colorscheme, and snacks for dashboard) for a total of 3 plugins loaded at start, including Lazy.
+Built on [Lazy](https://github.com/folke/lazy.nvim) I aimed to lazy load 99% of the plugins I use. Only including 2 plugins at startup (colorscheme, and snacks for dashboard) for a total of **3 plugins** loaded at start, including Lazy.
 
-# Screenshots
+# 📷 Screenshots
 
-![Dashboard](https://i.imgur.com/A8iky5R.png)
+![Dashboard](https://i.imgur.com/A8iky5R.png) ![Active Screen](https://i.imgur.com/IsX1b0R.png)
 
-![Active Screen](https://i.imgur.com/IsX1b0R.png)
+![Split View](https://i.imgur.com/FivDcDo.png) ![Neollama](https://i.imgur.com/jsvVKFZ.png)
 
-![Split View](https://i.imgur.com/FivDcDo.png)
-
-![Neollama](https://i.imgur.com/jsvVKFZ.png)
-
-# Features
+# ✨ Features
 
 Among other thigs, this config includes:
 
-- Multi cursor support
-- Full featured Lsp w/ Dap support
-- Linting and formatting support
-- Local AI integration including chats and code completion
-- Termianl integrations with language specific REPLs
-- Advanced navigation with multiple plugins
-- And more
+- 📑 Multi cursor support
+- 🔎 Full featured Lsp w/ Dap support
+- 📋 Linting and formatting support
+- 🤖 Local AI integration including chats and code completion
+- 💻 Terminal integrations with language specific REPLs
+- ⚡️ Advanced navigation with multiple plugins
+- 👀 And more
 
-All of this packaged in an instant, with startuptimes averaging 13-14 ms at their fastest! (on my hardware)
+All of this packaged in an *instant*, with startuptimes averaging **13-14** ms at their fastest! (on my hardware)
 
-## Plugins
+## 🔌 Plugins
 
 Below is a list of all the plugins installed with this config:
 
