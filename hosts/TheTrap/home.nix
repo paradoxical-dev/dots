@@ -20,6 +20,7 @@
     ../../user/pkgs/lazygit.nix
     ../../user/pkgs/ags.nix
     ../../user/pkgs/alpaca.nix
+    ../../user/pkgs/packet-tracer.nix
 
     ../../user/pkgs/music/mpd/mpd.nix
     ../../user/pkgs/music/mpd/mpdris.nix

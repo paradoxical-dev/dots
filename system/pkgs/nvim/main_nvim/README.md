@@ -17,7 +17,7 @@ Among other thigs, this config includes:
 - 📑 Multi cursor support
 - 🔎 Full featured Lsp w/ Dap support
 - 📋 Linting and formatting support
-- 🤖 Local AI integration including chats and code completion
+- 🤖 AI pair programming and context aware completions
 - 💻 Terminal integrations with language specific REPLs
 - ⚡️ Advanced navigation with multiple plugins
 - 👀 And more
@@ -43,6 +43,7 @@ Below is a list of all the plugins installed with this config:
 - [mason](https://github.com/williamboman/mason.nvim)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [neollama](https://github.com/paradoxical-dev/neollama) (Ollama chat support)
+- [nvim-aider](https://github.com/GeorgesAlkhouri/nvim-aider) (Aider integration for Cursor like pair programming)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)

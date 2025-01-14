@@ -1,4 +1,12 @@
 { config, pkgs, userSettings, ... }:
+let
+  themes = {
+    yin = "--light-mode";
+    yang = "--dark-mode";
+    burst = "--dark-mode";
+  };
+  code_theme = themes.${userSettings.theme};
+in
 
 {
 
@@ -22,6 +30,7 @@
       shutdown = "systemctl poweroff";
       v = "nvim";
       wifi = "nmtui";
+      ai = "aider --model ollama_chat/qwen2.5-coder:14b --weak-model ollama_chat/llama3.2:latest ${code_theme} --no-auto-commits --pretty --stream";
 
       gs = "git status";
       ga = "git add";
@@ -74,6 +83,7 @@
 
       	# Environment
       	export SYSTEM_THEME="${userSettings.theme}"
+        export OLLAMA_API_BASE="http://127.0.0.1:11434"
     '';
   };
 
