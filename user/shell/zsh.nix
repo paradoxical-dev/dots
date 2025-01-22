@@ -4,6 +4,7 @@ let
     yin = "--light-mode";
     yang = "--dark-mode";
     burst = "--dark-mode";
+    shards = "--dark-mode";
   };
   code_theme = themes.${userSettings.theme};
 in

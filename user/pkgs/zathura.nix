@@ -13,6 +13,10 @@ let
       lightcolor = "#17171f";
       darkcolor = "#d8d6eb";
     };
+    shards = {
+      lightcolor = "#101017";
+      darkcolor = "#d8d6eb";
+    };
   };
 
   currentTheme = themes.${userSettings.theme};

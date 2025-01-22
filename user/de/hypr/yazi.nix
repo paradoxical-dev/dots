@@ -11,6 +11,7 @@ let
         select_alt = { fg = "#be7c7d"; bg = "#342a2a"; };
       };
     };
+    shards = { };
   };
   currentTheme = themes.${userSettings.theme};
 in

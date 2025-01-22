@@ -27,6 +27,15 @@ let
       cursorName = "Bibata-Modern-Ice";
       cursorPackage = pkgs.bibata-cursors;
     };
+
+    shards = {
+      themeName = "Graphite-Dark";
+      themePackage = pkgs.graphite-gtk-theme;
+      iconName = "Adwaita";
+      iconPackage = pkgs.adwaita-icon-theme;
+      cursorName = "Bibata-Modern-Ice";
+      cursorPackage = pkgs.bibata-cursors;
+    };
   };
 
   currentTheme = themeConfig.${userSettings.theme} or {

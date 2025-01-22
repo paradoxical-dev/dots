@@ -1,4 +1,22 @@
 { config, pkgs, userSettings, ... }:
+let
+  themes = {
+    shards = {
+      opacity = 0.5;
+    };
+    burst = {
+      opacity = 0.8;
+    };
+    yin = {
+      opacity = 0.8;
+    };
+    yang = {
+      opacity = 0.8;
+    };
+  };
+
+  theme_config = themes.${userSettings.theme};
+in
 {
   home.packages = with pkgs; [ kitty ];
 
@@ -12,7 +30,7 @@
     shellIntegration.enableBashIntegration = true;
     shellIntegration.enableZshIntegration = true;
     settings = {
-      background_opacity = 0.8;
+      background_opacity = theme_config.opacity;
       active_tab_background = "#E29ECA";
       inactive_tab_background = "#090610";
       tab_title_template = "{tab.active_oldest_wd}";

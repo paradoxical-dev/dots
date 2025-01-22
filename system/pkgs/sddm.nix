@@ -19,6 +19,12 @@ let
       accent = "#87A1DD";
       button_text = "#FFFFFF";
     };
+    shards = {
+      wallpaper = "shard.png";
+      main = "#FFFFFF";
+      accent = "#94cbba";
+      button_text = "#FFFFFF";
+    };
   };
   currentTheme = themes.${userSettings.theme};
 in

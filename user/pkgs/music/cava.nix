@@ -13,6 +13,10 @@ let
       background = "#17171f";
       foreground = "#BB9AF7";
     };
+    shards = {
+      background = "#101017";
+      foreground = "#caafbe";
+    };
   };
 
   currentTheme = themes.${userSettings.theme};
