@@ -27,6 +27,7 @@
       ../../user/shell/starship/starship.nix
 
       ../../system/pkgs/docker.nix
+      ../../system/pkgs/vm.nix
       ../../system/pkgs/aider.nix
       ../../system/wm/hypr/packages.nix
     ];
