@@ -20,6 +20,7 @@ let
                     "heirline",
                     "lazy",
                     "mason",
+                    "neotest",
                     "neo-tree",
                     "render-md",
                     "semantics",

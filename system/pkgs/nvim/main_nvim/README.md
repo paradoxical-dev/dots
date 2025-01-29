@@ -6,9 +6,9 @@ Built on [Lazy](https://github.com/folke/lazy.nvim) I aimed to lazy load 99% of 
 
 # 📷 Screenshots
 
-![Dashboard](https://i.imgur.com/A8iky5R.png) ![Active Screen](https://i.imgur.com/IsX1b0R.png)
-
-![Split View](https://i.imgur.com/FivDcDo.png) ![Neollama](https://i.imgur.com/jsvVKFZ.png)
+| ![Dashboard](https://i.imgur.com/A8iky5R.png) | ![Tests](https://i.imgur.com/RPXN2fZ.png) |
+| --------------------------------------------- | ------------------------------------------------- |
+| ![Leetcode](https://i.imgur.com/PMwWYtp.png) | ![Split View w/ Multi Cursor](https://i.imgur.com/FivDcDo.png) |
 
 # ✨ Features
 
@@ -17,7 +17,9 @@ Among other thigs, this config includes:
 - 📑 Multi cursor support
 - 🔎 Full featured Lsp w/ Dap support
 - 📋 Linting and formatting support
-- 🤖 AI pair programming and context aware completions
+- 🧪 Testing support
+- 🧬 Leetcode integration
+- 🤖 Local AI integration including chats, code completion and file editing/creation
 - 💻 Terminal integrations with language specific REPLs
 - ⚡️ Advanced navigation with multiple plugins
 - 👀 And more
@@ -37,19 +39,21 @@ Below is a list of all the plugins installed with this config:
 - [goto-preview](https://github.com/rmagatti/goto-preview)
 - [harpoon](https://github.com/theprimeagen/harpoon)
 - [heirline](https://github.com/rebelot/heirline.nvim) (Custom statusline/wibar)
+- [leetcode.nvim](https://github.com/kawre/leetcode.nvim)
 - [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
 - [mason-null-ls.nvim](https://github.com/jay-babu/mason-null-ls.nvim) 
 - [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim)
 - [mason](https://github.com/williamboman/mason.nvim)
+- [neotest](https://github.com/nvim-neotest/neotest)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [neollama](https://github.com/paradoxical-dev/neollama) (Ollama chat support)
-- [nvim-aider](https://github.com/GeorgesAlkhouri/nvim-aider) (Aider integration for Cursor like pair programming)
+- [nvim-aider](https://github.com/GeorgesAlkhouri/nvim-aider) (Cursor like AI support)
 - [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
 - [nvim-colorizer](https://github.com/norcalli/nvim-colorizer.lua)
 - [nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui)
 - [nvim-dap](https://github.com/mfussenegger/nvim-dap)
 - [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)
-- [nvim-navic](https://github.com/SmiteshP/nvim-navic) (Symbol trackig wibar)
+- [nvim-navic](https://github.com/SmiteshP/nvim-navic) (Symbol trackig winbar)
 - [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) (Folds)
 - [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) (Fancy markdown)
 - [snacks.nvim](https://github.com/folke/snacks.nvim) (Our lord and savior [*folke*](https://github.com/folke))
@@ -58,6 +62,7 @@ Below is a list of all the plugins installed with this config:
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)
 - [toggleterm.nvim](https://github.com/akinsho/toggleterm.nvim)
 - [treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
+- [typr](https://github.com/nvzone/typr) (Typing practice in neovim!)
 - [vim-dadbod-ui](https://github.com/kristijanhusak/vim-dadbod-ui) (Database UI)
 - [vim-dadbod](https://github.com/tpope/vim-dadbod) (Database support)
 - [vim-visual-multi](https://github.com/mg979/vim-visual-multi) (Multiple cursors)

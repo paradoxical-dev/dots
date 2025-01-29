@@ -9,7 +9,9 @@ return {
         "vimdoc",
         "markdown",
         "bash",
+        "javascript",
       },
+      auto_install = true,
     },
   },
 }

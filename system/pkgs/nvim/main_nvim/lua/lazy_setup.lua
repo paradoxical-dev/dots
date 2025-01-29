@@ -41,20 +41,54 @@ vim.o.foldenable = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
+-- autoread edited files
+vim.o.autoread = true
+
+-- AUTOCMDS --
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback = function()
+    vim.highlight.on_yank({
+      higroup = "IncSearch",
+      timeout = 60,
+    })
+  end,
+  desc = "Highlight on yank",
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+  desc = "Split help buffers to the right",
+  pattern = "help",
+  command = "wincmd L",
+})
+
+-- vim.api.nvim_create_autocmd("WinEnter", {
+--   callback = function()
+--     local bufnr = vim.api.nvim_get_current_buf()
+--     local filetype = vim.bo[bufnr].filetype
+--     print("WinEnter triggered! Filetype: " .. filetype) -- Debugging line
+--
+--     if filetype == "toggleterm" then
+--       print("Entering insert mode in terminal") -- Debugging line
+--       vim.cmd("startinsert!")
+--     end
+--   end,
+--   desc = "Start insert mode when switching to terminal buffers",
+-- })
+
 -- LAZY SETUP --
 
 require("lazy").setup({
-	spec = { { import = "plugins" } },
-	performance = {
-		rtp = {
-			disabled_plugins = {
-				"gzip",
-				"netrwPlugin",
-				"tarPlugin",
-				"tohtml",
-				"zipPlugin",
-				"tutor",
-			},
-		},
-	},
+  spec = { { import = "plugins" } },
+  performance = {
+    rtp = {
+      disabled_plugins = {
+        "gzip",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "zipPlugin",
+        "tutor",
+      },
+    },
+  },
 })
