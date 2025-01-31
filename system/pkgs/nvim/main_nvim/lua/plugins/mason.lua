@@ -7,6 +7,7 @@ return {
 
 	-- LSP CONFIG --
 
+	{ "paradoxical-dev/lsp_hover", lazy = true },
 	{
 		"williamboman/mason-lspconfig.nvim",
 		event = { "BufReadPre", "BufNewFile" },
@@ -67,6 +68,16 @@ return {
 
 				-- sets up navic
 				require("nvim-navic").attach(client, bufnr)
+
+				-- fancy lsp hover
+				require("lsp_hover").setup({
+					default = {
+						border_hl = "FloatBorder",
+					},
+					["^lua_ls"] = {
+						border_hl = "FloatBorder",
+					},
+				})
 			end
 
 			local lsp_config = require("lspconfig")

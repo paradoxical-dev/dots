@@ -49,31 +49,45 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   callback = function()
     vim.highlight.on_yank({
       higroup = "IncSearch",
-      timeout = 60,
+      timeout = 80,
     })
   end,
   desc = "Highlight on yank",
 })
 
-vim.api.nvim_create_autocmd("FileType", {
-  desc = "Split help buffers to the right",
-  pattern = "help",
-  command = "wincmd L",
-})
-
--- vim.api.nvim_create_autocmd("WinEnter", {
---   callback = function()
---     local bufnr = vim.api.nvim_get_current_buf()
---     local filetype = vim.bo[bufnr].filetype
---     print("WinEnter triggered! Filetype: " .. filetype) -- Debugging line
---
---     if filetype == "toggleterm" then
---       print("Entering insert mode in terminal") -- Debugging line
---       vim.cmd("startinsert!")
---     end
---   end,
---   desc = "Start insert mode when switching to terminal buffers",
+-- vim.api.nvim_create_autocmd("FileType", {
+--   desc = "Split help buffers to the right",
+--   pattern = "help",
+--   command = "wincmd L",
 -- })
+
+-- persistent folds
+-- WARN: stole this from AstroNvim and have no real idea how it works
+local view_group = vim.api.nvim_create_augroup("auto_view", { clear = true })
+vim.api.nvim_create_autocmd({ "BufWinLeave", "BufWritePost", "WinLeave" }, {
+  desc = "Save view with mkview for real files",
+  group = view_group,
+  callback = function(args)
+    if vim.b[args.buf].view_activated then
+      vim.cmd.mkview({ mods = { emsg_silent = true } })
+    end
+  end,
+})
+vim.api.nvim_create_autocmd("BufWinEnter", {
+  desc = "Try to load file view if available and enable view saving for real files",
+  group = view_group,
+  callback = function(args)
+    if not vim.b[args.buf].view_activated then
+      local filetype = vim.api.nvim_get_option_value("filetype", { buf = args.buf })
+      local buftype = vim.api.nvim_get_option_value("buftype", { buf = args.buf })
+      local ignore_filetypes = { "gitcommit", "gitrebase", "svg", "hgcommit" }
+      if buftype == "" and filetype and filetype ~= "" and not vim.tbl_contains(ignore_filetypes, filetype) then
+        vim.b[args.buf].view_activated = true
+        vim.cmd.loadview({ mods = { emsg_silent = true } })
+      end
+    end
+  end,
+})
 
 -- LAZY SETUP --
 
