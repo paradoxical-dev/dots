@@ -22,7 +22,7 @@ let
                     "mason",
                     "neotest",
                     "neo-tree",
-                    "render-md",
+                    "markview",
                     "semantics",
                     "snacks",
                     "telescope",

@@ -85,6 +85,9 @@ in
       	# Environment
       	export SYSTEM_THEME="${userSettings.theme}"
         export OLLAMA_API_BASE="http://127.0.0.1:11434"
+
+        # Add Cargo to PATH
+        export PATH="$HOME/.cargo/bin:$PATH"
     '';
   };
 
