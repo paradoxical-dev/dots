@@ -15,6 +15,7 @@ return {
 				{ "<leader>h", group = "Harpoon", icon = { icon = "󱡅", color = "grey" } },
 				{ "<leader>c", group = "Chat", icon = { icon = "󰭻", color = "grey" } },
 				{ "<leader>x", group = "Tests", icon = { icon = "󰙨", color = "green" } },
+				{ "<leader>r", group = "REST Client", icon = { icon = "", color = "blue" } },
 
 				-- QoL / Movement --
 				{
@@ -87,26 +88,6 @@ return {
 					"<Cmd>wincmd w<CR>",
 					mode = "t",
 				},
-				-- {
-				--   "<C-h>",
-				--   "<Cmd>wincmd h<CR>",
-				--   mode = "t",
-				-- },
-				-- {
-				--   "<C-j>",
-				--   "<Cmd>wincmd j<CR>",
-				--   mode = "t",
-				-- },
-				-- {
-				--   "<C-k>",
-				--   "<Cmd>wincmd k<CR>",
-				--   mode = "t",
-				-- },
-				-- {
-				--   "<C-l>",
-				--   "<Cmd>wincmd l<CR>",
-				--   mode = "t",
-				-- },
 
 				{ "<leader>/", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/gi<Left><Left><Left>", desc = "Search and Replace" },
 				{ "<leader>X", "<cmd>!chmod +x %<CR>", desc = "Make Executable" },
@@ -141,7 +122,7 @@ return {
 					desc = "Toggle Diagnostics",
 					icon = { icon = "", color = "yellow" },
 				},
-				-- this is only needed when using multicursor in markdown files
+				-- INFO: this is only needed when using multicursor in markdown files
 				{
 					"<leader>ur",
 					-- "<cmd>Markview toggle<CR>",

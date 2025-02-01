@@ -75,6 +75,7 @@ return {
 						border_hl = "FloatBorder",
 					},
 					["^lua_ls"] = {
+						name = " lua_ls",
 						border_hl = "FloatBorder",
 					},
 				})

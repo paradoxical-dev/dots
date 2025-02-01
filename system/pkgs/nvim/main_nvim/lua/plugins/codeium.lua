@@ -11,7 +11,7 @@ return {
 				virtual_text = {
 					enabled = true,
 					manual = false,
-					filetypes = { dashboard = false, typr = false },
+					filetypes = { dashboard = false, typr = false, snacks_picker_input = false },
 					idle_delay = 25,
 					key_bindings = {
 						accept = "<C-g>",

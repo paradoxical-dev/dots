@@ -6,9 +6,9 @@ Built on [Lazy](https://github.com/folke/lazy.nvim) I aimed to lazy load 99% of 
 
 # 📷 Screenshots
 
-| ![Dashboard](https://i.imgur.com/A8iky5R.png) | ![Tests](https://i.imgur.com/RPXN2fZ.png) |
-| --------------------------------------------- | ------------------------------------------------- |
-| ![Leetcode](https://i.imgur.com/PMwWYtp.png) | ![Split View w/ Multi Cursor](https://i.imgur.com/FivDcDo.png) |
+| ![Dashboard](https://i.imgur.com/A8iky5R.png) | ![Tests](https://i.imgur.com/RPXN2fZ.png)                      |
+| --------------------------------------------- | -------------------------------------------------------------- |
+| ![Leetcode](https://i.imgur.com/PMwWYtp.png)  | ![Split View w/ Multi Cursor](https://i.imgur.com/FivDcDo.png) |
 
 # ✨ Features
 
@@ -24,7 +24,7 @@ Among other thigs, this config includes:
 - ⚡️ Advanced navigation with multiple plugins
 - 👀 And more
 
-All of this packaged in an *instant*, with startuptimes averaging **13-14** ms at their fastest! (on my hardware)
+All of this packaged in an _instant_, with startuptimes averaging **13-14** ms at their fastest! (on my hardware)
 
 ## 🔌 Plugins
 
@@ -41,9 +41,11 @@ Below is a list of all the plugins installed with this config:
 - [heirline](https://github.com/rebelot/heirline.nvim) (Custom statusline/wibar)
 - [leetcode.nvim](https://github.com/kawre/leetcode.nvim)
 - [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
-- [mason-null-ls.nvim](https://github.com/jay-babu/mason-null-ls.nvim) 
+- [mason-null-ls.nvim](https://github.com/jay-babu/mason-null-ls.nvim)
 - [mason-nvim-dap.nvim](https://github.com/jay-babu/mason-nvim-dap.nvim)
 - [mason](https://github.com/williamboman/mason.nvim)
+- [menu](https://github.com/nvzone/menu) (Asthetic quick menus)
+- [minty](https://github.com/nvzone/minty) (Color picker)
 - [neotest](https://github.com/nvim-neotest/neotest)
 - [neo-tree](https://github.com/nvim-neo-tree/neo-tree.nvim)
 - [neollama](https://github.com/paradoxical-dev/neollama) (Ollama chat support)
@@ -56,7 +58,7 @@ Below is a list of all the plugins installed with this config:
 - [nvim-navic](https://github.com/SmiteshP/nvim-navic) (Symbol trackig winbar)
 - [nvim-ufo](https://github.com/kevinhwang91/nvim-ufo) (Folds)
 - [render-markdown.nvim](https://github.com/MeanderingProgrammer/render-markdown.nvim) (Fancy markdown)
-- [snacks.nvim](https://github.com/folke/snacks.nvim) (Our lord and savior [*folke*](https://github.com/folke))
+- [snacks.nvim](https://github.com/folke/snacks.nvim) (Our lord and savior [_folke_](https://github.com/folke))
 - [snipe.nvim](https://github.com/leath-dub/snipe.nvim) (Alternate buffer navigation)
 - [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
 - [todo-comments.nvim](https://github.com/folke/todo-comments.nvim)

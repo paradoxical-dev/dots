@@ -59,9 +59,16 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  #ZSH
+  # ZSH
   users.defaultUserShell = pkgs.${userSettings.shell};
   programs.${userSettings.shell}.enable = true;
+
+  # Documentation
+  documentation.enable = true;
+  documentation.man.enable = true;
+  documentation.man.generateCaches = true;
+  documentation.dev.enable = true;
+  documentation.nixos.enable = true;
 
   environment.systemPackages = with pkgs; [
     pkg-config
@@ -74,6 +81,8 @@
     curl
     unzip
     ripgrep
+    man-pages
+    man-pages-posix
 
     tmux
     neovim

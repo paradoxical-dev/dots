@@ -15,14 +15,16 @@ let
                 opts = {
                   extensions = {
                     "dap",
+                    "diffview",
+                    "flash",
+                    "flog",
                     "gitsigns",
                     "harpoon",
                     "heirline",
                     "lazy",
+                    "markview",
                     "mason",
                     "neotest",
-                    "neo-tree",
-                    "markview",
                     "semantics",
                     "snacks",
                     "telescope",

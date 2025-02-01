@@ -1,7 +1,26 @@
--- BUG: Temporary fix for :Inspect command bug. See: https://github.com/neovim/neovim/issues/31675
-vim.hl = vim.highlight
+-- INFO:  optional profiling; start nvim with `PROF=1 nvim`
+if vim.env.PROF then
+	local snacks = vim.fn.stdpath("data") .. "/lazy/snacks.nvim"
+	vim.opt.rtp:append(snacks)
+	require("snacks.profiler").startup({
+		startup = {
+			event = "UIEnter",
+		},
+		presets = {
+			startup = {
+				min_time = 0,
+				sort = true,
+			},
+		},
+	})
+end
+--
 
--- bootstrap lazy.nvim
+-- BUG: temporary fix for :Inspect command bug. See: https://github.com/neovim/neovim/issues/31675
+vim.hl = vim.highlight
+--
+
+-- INFO: bootstrap lazy.nvim
 local lazypath = vim.env.LAZY or vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
   -- stylua: ignore
@@ -18,8 +37,9 @@ if not pcall(require, "lazy") then
 	vim.fn.getchar()
 	vim.cmd.quit()
 end
+--
 
--- Snacks debugging
+-- INFO: Snacks debugging
 _G.dd = function(...)
 	Snacks.debug.inspect(...)
 end
@@ -29,8 +49,8 @@ end
 vim.print = _G.dd
 --
 
--- add local rocks path
--- this is only needed for non NixOS supported luarocks such as gumbo
+-- INFO: add local rocks path
+-- this is only needed for non NixOS unsupported luarocks such as gumbo
 local lua_path = vim.fn.stdpath("config")
 	.. "/lua/rocks/share/lua/5.1/?.lua;"
 	.. vim.fn.stdpath("config")
@@ -39,5 +59,6 @@ local lua_cpath = vim.fn.stdpath("config") .. "/lua/rocks/lib/lua/5.1/?.so"
 
 package.path = package.path .. ";" .. lua_path
 package.cpath = package.cpath .. ";" .. lua_cpath
+--
 
 require("lazy_setup")

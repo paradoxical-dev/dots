@@ -15,6 +15,7 @@ return {
 					"javascript",
 					"c",
 					"rust",
+					"http",
 				},
 				auto_install = true,
 				highlight = {

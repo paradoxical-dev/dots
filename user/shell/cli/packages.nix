@@ -15,5 +15,6 @@
     tldr
     bat
     jq
+    fd
   ];
 }
