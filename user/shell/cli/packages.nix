@@ -8,6 +8,7 @@
     ddgr
     fzf
     chafa
+    timg
     figlet
     bc
     lm_sensors

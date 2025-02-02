@@ -87,6 +87,12 @@
     tmux
     neovim
     git
+
+    # TEST #
+    python3Packages.pynvim
+    python3Packages.prompt-toolkit
+    python3Packages.jupyter-client
+    python3Packages.pillow
   ];
 
   # UPOWER
