@@ -17,5 +17,8 @@
     bat
     jq
     fd
+    file
+    lesspipe
+    exiftool
   ];
 }
