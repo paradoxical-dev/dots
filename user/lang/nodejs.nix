@@ -5,5 +5,7 @@
     nodePackages_latest.nodemon
     # nodePackages_latest.ijavascript
     eslint
+
+    deno
   ];
 }
