@@ -37,12 +37,12 @@ let
         right = { };
         command_mode_color = "#f2cdcd";
         command_mode_icon = "󱐋";
-        norm_mode_color = "#f5c2e7";
+        norm_mode_color = "#b4befe";
         norm_mode_icon = "󰌪";
       };
       default_pane_border = "#404040";
       current_pane_border = "#b4befe";
-      command_style = "'fg=#b4befe,bg=default'";
+      command_style = "'fg=#94e2d5,bg=default'";
     };
   };
 
@@ -58,6 +58,7 @@ in
     baseIndex = 1;
     escapeTime = 0;
     extraConfig = ''
+      ###### BASE CONFIG ######
       set -g default-terminal 'tmux-256color'
       set-option -ga terminal-overrides ",xterm-256color:Tc"
 
@@ -74,7 +75,9 @@ in
       bind r source-file ~/.config/tmux/tmux.conf
       bind C-c run "tmux save buffer - | xclip -i -sel clip"
       bind C-v run "tmux set-buffer $(xclip -o -sel clip); tmux paste-buffer"
+      #########################
 
+      ######## PLGINS ########
       # TPM
       set -g @plugin 'tmux-plugins/tpm'
 
@@ -82,16 +85,37 @@ in
       set -g @plugin 'sainnhe/tmux-fzf'
       set -g @plugin 'wfxr/tmux-fzf-url'
 
+      # Pomodoro
+      set -g @plugin 'olimorris/tmux-pomodoro-plus'
+      set -g @pomodoro_on "#[fg=#666666]⏱︎ "
+      set -g @pomodoro_pause "#[fg=#f9e2af]⏸︎ "
+      set -g @pomodoro_complete "#[fg=#a6e3a1]✔︎ "
+      set -g @pomodoro_notifications "on"
+
+      # Battery
+      set -g @plugin 'tmux-plugins/tmux-battery'
+      set -g @batt_icon_charge_tier1 "󰁺"
+      set -g @batt_icon_charge_tier2 "󰁻"
+      set -g @batt_icon_charge_tier3 "󰁼"
+      set -g @batt_icon_charge_tier4 "󰁾"
+      set -g @batt_icon_charge_tier5 "󰁿"
+      set -g @batt_icon_charge_tier6 "󰂀"
+      set -g @batt_icon_charge_tier7 "󰂂"
+      set -g @batt_icon_charge_tier8 "󰁹"
+      set -g @batt_icon_status_charged ""
+      set -g @batt_icon_status_charging "󱐋"
+      set -g @batt_icon_status_discharging ""
+      set -g @batt_icon_status_unknown ""
+      set -g @batt_icon_status_attached ""
+      set -g @batt_remain_short true
+
+      # IP
+      set -g @plugin 'anghootys/tmux-ip-address'
+      ########################
+
+      ###### STATUSLINE ######
       # Statusline Options
       set-option -g status-position top
-      prefix_color="#{?client_prefix,${currentTheme.status.command_mode_color},${currentTheme.status.norm_mode_color}}"
-      prefix_symbol="#{?client_prefix,${currentTheme.status.command_mode_icon},${currentTheme.status.norm_mode_icon}}"
-      set -g status-left "#[fg=''${prefix_color}]#[fg=#232526,bg=''${prefix_color}]''${prefix_symbol}#[fg=''${prefix_color},bg=#232526] #[fg=''${prefix_color},bg=#232526]T-MODE#[fg=#232526,bg=default] "
-
-      set -g status-left-length 50
-      set -g status-right ""
-      set-option -g status-style bg=default,fg=default
-
       set -g renumber-windows on
       set-option -g status-bg default
       set-option -g status-fg default
@@ -101,17 +125,40 @@ in
       set-option -g message-style ${currentTheme.command_style}
       set-option -g message-command-style ${currentTheme.command_style}
 
-      # Configure window list style
+      # Modules
+      sep="#[fg=#666666]  |  "
+
+      prefix_color="#{?client_prefix,${currentTheme.status.command_mode_color},${currentTheme.status.norm_mode_color}}"
+      prefix_symbol="#{?client_prefix,${currentTheme.status.command_mode_icon},${currentTheme.status.norm_mode_icon}}"
+      mode_inicator=#[fg="''${prefix_color}]#[fg=#232526,bg=''${prefix_color}]''${prefix_symbol}#[fg=''${prefix_color},bg=#232526] #[fg=''${prefix_color},bg=#232526]T-MODE #[fg=#232526,bg=default]"
+
+      battery_mod="#[fg=#f5c2e7,bg=#232526]#{battery_percentage} #[fg=#f5c2e7,bg=#232526]#[fg=#232526,bg=#f5c2e7]#{battery_icon}#[fg=#f5c2e7,bg=default]"
+
+      ip="#[fg=#666666] #{ip_address}"
+
+      # Left status
+      set -g status-left "''${mode_inicator}''${sep}#[fg:#666666]󰌘 %H:%M''${sep}#{pomodoro_status}"
+      set -g status-left-length 50
+
+      # Right status
+      set -g status-right "''${ip}''${sep}''${battery_mod}"
+      set -g status-right-length 150
+      set-option -g status-style bg=default,fg=default
+
+      # Window list style
       setw -g window-status-format "${currentTheme.status.window.default}"
       setw -g window-status-current-format "${currentTheme.status.window.current}"
       setw -g window-status-separator "    "
+      #######################
 
+      ######### EXTRA #########
       # Pane border
       set -g pane-border-style fg=${currentTheme.default_pane_border}
       set -g pane-active-border-style fg=${currentTheme.current_pane_border}
 
       # Zen Mode
       set-option -g allow-passthrough on
+      #########################
 
       run '~/.tmux/plugins/tpm/tpm'
     '';
