@@ -1,4 +1,4 @@
-# !/bin/sh
+#!/bin/sh
 
 # INFO: filter for fzf file content previews
 

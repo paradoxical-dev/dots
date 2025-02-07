@@ -19,7 +19,7 @@
     				all = {
     					rosewater = "#a6e3a1",
     					flamingo = "#f2cdcd",
-    					pink = "#89b4fa",
+    					pink = "#a5bef0",
     					mauve = "#94e2d5",
     					red = "#f38ba8",
     					maroon = "#eba0ac",

@@ -8,7 +8,6 @@ let
   };
   code_theme = themes.${userSettings.theme};
   hist_size = 10000;
-  keymap-style = "vicmd";
   fzf-themes = {
     shards = {
       fg_plus = "#f8f8fb";
@@ -34,8 +33,6 @@ in
     enableCompletion = true;
     autosuggestion.enable = true;
     syntaxHighlighting.enable = true;
-
-    defaultKeymap = keymap-style;
 
     shellAliases = {
       update = "sudo nixos-rebuild switch --flake ${config.home.homeDirectory}dots#main";
@@ -98,6 +95,11 @@ in
           sha256 = "EWMeslDgs/DWVaDdI9oAS46hfZtp4LHTRY8TclKTNK8=";
         };
       }
+      {
+        name = "vi-mode";
+        src = pkgs.zsh-vi-mode;
+        file = "share/zsh-vi-mode/zsh-vi-mode.plugin.zsh";
+      }
     ];
 
     initExtra = ''
@@ -120,6 +122,30 @@ in
         # Keymaps #
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward
+
+        # VI mode customization #
+        export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK        
+        export ZVM_KEYTIMEOUT=0
+        export ZVM_VI_HIGHLIGHT_BACKGROUND=#45475b
+        function zvm_after_select_vi_mode() {
+          case $ZVM_MODE in
+            $ZVM_MODE_NORMAL)
+              echo 'n' > ${config.home.homeDirectory}.current_vi_mode
+              ;;
+            $ZVM_MODE_INSERT)
+              echo 'i' > ${config.home.homeDirectory}.current_vi_mode
+              ;;
+            $ZVM_MODE_VISUAL)
+              echo 'v' > ${config.home.homeDirectory}.current_vi_mode
+              ;;
+            $ZVM_MODE_REPLACE)
+              echo 'r' > ${config.home.homeDirectory}.current_vi_mode
+              ;;
+            $ZVM_MODE_VISUAL_LINE)
+              echo 'vl' > ${config.home.homeDirectory}.current_vi_mode
+              ;;
+          esac
+        }
 
         # Case insensitive completion
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
