@@ -1,0 +1,118 @@
+format = """
+${custom.vi_normal}\
+${custom.vi_insert}\
+${custom.vi_replace}\
+${custom.vi_visual}\
+${custom.vi_vline}\
+[  ](fg:#454545)\
+$directory\
+[](fg:#a5bef0)\
+[  ](fg:#454545)\
+$git_branch\
+$git_status\
+$fill\
+\n$character"""
+
+[custom.vi_normal]
+command = "echo " 
+symbol = "[](fg:#a5bef0 )"
+when = '~/dots/scripts/vi-modes/normal.sh'
+style = "fg:#10101e bg:#a5bef0 "
+format = "[](fg:#a5bef0 bg:#232526)[$output$symbol[ NORMAL](bg:#232526 fg:bold #a5bef0 )[](fg:#232526)]($style)"
+
+[custom.vi_insert]
+command = "echo " 
+symbol = "[](fg:#f5c2e7)"
+when = '~/dots/scripts/vi-modes/insert.sh'
+style = "fg:bold black bg:#f5c2e7"
+format = "[](fg:#f5c2e7 bg:#232526)[$output$symbol[ INSERT](bg:#232526 fg:bold #f5c2e7)[](fg:#232526)]($style)"
+
+[custom.vi_replace]
+command = "echo " 
+symbol = "[](fg:#f38ba8)"
+when = '~/dots/scripts/vi-modes/replace.sh'
+style = "fg:#10101e bg:#f38ba8"
+format = "[](fg:#f38ba8 bg:#232526)[$output$symbol[ REPLACE](bg:#232526 fg:bold #f38ba8)[](fg:#232526)]($style)"
+
+[custom.vi_visual]
+command = "echo " 
+symbol = "[](fg:#f2cdcd)"
+when = '~/dots/scripts/vi-modes/visual.sh'
+style = "fg:#10101e bg:#f2cdcd"
+format = "[](fg:#f2cdcd bg:#232526)[$output$symbol[ VISUAL](bg:#232526 fg:bold #f2cdcd)[](fg:#232526)]($style)"
+
+[custom.vi_vline]
+command = "echo " 
+symbol = "[](fg:#f2cdcd)"
+when = '~/dots/scripts/vi-modes/vline.sh'
+style = "fg:#10101e bg:#f2cdcd"
+format = "[](fg:#f2cdcd bg:#232526)[$output$symbol[ V-LINE](bg:#232526 fg:bold #f2cdcd)[](fg:#232526)]($style)"
+
+[character]
+format = "$symbol "
+success_symbol = "[❯](bold italic white)"
+vicmd_symbol = "[❯](bold italic white)"
+error_symbol = "[❯](bold italic white)"
+
+[fill]
+symbol = " "
+
+[directory]
+style = "fg:#10101e bold bg:#b4befe"
+format = "[[](fg:#232526)$path [](bg:#232526 fg:#b4befe)[](fg:#232526 bg:#b4befe)](bg:#232526 fg:bold #b4befe)"
+truncation_length = 2
+truncation_symbol = "…/"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+
+[git_branch]
+symbol = ""
+style = "bg:#94e2d5"
+format = '[[](fg:#232526)[$branch ](fg:bold #94e2d5 bg:#232526)]($style)'
+
+[git_status]
+style = "bg:#94e2d5"
+untracked = "[?](fg:bold green bg:#232526)"
+modified = "[!](fg:bold green bg:#232526)"
+staged = "[+](fg:bold green bg:#232526)"
+deleted = "[✘](fg:bold green bg:#232526)"
+conflicted = "[=](fg:bold green bg:#232526)"
+stashed = "[](fg:bold green bg:#232526)"
+renamed = "[»](fg:bold green bg:#232526)"
+format = '[[($all_status$ahead_behind )](fg:bold #94e2d5 bg:#232526)[](bg:#232526 fg:#94e2d5)[](fg:#232526 bg:#94e2d5)[](fg:#94e2d5)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[rust]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[golang]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[php]
+symbol = ""
+style = "bg:#212736"
+format = '[[ $symbol ($version) ](fg:#769ff0 bg:#212736)]($style)'
+
+[cmd_duration]
+min_time = 0
+format = "[](fg:#232526)[$duration ](bg:#232526 fg:bold white)"
+
+[status]
+disabled = false
+success_symbol = "[](fg:#94e2d5 bg:#232526)[](fg:bold black bg:#94e2d5)[](fg:#94e2d5)"
+symbol = "[](fg:#f38ba8 bg:#232526)[](fg:bold black bg:#f38ba8)[](fg:#f38ba8)"
+not_executable_symbol = "[](fg:#f38ba8 bg:#232526)[󰜺](fg:bold black bg:#f38ba8)[](fg:#f38ba8)"
+not_found_symbol = "[](fg:#b4b3f3 bg:#232526)[](fg:bold black bg:#b4b3f3)[](fg:#b4b3f3)"
+format = "[$symbol]($style)"

@@ -102,15 +102,18 @@ in
       set -g @batt_icon_charge_tier6 "󰂀"
       set -g @batt_icon_charge_tier7 "󰂂"
       set -g @batt_icon_charge_tier8 "󰁹"
-      set -g @batt_icon_status_charged ""
+      set -g @batt_icon_status_charged "󰁹󱐋"
       set -g @batt_icon_status_charging "󱐋"
       set -g @batt_icon_status_discharging ""
       set -g @batt_icon_status_unknown ""
       set -g @batt_icon_status_attached ""
       set -g @batt_remain_short true
 
-      # IP
-      set -g @plugin 'anghootys/tmux-ip-address'
+      # CPU
+      set -g @plugin 'tmux-plugins/tmux-cpu'
+
+      # Persistent sessions
+      set -g @plugin 'tmux-plugins/tmux-resurrect'
       ########################
 
       ###### STATUSLINE ######
@@ -132,16 +135,19 @@ in
       prefix_symbol="#{?client_prefix,${currentTheme.status.command_mode_icon},${currentTheme.status.norm_mode_icon}}"
       mode_inicator=#[fg="''${prefix_color}]#[fg=#232526,bg=''${prefix_color}]''${prefix_symbol}#[fg=''${prefix_color},bg=#232526] #[fg=''${prefix_color},bg=#232526]T-MODE #[fg=#232526,bg=default]"
 
-      battery_mod="#[fg=#f5c2e7,bg=#232526]#{battery_percentage} #[fg=#f5c2e7,bg=#232526]#[fg=#232526,bg=#f5c2e7]#{battery_icon}#[fg=#f5c2e7,bg=default]"
+      battery_mod="#[fg=#232526,bg=default]#[fg=#f5c2e7,bg=#232526]#{battery_percentage} #[fg=#f5c2e7,bg=#232526]#[fg=#232526,bg=#f5c2e7]#{battery_icon}#[fg=#f5c2e7,bg=default]"
 
-      ip="#[fg=#666666] #{ip_address}"
+      gpu_usage="#(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits)%"
+      # ram_usage="#(free | awk "/Mem:/ {printf("%.2f", $3/$2 * 100)}")%"
+      ram_usage="#(free | awk '/Mem:/ {printf(\"%.2f%%\", $3/$2 * 100)}')"
+      diagnostic_mod="#[fg=#666666] #{cpu_percentage}   ''${gpu_usage}   ''${ram_usage}"
 
       # Left status
       set -g status-left "''${mode_inicator}''${sep}#[fg:#666666]󰌘 %H:%M''${sep}#{pomodoro_status}"
       set -g status-left-length 50
 
       # Right status
-      set -g status-right "''${ip}''${sep}''${battery_mod}"
+      set -g status-right "''${diagnostic_mod}''${sep}''${battery_mod}"
       set -g status-right-length 150
       set-option -g status-style bg=default,fg=default
 
