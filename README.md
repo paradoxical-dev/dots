@@ -2,9 +2,14 @@
 
 # Overview
 
-My collection of configurations to create a modular, cross-platform system capable of supporting a wide range of use-cases. 
+My collection of configurations to create a modular, cross-platform system capable of supporting a wide range of use-cases.
 
 This configuration comes with support for popular video drivers, common development tools, easy switching between system themes, preconfigured neovim editor with integrated theme support, system security packages and much more. My use case is primarily focused on development and study work, however the config aims to be easily customizeable to fit any need.
+
+> [!IMPORTANT]
+> I'm thinking of a change to Gentoo linux. I'm getting a little tired of finicking with multiple package versions, language versions, etc. and how isolated you become from the machien
+> That being said I'll continue to update this repo as I read up and experiment with Gentoo on my older machine.
+> Gentoo seems enticing with complete control over the system and package managment, and could be a great learning experience as I look to automate some of my most valued nix features into a traditionallinux distro.
 
 ## Configurations
 
@@ -98,4 +103,5 @@ This makes it so that updating home-manager with a different set theme, will upd
 ![Neovim](https://i.imgur.com/TNgCoEj.png)
 
 ![Obsidian/zathura](https://i.imgur.com/tG6IhZx.png)
+
 </details>
