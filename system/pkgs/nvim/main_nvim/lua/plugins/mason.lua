@@ -236,6 +236,20 @@ return {
 					}
 					require("mason-nvim-dap").default_setup(config)
 				end,
+
+				python = function(config)
+					local path = vim.fn.system("which python")
+					path = path:gsub("%s+$", "")
+					config.adapters = {
+						type = "executable",
+						command = path,
+						args = { "-m", "debugpy.adapter" },
+						options = {
+							source_filetype = "python",
+						},
+					}
+					require("mason-nvim-dap").default_setup(config)
+				end,
 			},
 		},
 	},

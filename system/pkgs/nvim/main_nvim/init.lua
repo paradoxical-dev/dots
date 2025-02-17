@@ -20,6 +20,11 @@ end
 vim.hl = vim.highlight
 --
 
+-- INFO: fix python path
+--
+vim.g.python3_host_prog = "~/.nix-profile/bin/python3"
+--
+
 -- INFO: bootstrap lazy.nvim
 local lazypath = vim.env.LAZY or vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.env.LAZY or (vim.uv or vim.loop).fs_stat(lazypath)) then
