@@ -1,6 +1,7 @@
-{ pkgs, ... }:
+{pkgs, ...}:
 {
   home.packages = with pkgs; [
-    ags
+    nixd
+    nil
   ];
 }

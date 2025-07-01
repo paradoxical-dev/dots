@@ -1,4 +1,4 @@
-{ config, pkgs, userSettings, ... }:
+{ config, userSettings, ... }:
 let
   cursorConfigs = {
     yin = {

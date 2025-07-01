@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   home.packages = with pkgs; [
-    sddm
+    kdePackages.sddm
     libgtop
     btop
     gnome-bluetooth

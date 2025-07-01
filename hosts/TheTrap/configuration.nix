@@ -1,36 +1,45 @@
-{ config, pkgs, lib, systemSettings, userSettings, grub2-themes, sddm-sugar-candy-nix, ... }:
 {
-  imports =
-    [
-      ./hardware-configuration.nix
-      ../../system/hardware/drivers/${systemSettings.gpu.type}.nix
-      ../../system/hardware/drivers/cuda-cache.nix
-      ../../system/hardware/drivers/xserver-video.nix
-      ../../system/hardware/bluetooth.nix
-      ../../system/hardware/pipewire.nix
-      ../../system/hardware/power-profile.nix
+  config,
+  pkgs,
+  lib,
+  systemSettings,
+  userSettings,
+  grub2-themes,
+  sddm-sugar-candy-nix,
+  ...
+}:
+{
+  imports = [
+    ./hardware-configuration.nix
+    ../../system/hardware/drivers/${systemSettings.gpu.type}.nix
+    ../../system/hardware/drivers/cuda-cache.nix
+    ../../system/hardware/drivers/xserver-video.nix
+    ../../system/hardware/bluetooth.nix
+    ../../system/hardware/pipewire.nix
+    ../../system/hardware/power-profile.nix
 
-      ../../system/security/firewall.nix
-      ../../system/security/unbound.nix
-      ../../system/security/sysctl.nix
-      ../../system/security/fail2ban.nix
-      ../../system/security/sudo.nix
+    ../../system/security/firewall.nix
+    ../../system/security/unbound.nix
+    ../../system/security/sysctl.nix
+    ../../system/security/fail2ban.nix
+    ../../system/security/sudo.nix
 
-      ../../system/boot/grub/${systemSettings.bootmode}.nix
-      grub2-themes.nixosModules.default
-      ../../system/boot/international.nix
+    ../../system/boot/grub/${systemSettings.bootmode}.nix
+    grub2-themes.nixosModules.default
+    ../../system/boot/international.nix
 
-      ../../system/pkgs/sddm.nix
-      sddm-sugar-candy-nix.nixosModules.default
+    ../../system/pkgs/sddm.nix
+    sddm-sugar-candy-nix.nixosModules.default
 
-      ../../user/shell/cli/packages.nix
-      ../../user/shell/starship/starship.nix
+    ../../user/shell/cli/packages.nix
+    ../../user/shell/starship/starship.nix
 
-      ../../system/pkgs/docker.nix
-      ../../system/pkgs/vm.nix
-      ../../system/pkgs/aider.nix
-      ../../system/wm/hypr/packages.nix
-    ];
+    ../../system/pkgs/docker.nix
+    ../../system/pkgs/vm.nix
+    ../../system/pkgs/aider.nix
+    ../../system/pkgs/zotero.nix
+    ../../system/wm/hypr/packages.nix
+  ];
 
   nixpkgs.overlays = [
     sddm-sugar-candy-nix.overlays.default
@@ -48,7 +57,10 @@
   users.users.${userSettings.username} = {
     isNormalUser = true;
     description = userSettings.name;
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     shell = pkgs.${userSettings.shell};
     packages = with pkgs; [ ];
   };
@@ -109,7 +121,10 @@
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
 
   # FLAKES
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
+  ];
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

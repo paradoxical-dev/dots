@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, deno, ... }:
 {
   home.packages = with pkgs; [
     nodePackages_latest.nodejs

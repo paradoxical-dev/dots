@@ -7,9 +7,10 @@
     xwayland
     grim
     slurp
+    xorg.xhost
     xdg-desktop-portal-hyprland
     xdg-desktop-portal-gtk
     wl-clipboard
-    breeze-icons
+    kdePackages.breeze-icons
   ];
 }

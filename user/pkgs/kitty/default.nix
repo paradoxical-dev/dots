@@ -2,7 +2,7 @@
 let
   themes = {
     shards = {
-      opacity = 0.5;
+      opacity = 0.9;
     };
     burst = {
       opacity = 0.8;

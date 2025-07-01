@@ -3,6 +3,8 @@
 
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
+    nixpkgs-24_05.url = "nixpkgs/nixos-24.05";
+
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
@@ -16,7 +18,7 @@
     hyprpanel.url = "github:Jas-SinghFSU/HyprPanel";
   };
 
-  outputs = { self, nixpkgs, home-manager, hyprpanel, sddm-sugar-candy-nix, grub2-themes, ... }:
+  outputs = { self, nixpkgs, nixpkgs-24_05, home-manager, hyprpanel, sddm-sugar-candy-nix, grub2-themes, ... }:
     let
       systemSettings = {
         system = "x86_64-linux";
@@ -65,6 +67,8 @@
       };
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};
+      stablePkgs = nixpkgs-24_05.legacyPackages.${systemSettings.system};
+      stableDeno = stablePkgs.deno;
     in
     {
       nixosConfigurations = {
@@ -91,6 +95,7 @@
             inherit systemSettings;
             inherit userSettings;
             inherit hyprpanel;
+            deno = stableDeno;
           };
         };
       };

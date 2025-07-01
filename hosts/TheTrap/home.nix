@@ -1,4 +1,10 @@
-{ config, pkgs, userSettings, hyprpanel, ... }:
+{
+  config,
+  pkgs,
+  userSettings,
+  hyprpanel,
+  ...
+}:
 {
   home.stateVersion = "24.05";
   home.username = userSettings.username;
@@ -7,7 +13,9 @@
   home.file.".system-theme".text = userSettings.theme; # writes current theme to file to be used by scripts
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.overlays = [ hyprpanel.overlay ];
+  nixpkgs.overlays = [
+    hyprpanel.overlay
+  ];
 
   imports = [
     ../../user/shell/${userSettings.shell}.nix
@@ -21,6 +29,10 @@
     ../../user/pkgs/ags.nix
     ../../user/pkgs/alpaca.nix
     ../../user/pkgs/packet-tracer.nix
+    ../../user/pkgs/mpv.nix
+    ../../user/pkgs/zed.nix
+    # ../../user/pkgs/vscode.nix
+    ../../user/pkgs/distrobox.nix
 
     ../../user/pkgs/music/mpd/mpd.nix
     ../../user/pkgs/music/mpd/mpdris.nix
@@ -36,6 +48,7 @@
     ../../user/de/hypr/hyprlock.nix
     ../../user/de/hypr/hypridle.nix
 
+    ../../user/lang/lsp.nix
     ../../user/lang/databases.nix
     ../../user/lang/lua.nix
     ../../user/lang/c.nix
@@ -44,10 +57,7 @@
     ../../user/lang/python/pyenv.nix
     ../../user/lang/nodejs.nix
     ../../user/lang/dart.nix
-  ] ++ (if userSettings.nvim.match_theme then
-    [ ../../system/pkgs/nvim/colors.nix ]
-  else [ ]
-  );
+  ] ++ (if userSettings.nvim.match_theme then [ ../../system/pkgs/nvim/colors.nix ] else [ ]);
 
   programs = {
     git = {
