@@ -13,5 +13,6 @@
     wofi
     yazi
     firefox-wayland
+    google-chrome
   ];
 }

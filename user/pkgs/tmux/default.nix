@@ -28,8 +28,10 @@ let
     shards = {
       status = {
         window = {
-          default = "#[fg=#666666]#[fg=#232526,bg=#666666]#[Italics]#[Bold]#I#[fg=#666666,bg=#232526] #[fg=#666666,bg=#232526]#[Italics] #W #[fg=#232526,bg=default]";
-          current = "#[fg=#94e2d5]#[fg=#232526,bg=#94e2d5]#[Italics]#[Bold]#I#[fg=#94e2d5,bg=#232526] #[fg=#94e2d5,bg=#232526]#[Italics] #W #[fg=#232526,bg=default]";
+          # default = "#[fg=#666666]#[fg=#232526,bg=#666666]#[Italics]#[Bold]#I#[fg=#666666,bg=#232526] #[fg=#666666,bg=#232526]#[Italics] #W #[fg=#232526,bg=default]";
+          # current = "#[fg=#94e2d5]#[fg=#232526,bg=#94e2d5]#[Italics]#[Bold]#I#[fg=#94e2d5,bg=#232526] #[fg=#94e2d5,bg=#232526]#[Italics] #W #[fg=#232526,bg=default]";
+          default = "#[fg=#666666]#[Italics]#I: #[Italics]#[fg=#666666]#W";
+          current = "#[fg=#94e2d5]#[Italics]#[Bold]#I: #[Italics]#[fg=#d0d0d1]#W";
         };
         left = {
           # default = "#[fg=#f5c2e7]#[fg=#232526,bg=#f5c2e7]#{?client_prefix,󰌪,󱐋}#[fg=#f5c2e7,bg=#232526] #[fg=#f5c2e7,bg=#232526]T-MODE#[fg=#232526,bg=default] ";
@@ -133,21 +135,26 @@ in
 
       prefix_color="#{?client_prefix,${currentTheme.status.command_mode_color},${currentTheme.status.norm_mode_color}}"
       prefix_symbol="#{?client_prefix,${currentTheme.status.command_mode_icon},${currentTheme.status.norm_mode_icon}}"
-      mode_inicator=#[fg="''${prefix_color}]#[fg=#232526,bg=''${prefix_color}]''${prefix_symbol}#[fg=''${prefix_color},bg=#232526] #[fg=''${prefix_color},bg=#232526]T-MODE #[fg=#232526,bg=default]"
+      # mode_inicator=#[fg="''${prefix_color}]#[fg=#232526,bg=''${prefix_color}]''${prefix_symbol}#[fg=''${prefix_color},bg=#232526] #[fg=''${prefix_color},bg=#232526]T-MODE #[fg=#232526,bg=default]"
+      mode_inicator="#[bg=''${prefix_color},fg=#000000] ''${prefix_symbol} TMUX #[fg=''${prefix_color},bg=default] "
 
-      battery_mod="#[fg=#232526,bg=default]#[fg=#f5c2e7,bg=#232526]#{battery_percentage} #[fg=#f5c2e7,bg=#232526]#[fg=#232526,bg=#f5c2e7]#{battery_icon}#[fg=#f5c2e7,bg=default]"
+      # battery_mod="#[fg=#232526,bg=default]#[fg=#f5c2e7,bg=#232526]#{battery_percentage} #[fg=#f5c2e7,bg=#232526]#[fg=#232526,bg=#f5c2e7]#{battery_icon}#[fg=#f5c2e7,bg=default]"
+      battery_mod="#[fg=''${prefix_color},bg=default] #[fg=#232526,bg=''${prefix_color}] #{battery_icon} #{battery_percentage} #[fg=#232526,bg=''${prefix_color}]"
 
       gpu_usage="#(nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader,nounits)%"
       # ram_usage="#(free | awk "/Mem:/ {printf("%.2f", $3/$2 * 100)}")%"
       ram_usage="#(free | awk '/Mem:/ {printf(\"%.2f%%\", $3/$2 * 100)}')"
-      diagnostic_mod="#[fg=#666666] #{cpu_percentage}   ''${gpu_usage}   ''${ram_usage}"
+      # diagnostic_mod="#[fg=#666666] #{cpu_percentage}   ''${gpu_usage}   ''${ram_usage}"
+      diagnostic_mod="#[fg=#666666] #{cpu_percentage}   ''${ram_usage}"
 
       # Left status
-      set -g status-left "''${mode_inicator}''${sep}#[fg:#666666]󰌘 %H:%M''${sep}#{pomodoro_status}"
+      # set -g status-left "''${mode_inicator}''${sep}#[fg:#666666]󰌘 %H:%M''${sep}#{pomodoro_status}"
+      set -g status-left "''${mode_inicator} #[fg=#666666]󰌘 %H:%M #{pomodoro_status}"
       set -g status-left-length 50
 
       # Right status
-      set -g status-right "''${diagnostic_mod}''${sep}''${battery_mod}"
+      # set -g status-right "''${diagnostic_mod}''${sep}''${battery_mod}"
+      set -g status-right "''${diagnostic_mod} ''${battery_mod}"
       set -g status-right-length 150
       set-option -g status-style bg=default,fg=default
 

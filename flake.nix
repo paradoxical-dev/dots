@@ -63,7 +63,7 @@
         };
         fonts = [ pkgs.victor-mono ];
         nerdFonts = [ pkgs.nerd-fonts.jetbrains-mono ];
-        fontSize = "11.5";
+        fontSize = "13";
       };
       lib = nixpkgs.lib;
       pkgs = nixpkgs.legacyPackages.${systemSettings.system};

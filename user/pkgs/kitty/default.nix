@@ -2,7 +2,7 @@
 let
   themes = {
     shards = {
-      opacity = 0.9;
+      opacity = 0.99;
     };
     burst = {
       opacity = 0.8;
@@ -45,16 +45,17 @@ in
     extraConfig = ''
       include ~/dots/user/pkgs/kitty/themes/${userSettings.theme}.conf
 
-      window_padding_width 5 15
+      window_padding_width   5 15
 
-      enabled_layouts    Grid, Stack
+      enabled_layouts        Grid, Stack
 
-      cursor_trail       3
+      cursor_trail           3
 
-      font_size          ${userSettings.fontSize}
-      font_family        JetBrainsMonoNL NFM Regular
-      italic_font        Victor Mono Italic
-      bold_italic_font   Victor Mono Bold Italic
+      modify_font            cell_height 150%
+      font_size              ${userSettings.fontSize}
+      font_family            JetBrainsMono Nerd Font Mono
+      italic_font            Victor Mono Italic
+      bold_italic_font       Victor Mono Bold Italic
     '';
   };
 }

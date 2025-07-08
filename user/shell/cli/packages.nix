@@ -1,10 +1,11 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   environment.systemPackages = with pkgs; [
     bat
     bc
     bottom
     chafa
+    commitizen
     ddgr
     entr
     exiftool
@@ -19,6 +20,7 @@
     lesspipe
     lm_sensors
     lshw
+    openssl
     smartmontools
     timg
     tldr
