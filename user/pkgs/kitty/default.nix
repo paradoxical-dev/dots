@@ -51,7 +51,7 @@ in
 
       cursor_trail           3
 
-      modify_font            cell_height 150%
+      # modify_font            cell_height 150%
       font_size              ${userSettings.fontSize}
       font_family            JetBrainsMono Nerd Font Mono
       italic_font            Victor Mono Italic
