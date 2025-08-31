@@ -123,30 +123,6 @@ in
         bindkey '^p' history-search-backward
         bindkey '^n' history-search-forward
 
-        # VI mode customization #
-        export ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK        
-        export ZVM_KEYTIMEOUT=0
-        export ZVM_VI_HIGHLIGHT_BACKGROUND=#45475b
-        function zvm_after_select_vi_mode() {
-          case $ZVM_MODE in
-            $ZVM_MODE_NORMAL)
-              echo 'n' > ${config.home.homeDirectory}.current_vi_mode
-              ;;
-            $ZVM_MODE_INSERT)
-              echo 'i' > ${config.home.homeDirectory}.current_vi_mode
-              ;;
-            $ZVM_MODE_VISUAL)
-              echo 'v' > ${config.home.homeDirectory}.current_vi_mode
-              ;;
-            $ZVM_MODE_REPLACE)
-              echo 'r' > ${config.home.homeDirectory}.current_vi_mode
-              ;;
-            $ZVM_MODE_VISUAL_LINE)
-              echo 'vl' > ${config.home.homeDirectory}.current_vi_mode
-              ;;
-          esac
-        }
-
         # Case insensitive completion
         zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 
@@ -182,8 +158,14 @@ in
         zstyle ':fzf-tab:complete:-command-:*' fzf-preview \
         '(out=$(tldr --color always "$word") 2>/dev/null && echo $out) || (out=$(MANWIDTH=$FZF_PREVIEW_COLUMNS man "$word") 2>/dev/null && echo $out) || (out=$(which "$word") && echo $out) || echo "''${(P)word}"'
 
+	# Vterm #
+	# this is used for vterm in emacs
+	source $HOME/.config/zsh/vterm.sh
+
+
         # Environment #
         export SYSTEM_THEME="${userSettings.theme}"
+        export PATH="$HOME/.config/emacs/bin:$PATH"
         export OLLAMA_API_BASE="http://127.0.0.1:11434"
 
         # Add Cargo to PATH

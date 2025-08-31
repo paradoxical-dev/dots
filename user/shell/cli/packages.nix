@@ -21,8 +21,10 @@
     lm_sensors
     lshw
     openssl
+    plocate
     smartmontools
     timg
     tldr
+    vips
   ];
 }

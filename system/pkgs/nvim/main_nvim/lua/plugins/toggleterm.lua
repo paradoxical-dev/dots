@@ -4,11 +4,6 @@ return {
 		lazy = true,
 		keys = {
 			{
-				"<leader>tf",
-				"<cmd>ToggleTerm direction=float<CR>",
-				desc = "Floating Terminal",
-			},
-			{
 				"<leader>th",
 				"<cmd>ToggleTerm direction=horizontal<CR>",
 				desc = "Horizontal Terminal",
@@ -78,6 +73,28 @@ return {
 					return math.floor(vim.o.lines * 0.7)
 				end,
 				title_pos = "center",
+			},
+		},
+	},
+	{
+		"nvzone/floaterm",
+		dependencies = "nvzone/volt",
+		opts = {
+			border = true,
+		},
+		event = "VeryLazy",
+		cmd = "FloatermToggle",
+		keys = {
+			{
+				"<leader>tf",
+				"<cmd>FloatermToggle<cr>",
+				desc = "Toggle Floaterm",
+			},
+			{
+				"<C-e>",
+				mode = { "t", "n" },
+				"<cmd>FloatermToggle<cr>",
+				desc = "Toggle Floaterm",
 			},
 		},
 	},

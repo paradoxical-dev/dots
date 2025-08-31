@@ -4,5 +4,8 @@
     nixd
     nil
     asm-lsp
+    pyright
+    rust-analyzer
+    lldb
   ];
 }

@@ -11,6 +11,8 @@
       ppkgs.pandas
       ppkgs.numpy
       ppkgs.matplotlib
+      ppkgs.memory-tempfile
+      ppkgs.seaborn
 
       # pyrola / jupyter support
       ppkgs.pynvim

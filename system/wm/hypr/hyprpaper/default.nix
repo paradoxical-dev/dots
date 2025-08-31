@@ -1,10 +1,11 @@
-{ config, pkgs, lib, userSettings, ... }:
+{ config, pkgs, userSettings, ... }:
 let
   themes = {
     yin = "${config.home.homeDirectory}dots/wallpapers/yin.png";
     yang = "${config.home.homeDirectory}dots/wallpapers/yang.png";
     burst = "${config.home.homeDirectory}dots/wallpapers/fractal.png";
-    shards = "${config.home.homeDirectory}dots/wallpapers/street-view.png";
+    # shards = "${config.home.homeDirectory}dots/wallpapers/street-view.png";
+    shards = "${config.home.homeDirectory}dots/wallpapers/mountain-lake.jpg";
   };
 
   wallpaperPath = themes.${userSettings.theme};

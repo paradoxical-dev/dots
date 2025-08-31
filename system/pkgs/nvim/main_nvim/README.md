@@ -24,7 +24,7 @@ Among other thigs, this config includes:
 - ⚡️ Advanced navigation with multiple plugins
 - 👀 And more
 
-All of this packaged in an _instant_, with startuptimes averaging **13-14** ms at their fastest! (on my hardware)
+All of this packaged in an _instant_, with startuptimes averaging **sub 20** ms at their fastest! (on my hardware)
 
 ## 🔌 Plugins
 

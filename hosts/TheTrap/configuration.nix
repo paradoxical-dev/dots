@@ -34,6 +34,7 @@
     ../../user/shell/cli/packages.nix
     ../../user/shell/starship/starship.nix
 
+    ../../system/pkgs/emacs.nix
     ../../system/pkgs/docker.nix
     ../../system/pkgs/vm.nix
     ../../system/pkgs/aider.nix
@@ -58,6 +59,7 @@
     isNormalUser = true;
     description = userSettings.name;
     extraGroups = [
+      "plocate"
       "networkmanager"
       "wheel"
     ];
@@ -100,6 +102,13 @@
     neovim
     git
   ];
+
+  # LOCATE
+  services.locate = {
+    enable = true;
+    package = pkgs.plocate;
+  };
+
 
   # UPOWER
   services.upower.enable = true;

@@ -26,6 +26,14 @@ return {
 			require("luasnip.loaders.from_vscode").lazy_load()
 			cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 			cmp.setup({
+				-- col offset
+				window = {
+					completion = {
+						winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
+						col_offset = -3,
+						side_padding = 0,
+					},
+				},
 				sources = {
 					{ name = "path" },
 					{ name = "nvim_lsp" },
@@ -78,14 +86,27 @@ return {
 						require("luasnip").lsp_expand(args.body)
 					end,
 				},
-				-- for symbols
+				-- custom format
 				formatting = {
-					format = lspkind.cmp_format({
-						mode = "symbol",
-						maxwidth = 50,
-						ellipsis_char = "...",
-						smybol_map = { Codeium = "" },
-					}),
+					fields = { "kind", "abbr", "menu" },
+					format = function(entry, vim_item)
+						local kind = require("lspkind").cmp_format({
+							mode = "symbol_text",
+							maxwidth = 50,
+							symbol_map = { Codeium = "" },
+							ellipsis_char = "…",
+						})(entry, vim_item)
+						local strings = vim.split(kind.kind, "%s", { trimempty = true })
+
+						if entry.source.name == "codeium" then
+							kind.kind_hl_group = "CmpItemKind"
+						end
+
+						kind.kind = " " .. (strings[1] or "") .. " "
+						kind.menu = "    (" .. (strings[2] or "") .. ")"
+
+						return kind
+					end,
 				},
 			})
 		end,

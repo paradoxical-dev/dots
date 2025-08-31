@@ -29,6 +29,9 @@ return {
 				},
 			},
 
+			input = {},
+			image = {},
+
 			indent = {
 				enabled = true,
 				scope = {
@@ -147,15 +150,71 @@ return {
 			},
 
 			dashboard = {
+				width = 70,
+				-- row = 3,
+				preset = {
+					keys = {
+						{
+							icon = "  ",
+							key = "f",
+							desc = "Find File",
+							action = ":lua Snacks.dashboard.pick('files')",
+						},
+						{
+							icon = "  ",
+							key = "g",
+							desc = "Find Text",
+							action = ":lua Snacks.dashboard.pick('live_grep')",
+						},
+						{
+							icon = "  ",
+							key = "r",
+							desc = "Recent Files",
+							action = ":lua Snacks.dashboard.pick('oldfiles')",
+						},
+						{
+							icon = "  ",
+							key = "p",
+							desc = "Recent Projects",
+							action = ":lua Snacks.picker.projects()",
+						},
+						{
+							icon = "  ",
+							key = "c",
+							desc = "Config",
+							action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})",
+						},
+						{
+							icon = "󰒲  ",
+							key = "L",
+							desc = "Lazy",
+							action = ":Lazy",
+							enabled = package.loaded.lazy ~= nil,
+						},
+						{ icon = "  ", key = "q", desc = "Quit", action = ":qa" },
+					},
+				},
 				sections = {
 					{
 						section = "terminal",
-						cmd = "chafa ~/Downloads/shenron-removebg-preview.png --format symbols --symbols vhalf --size 60x25 --stretch; sleep 0.1",
-						height = 24,
+						cmd = "cat ~/dots/p.txt",
+						height = 9,
+						align = "center",
+						padding = 3,
 					},
 					{
-						{ section = "keys", padding = 1, gap = 1 },
-						{ section = "startup" },
+						{ section = "keys", padding = 3, gap = 1 },
+						{
+							text = {
+								{ string.rep("─", 70), hl = "Special" },
+							},
+						},
+						{ section = "startup", icon = "  " },
+						{
+							text = {
+								{ string.rep("─", 70), hl = "Special" },
+							},
+						},
 					},
 				},
 			},
@@ -164,25 +223,9 @@ return {
 				enabled = true,
 				prompt = "   ",
 				layout = {
-					-- layout = {
-					-- 	backdrop = false,
-					-- 	row = 1,
-					-- 	width = 0.4,
-					-- 	min_width = 80,
-					-- 	height = 0.5,
-					-- 	min_height = 30,
-					-- 	box = "vertical",
-					-- 	border = "rounded",
-					-- 	title = "{title} {live} {flags}",
-					-- 	title_pos = "center",
-					-- 	{ win = "preview", title = "{preview}", height = 0.4, border = "top" },
-					-- 	{ win = "input", height = 1, border = "bottom" },
-					-- 	{ win = "list", border = "none" },
-					-- },
-
 					preview = false,
 					layout = {
-						backdrop = false,
+						backdrop = true,
 						row = 1,
 						width = 0.4,
 						min_width = 80,
@@ -301,7 +344,9 @@ return {
 			{
 				"<leader>fi",
 				function()
-					Snacks.picker.highlights()
+					Snacks.picker.highlights({
+						confirm = { "copy", "close" },
+					})
 				end,
 				desc = "Browse Highlights",
 			},
@@ -771,91 +816,6 @@ return {
 					})
 				end,
 				desc = "Browse Type Definitions",
-			},
-
-			-- EXPLORER --
-			{
-				"<leader>o",
-				function()
-					Snacks.picker.explorer({
-						finder = "explorer",
-						sort = { fields = { "sort" } },
-						tree = true,
-						supports_live = true,
-						follow_file = true,
-						focus = "list",
-						auto_close = false,
-						jump = { close = false },
-						layout = {
-							preview = false,
-							layout = {
-								backdrop = false,
-								width = 25,
-								min_width = 20,
-								height = 0,
-								position = "left",
-								border = "none",
-								box = "vertical",
-								{
-									win = "input",
-									height = 1,
-									border = "rounded",
-									wo = {
-										winhighlight = "NormalFloat:Normal,FloatTitle:SnacksPickerInputTitle,CursorLine:SnacksPickerInputCursorLine,FloatBorder:SnacksIndent,FloatFooter:SnacksPickerInputFooter",
-									},
-									title = "{title} {live} {flags}",
-									title_pos = "center",
-								},
-								{
-									win = "list",
-									border = "none",
-									wo = {
-										winhighlight = "FloatTitle:SnacksPickerListTitle,FloatBorder:SnacksPickerListBorder,FloatFooter:SnacksPickerListFooter,CursorLine:SnacksPickerListCursorLine,NormalFloat:Normal,SnacksPickerTree:SnacksIndent",
-										statuscolumn = "",
-										signcolumn = "no",
-										conceallevel = 3,
-										number = false,
-										relativenumber = false,
-										winbar = "",
-									},
-								},
-								{
-									win = "preview",
-									title = "{preview}",
-									height = 0.4,
-									border = "top",
-								},
-							},
-						},
-						formatters = { file = { filename_only = true } },
-						matcher = { sort_empty = true },
-						win = {
-							list = {
-								keys = {
-									["<BS>"] = "explorer_up",
-									["a"] = "explorer_add",
-									["d"] = "explorer_del",
-									["r"] = "explorer_rename",
-									["c"] = "explorer_copy",
-									["m"] = "explorer_move",
-									["y"] = "explorer_yank",
-									["<c-c>"] = "explorer_cd",
-									["."] = "explorer_focus",
-								},
-								wo = {
-									winhighlight = "NormalFloat:Normal",
-								},
-								b = {
-									filetype = "snacks-explorer",
-								},
-							},
-							wo = {
-								winhighlight = "NormalFloat:Normal",
-							},
-						},
-					})
-				end,
-				desc = "File Explorer",
 			},
 
 			-- SCRATCH --

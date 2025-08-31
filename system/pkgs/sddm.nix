@@ -20,7 +20,8 @@ let
       button_text = "#FFFFFF";
     };
     shards = {
-      wallpaper = "shard.png";
+      # wallpaper = "shard.png";
+      wallpaper = "mountain-lake.jpg";
       main = "#FFFFFF";
       accent = "#94cbba";
       button_text = "#FFFFFF";

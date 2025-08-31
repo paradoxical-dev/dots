@@ -7,16 +7,71 @@ return {
 
 	-- LSP CONFIG --
 
-	{ "paradoxical-dev/lsp_hover", lazy = true },
+	{
+		"paradoxical-dev/lsp_hover",
+		lazy = true,
+		opts = {
+			default = {
+				name = "󰗊 LSP/Hover",
+				border_hl = "MarkviewGradient6",
+				min_width = 30,
+			},
+			["^lua_ls"] = {
+				name = " lua_ls",
+				border_hl = "MarkviewGradient6",
+			},
+			["^nil_ls"] = {
+				name = "󱄅 nil_ls",
+				border_hl = "MarkviewGradient6",
+			},
+			["^pyright"] = {
+				name = "󰌠 pyright",
+				border_hl = "MarkviewGradient6",
+			},
+			["^denols"] = {
+				name = " denols",
+				border_hl = "MarkviewGradient6",
+			},
+			["^clangd"] = {
+				name = " clangd",
+				border_hl = "MarkviewGradient6",
+			},
+			["^cssls"] = {
+				name = " cssls",
+				border_hl = "MarkviewGradient6",
+			},
+			["^rust_analyzer"] = {
+				name = " rust_analyzer",
+				border_hl = "MarkviewGradient6",
+			},
+			["^bashls"] = {
+				name = " bashls",
+				border_hl = "MarkviewGradient6",
+			},
+		},
+	},
 	{
 		"williamboman/mason-lspconfig.nvim",
 		event = { "BufReadPre", "BufNewFile" },
 		dependencies = {
 			"williamboman/mason.nvim",
+			"neovim/nvim-lspconfig",
+			"paradoxical-dev/lsp_hover",
 		},
 		opts = function(_, opts)
 			opts.ensure_installed = {
+				"bashls",
+				"clangd",
+				"cmake",
+				"cssls",
+				"denols",
+				"dockerls",
+				"html",
 				"lua_ls",
+				"nil_ls",
+				"pyright",
+				"rust_analyzer",
+				"yamlls",
 			}
 
 			local on_attach = function(client, bufnr)
@@ -25,76 +80,62 @@ return {
 				vim.keymap.set("n", "gd", function()
 					vim.lsp.buf.definition()
 				end, { buffer = bufnr, remap = false, desc = "Go to Definition" })
-				vim.keymap.set("n", "K", function()
-					vim.lsp.buf.hover()
-				end, { buffer = bufnr, remap = false, desc = "Hover Info" })
+
 				vim.keymap.set("n", "<leader>lf", function()
 					vim.diagnostic.open_float()
 				end, { buffer = bufnr, remap = false, desc = "Diagnostic Float" })
+
 				vim.keymap.set("n", "[d", function()
 					vim.diagnostic.goto_next()
 				end, { buffer = bufnr, remap = false, desc = "Next Diagnostic" })
+
 				vim.keymap.set("n", "]d", function()
 					vim.diagnostic.goto_prev()
 				end, { buffer = bufnr, remap = false, desc = "Previous Diagnostic" })
+
 				vim.keymap.set("n", "<leader>lc", function()
-					vim.lsp.buf.code_action()
+					require("tiny-code-action").code_action()
 				end, { buffer = bufnr, remap = false, desc = "Code Actions" })
+
 				vim.keymap.set("n", "<leader>lR", function()
 					vim.lsp.buf.rename()
 				end, { buffer = bufnr, remap = false, desc = "Symbol Rename" })
+
 				vim.keymap.set("i", "<C-h>", function()
 					vim.lsp.buf.signature_help()
 				end, options)
 
-				-- sets icons for diagnostics
+				-- sets up diagnostics
 				vim.diagnostic.config({
 					virtual_text = true,
-					signs = true,
 					underline = true,
 					update_in_insert = false,
 					severity_sort = true,
+					signs = {
+						text = {
+							[vim.diagnostic.severity.ERROR] = "",
+							[vim.diagnostic.severity.WARN] = "",
+							[vim.diagnostic.severity.HINT] = "󰌵",
+							[vim.diagnostic.severity.INFO] = "",
+						},
+					},
 				})
-				local signs = {
-					Error = "",
-					Warn = "",
-					Hint = "󰌵",
-					Info = "",
-				}
-				for type, icon in pairs(signs) do
-					local hl = "DiagnosticSign" .. type
-					vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
-				end
 
-				-- sets up navic
+				-- sets up breadcrumbs
 				require("nvim-navic").attach(client, bufnr)
-
-				-- fancy lsp hover
-				require("lsp_hover").setup({
-					default = {
-						border_hl = "FloatBorder",
-					},
-					["^lua_ls"] = {
-						name = " lua_ls",
-						border_hl = "FloatBorder",
-					},
-				})
 			end
 
 			local lsp_config = require("lspconfig")
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
-			opts.handlers = {
-				-- default setup for servers
-				function(server_name)
-					lsp_config[server_name].setup({
-						on_attach = on_attach,
-						capabilities = capabilities,
-					})
-				end,
-			}
+			for _, server_name in pairs(opts.ensure_installed) do
+				lsp_config[server_name].setup({
+					on_attach = on_attach,
+					capabilities = capabilities,
+				})
+			end
+			return opts
 		end,
 	},
-	{ "neovim/nvim-lspconfig", event = { "BufReadPre", "BufNewFile" } },
 
 	-- NULL-LS --
 
@@ -138,6 +179,45 @@ return {
 	{
 		"mfussenegger/nvim-dap",
 		lazy = true,
+		dependencies = {
+			{ "niuiic/dap-utils.nvim", dependencies = { "niuiic/core.nvim" } },
+		},
+		config = function()
+			require("dap").adapters["pwa-node"] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "node",
+					args = {
+						os.getenv("HOME")
+							.. "/.local/share/nvim/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js",
+						"${port}",
+					},
+				},
+			}
+			require("dap").configurations.javascript = {
+				{
+					name = "Launch with NPM",
+					request = "launch",
+					runtimeArgs = { "run-script", "debug" },
+					runtimeExecutable = "npm",
+					skipFiles = { "<node_internals>/**" },
+					type = "pwa-node",
+					-- program = "${file}",
+					cwd = "${workspaceFolder}",
+				},
+				{
+					name = "Attach to process",
+					type = "pwa-node",
+					request = "attach",
+					port = 9229,
+					restart = true,
+					timeout = 10000,
+					skipFiles = { "<node_internals>/**" },
+				},
+			}
+		end,
 	},
 	{
 		"rcarriga/nvim-dap-ui",
@@ -236,6 +316,152 @@ return {
 					}
 					require("mason-nvim-dap").default_setup(config)
 				end,
+
+				chrome = function(config)
+					local chrome_debug_path = os.getenv("HOME")
+						.. "/.local/share/nvim/mason/packages/chrome-debug-adapter/out/src/chromeDebug.js"
+
+					config.adapters = {
+						type = "executable",
+						command = "node",
+						args = { chrome_debug_path },
+					}
+
+					local chrome_path = vim.fn.trim(vim.fn.system("which google-chrome-stable"))
+					if chrome_path == "" then
+						vim.notify("Could not find Chrome. Set 'runtimeExecutable' manually.", vim.log.levels.ERROR)
+					end
+
+					local web_root = vim.fn.getcwd() .. "/src"
+
+					local launch_config = {
+						name = "Launch Chrome",
+						type = "chrome",
+						request = "launch",
+						url = "http://localhost:3000",
+						webRoot = web_root,
+						runtimeExecutable = chrome_path,
+						runtimeArgs = {
+							"--remote-debugging-port=9222",
+							"--no-first-run",
+							"--no-default-browser-check",
+							"--disable-default-apps",
+							"--disable-popup-blocking",
+							"--user-data-dir=/tmp/vscode-chrome-debug-profile",
+						},
+						sourceMaps = true,
+						protocol = "inspector",
+					}
+
+					local attach_config = {
+						name = "Attach to Chrome",
+						type = "chrome",
+						request = "attach",
+						port = 9222,
+						webRoot = web_root,
+						sourceMaps = true,
+						protocol = "inspector",
+					}
+
+					config.configurations = {
+						launch_config,
+						attach_config,
+					}
+
+					require("mason-nvim-dap").default_setup(config)
+				end,
+
+				-- js = function(config)
+				-- 	local js_debug_path = vim.fn.stdpath("data")
+				-- 		.. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
+				--
+				-- 	config.adapters = {
+				-- 		type = "server",
+				-- 		host = "localhost",
+				-- 		port = "${port}",
+				-- 		executable = {
+				-- 			command = "node",
+				-- 			args = { js_debug_path, "${port}" },
+				-- 		},
+				-- 	}
+				--
+				-- 	config.configurations = {
+				-- 		{
+				-- 			type = "js",
+				-- 			request = "launch",
+				-- 			name = "Launch NPM Script",
+				-- 			program = vim.fn.getcwd() .. "/index.js",
+				-- 			cwd = vim.fn.getcwd(),
+				-- 			runtimeExecutable = "npm",
+				-- 			runtimeArgs = { "run-script", "debug" },
+				-- 			skipFiles = { "<node_internals>/**" },
+				-- 			sourceMaps = true,
+				-- 			protocol = "inspector",
+				-- 			console = "integratedTerminal",
+				-- 		},
+				-- 		{
+				-- 			type = "js",
+				-- 			request = "attach",
+				-- 			name = "Attach to Process",
+				-- 			-- port = 9229,
+				-- 			-- restart = true,
+				-- 			-- timeout = 10000,
+				-- 			processId = require("dap.utils").pick_process,
+				-- 			cwd = vim.fn.getcwd(),
+				-- 			skipFiles = { "<node_internals>/**" },
+				-- 			sourceMaps = true,
+				-- 			protocol = "inspector",
+				-- 		},
+				-- 	}
+				--
+				-- 	config.filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" }
+				--
+				-- 	require("mason-nvim-dap").default_setup(config)
+				-- end,
+
+				-- js = function(config)
+				-- 	local js_debug_path = vim.fn.stdpath("data")
+				-- 		.. "/mason/packages/js-debug-adapter/js-debug/src/dapDebugServer.js"
+				--
+				-- 	config.adapters = {
+				-- 		type = "server",
+				-- 		host = "localhost",
+				-- 		port = "${port}",
+				-- 		executable = {
+				-- 			command = "node",
+				-- 			args = { js_debug_path, "${port}" },
+				-- 		},
+				-- 	}
+				--
+				-- 	local configurations = {
+				-- 		{
+				-- 			type = "pwa-node",
+				-- 			request = "launch",
+				-- 			name = "Launch Express App",
+				-- 			program = "${workspaceFolder}/index.js",
+				-- 			cwd = "${workspaceFolder}",
+				-- 			runtimeExecutable = "node",
+				-- 			skipFiles = { "<node_internals>/**" },
+				-- 			sourceMaps = true,
+				-- 			console = "integratedTerminal",
+				-- 		},
+				-- 		{
+				-- 			type = "pwa-node",
+				-- 			request = "attach",
+				-- 			name = "Attach to Process",
+				-- 			processId = require("dap.utils").pick_process,
+				-- 			cwd = "${workspaceFolder}",
+				-- 			skipFiles = { "<node_internals>/**" },
+				-- 		},
+				-- 	}
+				--
+				-- 	config.configurations = config.configurations or {}
+				-- 	vim.list_extend(config.configurations, configurations)
+				--
+				-- 	-- config.configurations.typescript = config.configurations.javascript
+				--
+				-- 	require("mason-nvim-dap").default_setup(config)
+				-- end,
 
 				python = function(config)
 					local path = vim.fn.system("which python")

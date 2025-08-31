@@ -12,6 +12,7 @@
     hyprpanel
     wofi
     yazi
+    ranger
     firefox-wayland
     google-chrome
   ];

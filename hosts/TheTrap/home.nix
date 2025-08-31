@@ -31,8 +31,10 @@
     ../../user/pkgs/packet-tracer.nix
     ../../user/pkgs/mpv.nix
     ../../user/pkgs/zed.nix
+    # ../../user/pkgs/emacs.nix
     # ../../user/pkgs/vscode.nix
     ../../user/pkgs/distrobox.nix
+    ../../user/pkgs/latex.nix
 
     ../../user/pkgs/music/mpd/mpd.nix
     ../../user/pkgs/music/mpd/mpdris.nix
@@ -48,15 +50,16 @@
     ../../user/de/hypr/hyprlock.nix
     ../../user/de/hypr/hypridle.nix
 
-    ../../user/lang/lsp.nix
-    ../../user/lang/databases.nix
-    ../../user/lang/lua.nix
     ../../user/lang/c.nix
-    ../../user/lang/rust.nix
+    ../../user/lang/dart.nix
+    ../../user/lang/databases.nix
+    ../../user/lang/java.nix
+    ../../user/lang/lsp.nix
+    ../../user/lang/lua.nix
+    ../../user/lang/nodejs.nix
     ../../user/lang/python/py.nix
     ../../user/lang/python/pyenv.nix
-    ../../user/lang/nodejs.nix
-    ../../user/lang/dart.nix
+    ../../user/lang/rust.nix
   ] ++ (if userSettings.nvim.match_theme then [ ../../system/pkgs/nvim/colors.nix ] else [ ]);
 
   programs = {
